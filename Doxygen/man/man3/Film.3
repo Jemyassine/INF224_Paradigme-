@@ -1,0 +1,119 @@
+.TH "Film" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Film
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBVideo\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFilm\fP (const std::string &name, const std::string &pathname, int duration, int *chapters=nullptr, int count=0)"
+.br
+.ti -1c
+.RI "void \fBsetChapters\fP (int *chapters, int count)"
+.br
+.ti -1c
+.RI "const int * \fBgetChapters\fP () const"
+.br
+.ti -1c
+.RI "const int \fBgetChapterCount\fP () const"
+.br
+.ti -1c
+.RI "const int \fBgetChapterDuration\fP (int index) const"
+.br
+.ti -1c
+.RI "void \fBdisplayChapters\fP () const"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (std::ostream &os) const override"
+.br
+.ti -1c
+.RI "\fBFilm\fP (const \fBFilm\fP &other)"
+.br
+.ti -1c
+.RI "\fBFilm\fP & \fBoperator=\fP (const \fBFilm\fP &other)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (std::ofstream &ofs) const override"
+.br
+.ti -1c
+.RI "void \fBread\fP (std::ifstream &ifs) override"
+.br
+.ti -1c
+.RI "std::string \fBgetClassName\fP () const override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBVideo\fP
+.in +1c
+.ti -1c
+.RI "\fBVideo\fP (const std::string &name, const std::string &pathname, int duration)"
+.br
+.ti -1c
+.RI "int \fBgetDuration\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP (int duration)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (std::ostream &os) const override"
+.br
+.ti -1c
+.RI "void \fBplay\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (std::ofstream &ofs) const override"
+.br
+.ti -1c
+.RI "void \fBread\fP (std::ifstream &ifs) override"
+.br
+.ti -1c
+.RI "std::string \fBgetClassName\fP () const override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBMultimedia\fP
+.in +1c
+.ti -1c
+.RI "\fBMultimedia\fP (std::string name, std::string pathname)"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetPathname\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBsetPathname\fP (const std::string &pathname)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void Film::display (std::ostream & os) const\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBMultimedia\fP\&.
+.SS "std::string Film::getClassName () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBMultimedia\fP\&.
+.SS "void Film::read (std::ifstream & ifs)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Reimplemented from \fBMultimedia\fP\&.
+.SS "void Film::write (std::ofstream & ofs) const\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Reimplemented from \fBMultimedia\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classswing_1_1src_1_1swing_1_1_client" kind="class" language="Java" prot="public">
+    <compoundname>swing::src::swing::Client</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classswing_1_1src_1_1swing_1_1_client_1a561cee69aae6455fb0d59842619f76c5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_socket" kindref="compound">Socket</ref></type>
+        <definition>Socket swing.src.swing.Client.sock</definition>
+        <argsstring></argsstring>
+        <name>sock</name>
+        <qualifiedname>swing.src.swing.Client.sock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="swing/src/swing/Client.java" line="7" column="20" bodyfile="swing/src/swing/Client.java" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classswing_1_1src_1_1swing_1_1_client_1aa39f445cd23b6001708cba73d6717547" prot="private" static="no" mutable="no">
+        <type>BufferedReader</type>
+        <definition>BufferedReader swing.src.swing.Client.input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>swing.src.swing.Client.input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="swing/src/swing/Client.java" line="8" column="28" bodyfile="swing/src/swing/Client.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classswing_1_1src_1_1swing_1_1_client_1ae32de93a0e8ea31ceac8c402470ed1a0" prot="private" static="no" mutable="no">
+        <type>BufferedWriter</type>
+        <definition>BufferedWriter swing.src.swing.Client.output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <qualifiedname>swing.src.swing.Client.output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="swing/src/swing/Client.java" line="9" column="28" bodyfile="swing/src/swing/Client.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classswing_1_1src_1_1swing_1_1_client_1a90bfd97d45080a8f81e82bc276258b19" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>swing.src.swing.Client.Client</definition>
+        <argsstring>(String host, int port)</argsstring>
+        <name>Client</name>
+        <qualifiedname>swing.src.swing.Client.Client</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <exceptions> throws UnknownHostException, IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialise la connexion. Renvoie une exception en cas d&apos;erreur. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="swing/src/swing/Client.java" line="15" column="12" bodyfile="swing/src/swing/Client.java" bodystart="15" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classswing_1_1src_1_1swing_1_1_client_1acf1efb106790fd300fba711c85436d7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String swing.src.swing.Client.send</definition>
+        <argsstring>(String request)</argsstring>
+        <name>send</name>
+        <qualifiedname>swing.src.swing.Client.send</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Envoie une requete au server et retourne sa reponse. Noter que la methode bloque si le serveur ne repond pas. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Envoyer la requete au serveur</para>
+<para>Recuperer le resultat envoye par le serveur</para>
+        </inbodydescription>
+        <location file="swing/src/swing/Client.java" line="39" column="19" bodyfile="swing/src/swing/Client.java" bodystart="39" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="swing/src/swing/Client.java" line="6" column="7" bodyfile="swing/src/swing/Client.java" bodystart="6" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classswing_1_1src_1_1swing_1_1_client_1a90bfd97d45080a8f81e82bc276258b19" prot="public" virt="non-virtual"><scope>swing::src::swing::Client</scope><name>Client</name></member>
+      <member refid="classswing_1_1src_1_1swing_1_1_client_1aa39f445cd23b6001708cba73d6717547" prot="private" virt="non-virtual"><scope>swing::src::swing::Client</scope><name>input</name></member>
+      <member refid="classswing_1_1src_1_1swing_1_1_client_1ae32de93a0e8ea31ceac8c402470ed1a0" prot="private" virt="non-virtual"><scope>swing::src::swing::Client</scope><name>output</name></member>
+      <member refid="classswing_1_1src_1_1swing_1_1_client_1acf1efb106790fd300fba711c85436d7c" prot="public" virt="non-virtual"><scope>swing::src::swing::Client</scope><name>send</name></member>
+      <member refid="classswing_1_1src_1_1swing_1_1_client_1a561cee69aae6455fb0d59842619f76c5" prot="private" virt="non-virtual"><scope>swing::src::swing::Client</scope><name>sock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

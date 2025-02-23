@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="classswing_1_1src_1_1swing_1_1_client" kind="class"><name>swing::src::swing::Client</name>
+    <member refid="classswing_1_1src_1_1swing_1_1_client_1a561cee69aae6455fb0d59842619f76c5" kind="variable"><name>sock</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_client_1aa39f445cd23b6001708cba73d6717547" kind="variable"><name>input</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_client_1ae32de93a0e8ea31ceac8c402470ed1a0" kind="variable"><name>output</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_client_1a90bfd97d45080a8f81e82bc276258b19" kind="function"><name>Client</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_client_1acf1efb106790fd300fba711c85436d7c" kind="function"><name>send</name></member>
+  </compound>
+  <compound refid="class_film" kind="class"><name>Film</name>
+    <member refid="class_film_1a2b5d60515dcf84e788136cc6cd4ea403" kind="variable"><name>chapterDurations</name></member>
+    <member refid="class_film_1acd94aec2eec811888558c43b5515b75c" kind="variable"><name>chapterCount</name></member>
+    <member refid="class_film_1af2835db2b0ef3a87aaa3222f4d9d1ae3" kind="function"><name>Film</name></member>
+    <member refid="class_film_1a1c873d8e0e4b56ef4b5c4983671f4d1d" kind="function"><name>Film</name></member>
+    <member refid="class_film_1a8dab653f8a6c0635ca5ddbe0bbdd9a25" kind="function"><name>~Film</name></member>
+    <member refid="class_film_1a023189ed17b7e112e6db9d6f7b767e69" kind="function"><name>setChapters</name></member>
+    <member refid="class_film_1a7bdcc9cb81df92862f98b3b6b286ab4a" kind="function"><name>getChapters</name></member>
+    <member refid="class_film_1ae2ce531d6e526ad89a52cc64a109f1a4" kind="function"><name>getChapterCount</name></member>
+    <member refid="class_film_1a651777e681c98d0581a67e0fff55a879" kind="function"><name>getChapterDuration</name></member>
+    <member refid="class_film_1aa8595702a0c221bbd8c7bc6cb5c66d92" kind="function"><name>displayChapters</name></member>
+    <member refid="class_film_1a441f4fb605a7d46b906678c87040d707" kind="function"><name>display</name></member>
+    <member refid="class_film_1a71002f3f02dd2e03d9059bfc86c17118" kind="function"><name>Film</name></member>
+    <member refid="class_film_1a3162aa6c8d939fcd5afe49d47202cbf5" kind="function"><name>operator=</name></member>
+    <member refid="class_film_1a64700dae3afe5511027b24c72d28888f" kind="function"><name>write</name></member>
+    <member refid="class_film_1ac739dc43e2e83ec751274820e1a76a06" kind="function"><name>read</name></member>
+    <member refid="class_film_1a5d1cfd8484d03b7df2c430f8e37f1d08" kind="function"><name>getClassName</name></member>
+  </compound>
+  <compound refid="class_group" kind="class"><name>Group</name>
+    <member refid="class_group_1abfa8bde619513cf0768c14f2e5beeca1" kind="variable"><name>name</name></member>
+    <member refid="class_group_1a10fc62dd92115677976891017a943e00" kind="function"><name>Group</name></member>
+    <member refid="class_group_1aed00a22ff227ee2657ae44a5cbcedf7c" kind="function"><name>~Group</name></member>
+    <member refid="class_group_1a2441b4048116108fe8f65bdf71d02494" kind="function"><name>getName</name></member>
+    <member refid="class_group_1a661faafa833aa92388499c5f43d34dfa" kind="function"><name>display</name></member>
+    <member refid="class_group_1ac1565b0b2f438f2619d8a5fd0a7a77a2" kind="function"><name>play</name></member>
+  </compound>
+  <compound refid="struct_input_buffer" kind="struct"><name>InputBuffer</name>
+    <member refid="struct_input_buffer_1aee7a717b6cf023deabe9910410e6cfb6" kind="variable"><name>buffer</name></member>
+    <member refid="struct_input_buffer_1a2f05121c4fb8571845cc22d083c6da46" kind="variable"><name>begin</name></member>
+    <member refid="struct_input_buffer_1a52ba71c71b9b955b8369fc5217e3c4b6" kind="variable"><name>end</name></member>
+    <member refid="struct_input_buffer_1ad94b06e792363709c990e9aa78c500ec" kind="variable"><name>remaining</name></member>
+    <member refid="struct_input_buffer_1a9409ec8e4581caa99dcac1af963349b5" kind="function"><name>InputBuffer</name></member>
+    <member refid="struct_input_buffer_1acbb3a083318ff4e73a67646dd0b8996e" kind="function"><name>~InputBuffer</name></member>
+  </compound>
+  <compound refid="classswing_1_1src_1_1_main" kind="class"><name>swing::src::Main</name>
+    <member refid="classswing_1_1src_1_1_main_1a14cf0ae0eb78412c27dee68460549ae5" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="class_multimedia" kind="class"><name>Multimedia</name>
+    <member refid="class_multimedia_1a58f835cc9f6520566094574971ce4033" kind="variable"><name>name</name></member>
+    <member refid="class_multimedia_1ae419d92973bfff542aa0b5e355436c52" kind="variable"><name>pathname</name></member>
+    <member refid="class_multimedia_1a7106753d618df92d53b89328b7ecfe7f" kind="function"><name>Multimedia</name></member>
+    <member refid="class_multimedia_1a337b5ed495d27cd9d0319f90c898cf96" kind="function"><name>Multimedia</name></member>
+    <member refid="class_multimedia_1ab280f9ce1d0a1291c9b1ab876e854c94" kind="function"><name>~Multimedia</name></member>
+    <member refid="class_multimedia_1ace0804f8019ed84df1f3c18eb28cf189" kind="function"><name>getName</name></member>
+    <member refid="class_multimedia_1a4b330c898974e8b62cc3220d6381bd7c" kind="function"><name>getPathname</name></member>
+    <member refid="class_multimedia_1a7f76261a215bae20b9fafa18acb5ebd2" kind="function"><name>setName</name></member>
+    <member refid="class_multimedia_1a11bfaef1f1f5351b15d75fd2c2a92928" kind="function"><name>setPathname</name></member>
+    <member refid="class_multimedia_1af3d889bdbf9c04809f11195d7a17448e" kind="function"><name>display</name></member>
+    <member refid="class_multimedia_1a1fa4ae371afc516559955b38e0392acb" kind="function"><name>play</name></member>
+    <member refid="class_multimedia_1a866891c1ac5118d2c0d5c1ae12482d09" kind="function"><name>write</name></member>
+    <member refid="class_multimedia_1aabaabcf03f9b98c31b3dd9958d1be1aa" kind="function"><name>read</name></member>
+    <member refid="class_multimedia_1a142f01a2d7c1f55a4a32b53303bd692e" kind="function"><name>getClassName</name></member>
+  </compound>
+  <compound refid="class_multimedia_manager" kind="class"><name>MultimediaManager</name>
+    <member refid="class_multimedia_manager_1a7eda0cc9a000f341a8c991b79c577777" kind="variable"><name>multimediaTable</name></member>
+    <member refid="class_multimedia_manager_1a0efa5723b929db7f4b421da5a82d8abf" kind="variable"><name>groupTable</name></member>
+    <member refid="class_multimedia_manager_1a573be05631d25809239192b329b970ca" kind="function"><name>MultimediaManager</name></member>
+    <member refid="class_multimedia_manager_1a15781aabe04ae6f9a46c3a9d08cfa2de" kind="function"><name>~MultimediaManager</name></member>
+    <member refid="class_multimedia_manager_1a39a0131f35c57b8c3c7d8f8b5844755d" kind="function"><name>createPhoto</name></member>
+    <member refid="class_multimedia_manager_1ade1099bdf55b6e2f1868fc5e6a33a093" kind="function"><name>createVideo</name></member>
+    <member refid="class_multimedia_manager_1af21e4b6f003263e1d768e192dda8800a" kind="function"><name>createFilm</name></member>
+    <member refid="class_multimedia_manager_1aca2d16e0725e1b710d795208f332fab0" kind="function"><name>createGroup</name></member>
+    <member refid="class_multimedia_manager_1a7d3934e71088005b18b04203232d4d48" kind="function"><name>findMultimedia</name></member>
+    <member refid="class_multimedia_manager_1a9eb9c1d9ddf8b9252e8507a68cf56bf6" kind="function"><name>displayMultimedia</name></member>
+    <member refid="class_multimedia_manager_1aeb3be79deb8d3f15a60472a7d344cf7d" kind="function"><name>displayGroup</name></member>
+    <member refid="class_multimedia_manager_1adf6126d3d97ab86044c885ab6c8ebf35" kind="function"><name>playMultimedia</name></member>
+    <member refid="class_multimedia_manager_1a75d17031b5e656aea68b0f4f2632a266" kind="function"><name>playGroup</name></member>
+    <member refid="class_multimedia_manager_1af893904e73016ed9761afba73b0bcdce" kind="function"><name>removeMultimedia</name></member>
+    <member refid="class_multimedia_manager_1aef9ea73a17ffe243cc8fb180daabbad6" kind="function"><name>removeGroup</name></member>
+    <member refid="class_multimedia_manager_1aa1d266f1e84148df8454f5a6604d5241" kind="function"><name>listAllMultimedias</name></member>
+    <member refid="class_multimedia_manager_1ae7815c740203b7f2f5aa4b2ab7164674" kind="function"><name>listALLGroups</name></member>
+    <member refid="class_multimedia_manager_1aa86f583785502469d1d381ca64ce49cd" kind="function"><name>save</name></member>
+    <member refid="class_multimedia_manager_1a3f21279b2748eb074725994651793548" kind="function"><name>load</name></member>
+    <member refid="class_multimedia_manager_1a9c5293600dd726f9bbb54285b6e29840" kind="function"><name>createObject</name></member>
+  </compound>
+  <compound refid="class_multimedia_manager_test" kind="class"><name>MultimediaManagerTest</name>
+    <member refid="class_multimedia_manager_test_1a1a2c30c9188bf9ff0d80b4364dae644b" kind="function"><name>MultimediaManagerTest</name></member>
+  </compound>
+  <compound refid="class_photo" kind="class"><name>Photo</name>
+    <member refid="class_photo_1acf8fbc131299fe8c01b6e627cb8f62ff" kind="variable"><name>latitude</name></member>
+    <member refid="class_photo_1a90e917281bad3bb15d526d01ba88aa73" kind="variable"><name>longitude</name></member>
+    <member refid="class_photo_1a10ef03ede9235052eb9f7d5e950f85d3" kind="function"><name>Photo</name></member>
+    <member refid="class_photo_1afcd8b98f13007d1b2a235294d79ee099" kind="function"><name>Photo</name></member>
+    <member refid="class_photo_1adc366234be6226600360c7cbba8e7fcf" kind="function"><name>~Photo</name></member>
+    <member refid="class_photo_1a8bfc54f6bb210e3fcbd7b5c501e38053" kind="function"><name>display</name></member>
+    <member refid="class_photo_1a98b55224b5f9bd016cb08aa2e9a64e46" kind="function"><name>play</name></member>
+    <member refid="class_photo_1ab86310b55a9c963863d2984087487ac5" kind="function"><name>write</name></member>
+    <member refid="class_photo_1a15d767ea069022f368e53ccb85c2af54" kind="function"><name>read</name></member>
+    <member refid="class_photo_1a2199b058723d50a474a03f4a937ff83e" kind="function"><name>getClassName</name></member>
+  </compound>
+  <compound refid="class_server_socket" kind="class"><name>ServerSocket</name>
+    <member refid="class_server_socket_1ac83ceafd3f8f2242c68e398901be12bd" kind="variable"><name>sockfd_</name></member>
+    <member refid="class_server_socket_1a2b3098589541243241ca25495155186c" kind="function"><name>ServerSocket</name></member>
+    <member refid="class_server_socket_1a510674d924c2544e6b0069e39c36516b" kind="function"><name>~ServerSocket</name></member>
+    <member refid="class_server_socket_1accc3d56d42aa50a5f3c920cf0b26959b" kind="function"><name>accept</name></member>
+    <member refid="class_server_socket_1ad5281fe6c005bca007a9a758bd612481" kind="function"><name>bind</name></member>
+    <member refid="class_server_socket_1a3eac6d5571bb092622d328dbda2de2cf" kind="function"><name>close</name></member>
+    <member refid="class_server_socket_1aa1c00353c8f50697c8a4a8882e520286" kind="function"><name>isClosed</name></member>
+    <member refid="class_server_socket_1a42fb2ded476612b5f23c46abb74db9c2" kind="function"><name>descriptor</name></member>
+    <member refid="class_server_socket_1ab34154bc6114c638ae02f5e018121099" kind="function"><name>setReceiveBufferSize</name></member>
+    <member refid="class_server_socket_1ae60d7cc31ad535e5d3cac42e38b8ec98" kind="function"><name>setReuseAddress</name></member>
+    <member refid="class_server_socket_1aedb9144c9c375fcb14ac47bcb9d2eb17" kind="function"><name>setSoTimeout</name></member>
+    <member refid="class_server_socket_1a9e5e1ee852ba26156c757a0086b780fe" kind="function"><name>setTcpNoDelay</name></member>
+    <member refid="class_server_socket_1a1e7360bc0ce72128c5439f0d245d0793" kind="function"><name>createSocket</name></member>
+    <member refid="class_server_socket_1a4ba3346c88fb74117c7b0d4d0e3e4005" kind="function"><name>ServerSocket</name></member>
+    <member refid="class_server_socket_1a491761ffc35fccab8cb348a2286928dd" kind="function"><name>operator=</name></member>
+    <member refid="class_server_socket_1a900d8868c7f1368837fe3c2db99afd91" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="class_server_tools" kind="class"><name>ServerTools</name>
+    <member refid="class_server_tools_1adb2b3016f674a62b7e9fe470512e5b10" kind="function"><name>getWords</name></member>
+    <member refid="class_server_tools_1ab54ad1dfac64635ac3686235e5f0a935" kind="function"><name>protocolDealer</name></member>
+  </compound>
+  <compound refid="class_socket" kind="class"><name>Socket</name>
+    <member refid="class_socket_1a1a662407744738aa56d1ccb6d7be26eb" kind="function"><name>startup</name></member>
+    <member refid="class_socket_1a744a91706b9510d266b7c07e31f3e028" kind="function"><name>cleanup</name></member>
+    <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kind="enum"><name>Errors</name></member>
+    <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb" kind="enumvalue"><name>Failed</name></member>
+    <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976ae3fcc87ee9b909ea92c751f70df4c9ac" kind="enumvalue"><name>InvalidSocket</name></member>
+    <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976ab8eb7f6e1d237e242921ef128c01491c" kind="enumvalue"><name>UnknownHost</name></member>
+    <member refid="class_socket_1a11a8bb11feaafab939278a8285afa567" kind="friend"><name>ServerSocket</name></member>
+    <member refid="class_socket_1afae007041d3bb70fa141b79791019d2d" kind="variable"><name>sockfd_</name></member>
+    <member refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" kind="function"><name>Socket</name></member>
+    <member refid="class_socket_1a8e3f095dfe84d6599761c4ca54900487" kind="function"><name>Socket</name></member>
+    <member refid="class_socket_1aeac4eb6379a543d38ed88977d3b6630a" kind="function"><name>~Socket</name></member>
+    <member refid="class_socket_1a772419bd74c4fe4987d190506a64ff87" kind="function"><name>connect</name></member>
+    <member refid="class_socket_1aff8a77c02a44937db59c8c8a057072d9" kind="function"><name>bind</name></member>
+    <member refid="class_socket_1acdffcdd08c888132e95da022e0710b1d" kind="function"><name>bind</name></member>
+    <member refid="class_socket_1aef06605c6725958004116983f1a2051f" kind="function"><name>close</name></member>
+    <member refid="class_socket_1af82b21921f44a5c210f8aaedc26ca1c3" kind="function"><name>isClosed</name></member>
+    <member refid="class_socket_1a1f3bad4217fea24f81d39f57406a0ec8" kind="function"><name>descriptor</name></member>
+    <member refid="class_socket_1a417b47af24de10184192de00d9112589" kind="function"><name>shutdownInput</name></member>
+    <member refid="class_socket_1a650128aee2581e6695c6812d8afe14b5" kind="function"><name>shutdownOutput</name></member>
+    <member refid="class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49" kind="function"><name>send</name></member>
+    <member refid="class_socket_1a01b463d51433a10658854446bde71c40" kind="function"><name>receive</name></member>
+    <member refid="class_socket_1aef5c4ba848f475f117b89bac531ac150" kind="function"><name>sendTo</name></member>
+    <member refid="class_socket_1aa19f1c03af97458c042880c6be638151" kind="function"><name>receiveFrom</name></member>
+    <member refid="class_socket_1a06ff0dd6837c9f51948df655fc2713cd" kind="function"><name>setReceiveBufferSize</name></member>
+    <member refid="class_socket_1ab02b997fa7e251d596116e95c9ccaf97" kind="function"><name>setReuseAddress</name></member>
+    <member refid="class_socket_1afc49ad6cc259a0006ca13bb22fdd7383" kind="function"><name>setSendBufferSize</name></member>
+    <member refid="class_socket_1a41cc1caae51e3e83e16ce2c20689ed03" kind="function"><name>setSoLinger</name></member>
+    <member refid="class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99" kind="function"><name>setSoTimeout</name></member>
+    <member refid="class_socket_1a7bc0110f3bedbb18f26b05ece01553fa" kind="function"><name>setTcpNoDelay</name></member>
+    <member refid="class_socket_1a53a0a6980058ce02034033b05f6ca389" kind="function"><name>getReceiveBufferSize</name></member>
+    <member refid="class_socket_1a440e7ee9303d454df0c51fe6125cd2af" kind="function"><name>getReuseAddress</name></member>
+    <member refid="class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897" kind="function"><name>getSendBufferSize</name></member>
+    <member refid="class_socket_1ae3545855771edf076843e2e07fa7d3cd" kind="function"><name>getSoLinger</name></member>
+    <member refid="class_socket_1a38b17de459b22ab45db16e538b963c49" kind="function"><name>getSoTimeout</name></member>
+    <member refid="class_socket_1a2539928ed0829df5070384f907ea48f7" kind="function"><name>getTcpNoDelay</name></member>
+    <member refid="class_socket_1ae65efac394eb49594cbb5b2db957e056" kind="function"><name>setLocalAddress</name></member>
+    <member refid="class_socket_1afa64e345564506760728d2b545fcbe0c" kind="function"><name>setAddress</name></member>
+    <member refid="class_socket_1aae1f09b930bb7118172baa0abb15543e" kind="function"><name>Socket</name></member>
+    <member refid="class_socket_1afcd91bc8b2b102813d22e00c1cf03a59" kind="function"><name>operator=</name></member>
+    <member refid="class_socket_1a9167eb93bf87c7c7fb2a408c0e0e3101" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="class_socket_buffer" kind="class"><name>SocketBuffer</name>
+    <member refid="class_socket_buffer_1a079fdc120086897d487fd5542fe57c7e" kind="variable"><name>insize_</name></member>
+    <member refid="class_socket_buffer_1a2e6112608ced0e269808fe454fa2ff81" kind="variable"><name>outsize_</name></member>
+    <member refid="class_socket_buffer_1a9103ba29f1740eb1ef20500f3d1eeb92" kind="variable"><name>insep_</name></member>
+    <member refid="class_socket_buffer_1a2ce505eb4c7d94f92d910e695b327d40" kind="variable"><name>outsep_</name></member>
+    <member refid="class_socket_buffer_1a78f7f3187813c123cac254f6e914b9ae" kind="variable"><name>sock_</name></member>
+    <member refid="class_socket_buffer_1a78504f4a49e11250977fab9fb56f387f" kind="variable"><name>in_</name></member>
+    <member refid="class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16" kind="function"><name>setReadSeparator</name></member>
+    <member refid="class_socket_buffer_1a81a0088b93fc30ebcdde8dc6841fc03d" kind="function"><name>readSeparator</name></member>
+    <member refid="class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4" kind="function"><name>setWriteSeparator</name></member>
+    <member refid="class_socket_buffer_1a8ec7db971ba2a8b11c37b55a56f77c25" kind="function"><name>writeSeparator</name></member>
+    <member refid="class_socket_buffer_1aa88689ce663aa53a0907834e149a55fb" kind="function"><name>SocketBuffer</name></member>
+    <member refid="class_socket_buffer_1a72dea820c5cfe0bca83ca0344dfe9f95" kind="function"><name>operator=</name></member>
+    <member refid="class_socket_buffer_1aec1a6777a4a2a49ef1c48924f0a6fa64" kind="function"><name>operator=</name></member>
+    <member refid="class_socket_buffer_1afed3bfc9187c207578f8ffe37c811a83" kind="function"><name>retrieveLine</name></member>
+    <member refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kind="function"><name>SocketBuffer</name></member>
+    <member refid="class_socket_buffer_1a739a80a7bb5d2603d8d0d9a88293bad8" kind="function"><name>SocketBuffer</name></member>
+    <member refid="class_socket_buffer_1a0ad263e938dccba0493d1d3e98f1c574" kind="function"><name>~SocketBuffer</name></member>
+    <member refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kind="function"><name>readLine</name></member>
+    <member refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kind="function"><name>writeLine</name></member>
+    <member refid="class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87" kind="function"><name>read</name></member>
+    <member refid="class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3" kind="function"><name>write</name></member>
+    <member refid="class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969" kind="function"><name>socket</name></member>
+  </compound>
+  <compound refid="class_socket_cnx" kind="class"><name>SocketCnx</name>
+    <member refid="class_socket_cnx_1ad46b42915ee50072a0307f0116403587" kind="variable"><name>server_</name></member>
+    <member refid="class_socket_cnx_1a51d23b906608701ef811a7d73f0de43e" kind="variable"><name>sock_</name></member>
+    <member refid="class_socket_cnx_1af5f1e7aef17b14deb89f65d8c89eb619" kind="variable"><name>sockbuf_</name></member>
+    <member refid="class_socket_cnx_1a0b358d64acd070e4f54123bd7a011183" kind="variable"><name>thread_</name></member>
+    <member refid="class_socket_cnx_1acd004e809a99928860ffa94cbde99ae1" kind="function"><name>SocketCnx</name></member>
+    <member refid="class_socket_cnx_1aacd070cab0e3cf19cdaa4ec180b3b64c" kind="function"><name>~SocketCnx</name></member>
+    <member refid="class_socket_cnx_1aa2ad22fb4fe4b78b3a9337e09475f10e" kind="function"><name>processRequests</name></member>
+  </compound>
+  <compound refid="class_t_c_p_server" kind="class"><name>TCPServer</name>
+    <member refid="class_t_c_p_server_1aaf1f42d2d5c7593e2a0349fea7c7648a" kind="typedef"><name>Callback</name></member>
+    <member refid="class_t_c_p_server_1a94abdeb80587f39a869fde6f24522a78" kind="friend"><name>TCPLock</name></member>
+    <member refid="class_t_c_p_server_1aff1ba1873083d214cbcb808b8091757a" kind="friend"><name>SocketCnx</name></member>
+    <member refid="class_t_c_p_server_1a3c61133d29aae2cb2b8a0d0b8b7dadaf" kind="variable"><name>servsock_</name></member>
+    <member refid="class_t_c_p_server_1a09d0401db192e78acbc9468945ccc00c" kind="variable"><name>callback_</name></member>
+    <member refid="class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7" kind="function"><name>TCPServer</name></member>
+    <member refid="class_t_c_p_server_1abc497ac52355e53986a6a1bd1acb9581" kind="function"><name>~TCPServer</name></member>
+    <member refid="class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23" kind="function"><name>run</name></member>
+    <member refid="class_t_c_p_server_1a92a79bdd5f489dbeaea65b03b4e7a630" kind="function"><name>TCPServer</name></member>
+    <member refid="class_t_c_p_server_1a8412bfde545abe3234ddc2bfaef88600" kind="function"><name>operator=</name></member>
+    <member refid="class_t_c_p_server_1a3dfcdb3bb20667b1d3cde93c84a4c024" kind="function"><name>error</name></member>
+  </compound>
+  <compound refid="class_test_polymorphisme" kind="class"><name>TestPolymorphisme</name>
+    <member refid="class_test_polymorphisme_1a216f9307ae37f2972546e1e9be5acd95" kind="function"><name>TestPolymorphisme</name></member>
+    <member refid="class_test_polymorphisme_1a418595a9426a363fb564ef6357501512" kind="function"><name>test</name></member>
+  </compound>
+  <compound refid="class_video" kind="class"><name>Video</name>
+    <member refid="class_video_1a8534071e7e759e39c42fa9a51ae620eb" kind="variable"><name>duration</name></member>
+    <member refid="class_video_1ab67336c2c5b6227a9635bc7dcd6af543" kind="function"><name>Video</name></member>
+    <member refid="class_video_1a35707f2f7f07e406a4c6bd1defe7c812" kind="function"><name>Video</name></member>
+    <member refid="class_video_1aebf7e2a8fa2bbd79335b1cf35925d190" kind="function"><name>~Video</name></member>
+    <member refid="class_video_1a57f903f1d582ac6ef88922c7a6cb8f7f" kind="function"><name>getDuration</name></member>
+    <member refid="class_video_1aca0f92f98c7b6377aaa23af1645b8172" kind="function"><name>setDuration</name></member>
+    <member refid="class_video_1a5aa5abf5dc093c7eecab97f9cd30555d" kind="function"><name>display</name></member>
+    <member refid="class_video_1a89e11497f4f200f387805b10bd42922d" kind="function"><name>play</name></member>
+    <member refid="class_video_1a3938693176fc86983e19c540ab7e7d56" kind="function"><name>write</name></member>
+    <member refid="class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7" kind="function"><name>read</name></member>
+    <member refid="class_video_1a1dcd090b6854b30bf9f2f233dc0faff7" kind="function"><name>getClassName</name></member>
+  </compound>
+  <compound refid="classswing_1_1src_1_1swing_1_1_window" kind="class"><name>swing::src::swing::Window</name>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a8e760a3512f753a0d0b1edcfa4c94b1a" kind="variable"><name>serialVersionUID</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a438be2eaec362e85d235c6a3ac838414" kind="variable"><name>client</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a98db32d55cda6733b0c95d33b2c24763" kind="variable"><name>textArea</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1afb11083be43a710c7fec5112fbf81888" kind="variable"><name>button1</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ac7464acc76f10c09948e2a6c5fae8ead" kind="variable"><name>button2</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a1a47cb1c88a0cf2dac289f03f31da70f" kind="variable"><name>btnExit</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a9febaae29b4f97e2e56312a58b549936" kind="variable"><name>btnClear</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a6feabcfdb85407bdd1b9a74e973cfe62" kind="variable"><name>btnAddVideo</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a7cb040657eacbf1bd3795c67f7b98da8" kind="variable"><name>btnRemove</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ad04476e0f7be990bcb8b04b822c44100" kind="variable"><name>menuBar</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a520412a138087ff7eee4a6ae1a2b51c3" kind="variable"><name>menu</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a71a1c923b5fdc48d71f44b52ec9faac1" kind="variable"><name>toolBar</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1af4eb7096cc90fc6228e61e9b8fd98a7c" kind="variable"><name>toolBar2</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ae5b78310c013cf1853c2ad907916f002" kind="variable"><name>textField</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a0d038e6375e60b3e5c58ba6112400abf" kind="variable"><name>fileNameTextField</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a1b505349f85245fed62b1455f3fc136f" kind="variable"><name>pathTextField</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ae35eb6d3cc49ec67f9a914d00c2e6da9" kind="variable"><name>field3</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1acbb21521faa2a975cd5a0e2c569418d1" kind="variable"><name>field4</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1acd28f7c495c62a93df8b79178f44a1cf" kind="variable"><name>multimedia</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1af02f8b2f082933ed011bb262b421a69a" kind="variable"><name>group</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1aa7fb76d2b401a8116d2fd8562623607f" kind="variable"><name>DEFAULT_HOST</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a21b608b1324e2116113ac3aac97440b8" kind="variable"><name>DEFAULT_PORT</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a6f1d8e140e2379557792a09a3b1ffcdb" kind="variable"><name>host</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ab087cd47cb4a68d46f7085314b75d1dd" kind="variable"><name>port</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a6cc0cace3c229213466a2d6a98ffb3d2" kind="function"><name>Window</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1abe093d913cacb153f92532abc9462a43" kind="function"><name>actionPerformed</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1a71e155ddff15de6d9b2d6c491e6cc9c7" kind="function"><name>setClient</name></member>
+    <member refid="classswing_1_1src_1_1swing_1_1_window_1ae56e55ecd1d7981e11d427baa2217bc8" kind="function"><name>getResponse</name></member>
+  </compound>
+  <compound refid="namespacejava_1_1io" kind="namespace"><name>java::io</name>
+  </compound>
+  <compound refid="namespacejava_1_1lang" kind="namespace"><name>java::lang</name>
+  </compound>
+  <compound refid="namespacejava_1_1net" kind="namespace"><name>java::net</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="namespaceswing" kind="namespace"><name>swing</name>
+  </compound>
+  <compound refid="namespaceswing_1_1src" kind="namespace"><name>swing::src</name>
+  </compound>
+  <compound refid="namespaceswing_1_1src_1_1swing" kind="namespace"><name>swing::src::swing</name>
+  </compound>
+  <compound refid="ccsocket_8cpp" kind="file"><name>ccsocket.cpp</name>
+  </compound>
+  <compound refid="ccsocket_8h" kind="file"><name>ccsocket.h</name>
+    <member refid="ccsocket_8h_1aff55fe551a9992a54ec54621c524d0a4" kind="define"><name>SOCKET</name></member>
+    <member refid="ccsocket_8h_1a964e73b2a42e87b1e20c8ffa730952a2" kind="define"><name>SOCKADDR</name></member>
+    <member refid="ccsocket_8h_1a91d11a5e66bd1e10b0e62aadb7775c9d" kind="define"><name>SOCKADDR_IN</name></member>
+    <member refid="ccsocket_8h_1a26769957ec1a2beaf223f33b66ee64ab" kind="define"><name>INVALID_SOCKET</name></member>
+    <member refid="ccsocket_8h_1a8bc56bf597ba32a5c8d828c75b4c9566" kind="define"><name>SOCKSIZE</name></member>
+    <member refid="ccsocket_8h_1a3849e30868a59da338c76e51820877c1" kind="define"><name>SOCKDATA</name></member>
+    <member refid="ccsocket_8h_1aca62ccba376682a3d25ca6f17a01d607" kind="define"><name>NO_SIGPIPE_</name></member>
+  </compound>
+  <compound refid="client_8cpp" kind="file"><name>client.cpp</name>
+    <member refid="client_8cpp_1a31286b5babe41e1c44365f96f223780b" kind="variable"><name>HOST</name></member>
+    <member refid="client_8cpp_1a11717c934f77ad5167dac5d28562d85a" kind="variable"><name>PORT</name></member>
+    <member refid="client_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_film_8cpp" kind="file"><name>Film.cpp</name>
+  </compound>
+  <compound refid="_film_8h" kind="file"><name>Film.h</name>
+  </compound>
+  <compound refid="_group_8cpp" kind="file"><name>Group.cpp</name>
+  </compound>
+  <compound refid="_group_8h" kind="file"><name>Group.h</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_multimedia_8cpp" kind="file"><name>Multimedia.cpp</name>
+  </compound>
+  <compound refid="_multimedia_8h" kind="file"><name>Multimedia.h</name>
+  </compound>
+  <compound refid="_multimedia_manager_8cpp" kind="file"><name>MultimediaManager.cpp</name>
+  </compound>
+  <compound refid="_multimedia_manager_8h" kind="file"><name>MultimediaManager.h</name>
+    <member refid="_multimedia_manager_8h_1a2d916b1e4343c54b7b0f0126a9a78ac6" kind="define"><name>version_etape_9</name></member>
+    <member refid="_multimedia_manager_8h_1a05d41e4e110e20f6ae397be147ab1980" kind="typedef"><name>MultimediaPtr</name></member>
+    <member refid="_multimedia_manager_8h_1af7b580c4f07b0bcbed28edff0cd65659" kind="typedef"><name>PhotoPtr</name></member>
+    <member refid="_multimedia_manager_8h_1a6b30147e1a61917fc566f24d19b34049" kind="typedef"><name>VideoPtr</name></member>
+    <member refid="_multimedia_manager_8h_1acd416dd4e2edfcd96191c1958103b6ec" kind="typedef"><name>FilmPtr</name></member>
+    <member refid="_multimedia_manager_8h_1a39c11e38578c734765a185f82eb65d45" kind="typedef"><name>GroupPtr</name></member>
+    <member refid="_multimedia_manager_8h_1a51e11435b7f4b269772638947dad3f28" kind="typedef"><name>multimediaTable</name></member>
+    <member refid="_multimedia_manager_8h_1a865184cb4eb7240e6b895a42a3ae00e3" kind="typedef"><name>groupTable</name></member>
+  </compound>
+  <compound refid="_multimedia_manager_test_8h" kind="file"><name>MultimediaManagerTest.h</name>
+  </compound>
+  <compound refid="_photo_8cpp" kind="file"><name>Photo.cpp</name>
+  </compound>
+  <compound refid="_photo_8h" kind="file"><name>Photo.h</name>
+  </compound>
+  <compound refid="server_8cpp" kind="file"><name>server.cpp</name>
+    <member refid="server_8cpp_1a11717c934f77ad5167dac5d28562d85a" kind="variable"><name>PORT</name></member>
+    <member refid="server_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_server_tools_8h" kind="file"><name>ServerTools.h</name>
+  </compound>
+  <compound refid="tcpserver_8cpp" kind="file"><name>tcpserver.cpp</name>
+  </compound>
+  <compound refid="tcpserver_8h" kind="file"><name>tcpserver.h</name>
+  </compound>
+  <compound refid="_test_polymorphisme_8h" kind="file"><name>TestPolymorphisme.h</name>
+  </compound>
+  <compound refid="_video_8cpp" kind="file"><name>Video.cpp</name>
+  </compound>
+  <compound refid="_video_8h" kind="file"><name>Video.h</name>
+  </compound>
+  <compound refid="_main_8java" kind="file"><name>Main.java</name>
+  </compound>
+  <compound refid="_client_8java" kind="file"><name>Client.java</name>
+  </compound>
+  <compound refid="_window_8java" kind="file"><name>Window.java</name>
+  </compound>
+  <compound refid="dir_2ea739fe366135ec15f610d081b5ff33" kind="dir"><name>CPP</name>
+  </compound>
+  <compound refid="dir_c93d5aeb99dbe9a1467eb97c9eaab718" kind="dir"><name>swing/src</name>
+  </compound>
+  <compound refid="dir_c5943f2a66e98d97de228ca03c868f13" kind="dir"><name>swing</name>
+  </compound>
+  <compound refid="dir_9ed349ed41b9fdae9123551de7d098d4" kind="dir"><name>swing/src/swing</name>
+  </compound>
+</doxygenindex>

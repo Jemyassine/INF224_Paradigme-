@@ -1,0 +1,42 @@
+.TH "SocketCnx" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SocketCnx \- Connection with a given client\&. Each \fBSocketCnx\fP uses a different thread\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocketCnx\fP (\fBTCPServer\fP &, \fBSocket\fP *)"
+.br
+.ti -1c
+.RI "void \fBprocessRequests\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPServer\fP & \fBserver_\fP"
+.br
+.ti -1c
+.RI "\fBSocket\fP * \fBsock_\fP"
+.br
+.ti -1c
+.RI "\fBSocketBuffer\fP * \fBsockbuf_\fP"
+.br
+.ti -1c
+.RI "std::thread \fBthread_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Connection with a given client\&. Each \fBSocketCnx\fP uses a different thread\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

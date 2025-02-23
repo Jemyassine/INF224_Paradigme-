@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_socket_buffer" kind="class" language="C++" prot="public">
+    <compoundname>SocketBuffer</compoundname>
+    <includes refid="ccsocket_8h" local="no">ccsocket.h</includes>
+    <sectiondef kind="user-defined">
+      <memberdef kind="variable" id="class_socket_buffer_1a079fdc120086897d487fd5542fe57c7e" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SocketBuffer::insize_</definition>
+        <argsstring></argsstring>
+        <name>insize_</name>
+        <qualifiedname>SocketBuffer::insize_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="347" column="10" bodyfile="CPP/ccsocket.h" bodystart="347" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_socket_buffer_1a2e6112608ced0e269808fe454fa2ff81" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SocketBuffer::outsize_</definition>
+        <argsstring></argsstring>
+        <name>outsize_</name>
+        <qualifiedname>SocketBuffer::outsize_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="347" column="18" bodyfile="CPP/ccsocket.h" bodystart="347" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_socket_buffer_1a9103ba29f1740eb1ef20500f3d1eeb92" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SocketBuffer::insep_</definition>
+        <argsstring></argsstring>
+        <name>insep_</name>
+        <qualifiedname>SocketBuffer::insep_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="348" column="7" bodyfile="CPP/ccsocket.h" bodystart="348" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_socket_buffer_1a2ce505eb4c7d94f92d910e695b327d40" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SocketBuffer::outsep_</definition>
+        <argsstring></argsstring>
+        <name>outsep_</name>
+        <qualifiedname>SocketBuffer::outsep_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="348" column="14" bodyfile="CPP/ccsocket.h" bodystart="348" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_socket_buffer_1a78f7f3187813c123cac254f6e914b9ae" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_socket" kindref="compound">Socket</ref> *</type>
+        <definition>Socket* SocketBuffer::sock_</definition>
+        <argsstring></argsstring>
+        <name>sock_</name>
+        <qualifiedname>SocketBuffer::sock_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="349" column="10" bodyfile="CPP/ccsocket.h" bodystart="349" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_socket_buffer_1a78504f4a49e11250977fab9fb56f387f" prot="protected" static="no" mutable="no">
+        <type>struct <ref refid="struct_input_buffer" kindref="compound">InputBuffer</ref> *</type>
+        <definition>struct InputBuffer* SocketBuffer::in_</definition>
+        <argsstring></argsstring>
+        <name>in_</name>
+        <qualifiedname>SocketBuffer::in_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="350" column="21" bodyfile="CPP/ccsocket.h" bodystart="350" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SocketBuffer::setReadSeparator</definition>
+        <argsstring>(int separ)</argsstring>
+        <name>setReadSeparator</name>
+        <qualifiedname>SocketBuffer::setReadSeparator</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>separ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns/changes the separator used by <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref>. <ref refid="class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16" kindref="member">setReadSeparator()</ref> changes the symbol used by <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> to separate successive messages:<itemizedlist>
+<listitem><para>if <emphasis>separ</emphasis> &lt; 0 (the default) <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> searches for \n, \r or \n\r.</para>
+</listitem><listitem><para>if <emphasis>separ</emphasis> &gt;= 0, <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> searches for this character to separate messages, </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="327" column="8" bodyfile="CPP/ccsocket.cpp" bodystart="357" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a81a0088b93fc30ebcdde8dc6841fc03d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int SocketBuffer::readSeparator</definition>
+        <argsstring>() const</argsstring>
+        <name>readSeparator</name>
+        <qualifiedname>SocketBuffer::readSeparator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="328" column="7" bodyfile="CPP/ccsocket.h" bodystart="328" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SocketBuffer::setWriteSeparator</definition>
+        <argsstring>(int separ)</argsstring>
+        <name>setWriteSeparator</name>
+        <qualifiedname>SocketBuffer::setWriteSeparator</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>separ</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns/changes the separator used by <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref>. <ref refid="class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4" kindref="member">setWriteSeparator()</ref> changes the character(s) used by <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> to separate successive messages:<itemizedlist>
+<listitem><para>if <emphasis>separ</emphasis> &lt; 0 (the default) <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> inserts \n\r between successive lines.</para>
+</listitem><listitem><para>if <emphasis>separ</emphasis> &gt;= 0, <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> inserts <emphasis>separ</emphasis> between successive lines, </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="336" column="8" bodyfile="CPP/ccsocket.cpp" bodystart="362" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a8ec7db971ba2a8b11c37b55a56f77c25" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int SocketBuffer::writeSeparator</definition>
+        <argsstring>() const</argsstring>
+        <name>writeSeparator</name>
+        <qualifiedname>SocketBuffer::writeSeparator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="337" column="7" bodyfile="CPP/ccsocket.h" bodystart="337" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1aa88689ce663aa53a0907834e149a55fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SocketBuffer::SocketBuffer</definition>
+        <argsstring>(const SocketBuffer &amp;)=delete</argsstring>
+        <name>SocketBuffer</name>
+        <qualifiedname>SocketBuffer::SocketBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="341" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a72dea820c5cfe0bca83ca0344dfe9f95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> &amp;</type>
+        <definition>SocketBuffer &amp; SocketBuffer::operator=</definition>
+        <argsstring>(const SocketBuffer &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>SocketBuffer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="342" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1aec1a6777a4a2a49ef1c48924f0a6fa64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> &amp;</type>
+        <definition>SocketBuffer &amp; SocketBuffer::operator=</definition>
+        <argsstring>(SocketBuffer &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>SocketBuffer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="343" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1afed3bfc9187c207578f8ffe37c811a83" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SocketBuffer::retrieveLine</definition>
+        <argsstring>(std::string &amp;str, SOCKSIZE received)</argsstring>
+        <name>retrieveLine</name>
+        <qualifiedname>SocketBuffer::retrieveLine</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>SOCKSIZE</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="346" column="8" bodyfile="CPP/ccsocket.cpp" bodystart="384" bodyend="430"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SocketBuffer::SocketBuffer</definition>
+        <argsstring>(Socket *, size_t inputSize=8192, size_t ouputSize=8192)</argsstring>
+        <name>SocketBuffer</name>
+        <qualifiedname>SocketBuffer::SocketBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_socket" kindref="compound">Socket</ref> *</type>
+          <defname>sock</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>inputSize</declname>
+          <defval>8192</defval>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ouputSize</declname>
+          <defval>8192</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <emphasis>socket</emphasis> must be a connected TCP/IP <ref refid="class_socket" kindref="compound">Socket</ref>. It should <bold>not</bold> be deleted as long as the <ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> is used. <emphasis>inputSize</emphasis> and <emphasis>ouputSize</emphasis> are the sizes of the buffers that are used internally for exchanging data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="283" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="338" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a739a80a7bb5d2603d8d0d9a88293bad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SocketBuffer::SocketBuffer</definition>
+        <argsstring>(Socket &amp;, size_t inputSize=8192, size_t ouputSize=8192)</argsstring>
+        <name>SocketBuffer</name>
+        <qualifiedname>SocketBuffer::SocketBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_socket" kindref="compound">Socket</ref> &amp;</type>
+          <defname>sock</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>inputSize</declname>
+          <defval>8192</defval>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ouputSize</declname>
+          <defval>8192</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="284" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="348" bodyend="349"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_socket_buffer_1a0ad263e938dccba0493d1d3e98f1c574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SocketBuffer::~SocketBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~SocketBuffer</name>
+        <qualifiedname>SocketBuffer::~SocketBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="287" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="352" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE SocketBuffer::readLine</definition>
+        <argsstring>(std::string &amp;message)</argsstring>
+        <name>readLine</name>
+        <qualifiedname>SocketBuffer::readLine</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read a message from a connected socket. <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> receives one (and only one) message sent by <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> on the other side, ie, a call to <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> corresponds to one and exactly one call to <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> on the other side. The received data is stored in <emphasis>message</emphasis>. This method blocks until the message is fully received.</para>
+<para><simplesect kind="return"><para>The number of bytes that were received or one of the following values:<itemizedlist>
+<listitem><para>0: shutdownOutput() was called on the other side</para>
+</listitem><listitem><para>Socket::Failed (-1): a connection error occured</para>
+</listitem><listitem><para>Socket::InvalidSocket (-2): the socket is invalid. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>the separator (eg <linebreak/>
+) is counted in the value returned by <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="300" column="12" bodyfile="CPP/ccsocket.cpp" bodystart="367" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE SocketBuffer::writeLine</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>writeLine</name>
+        <qualifiedname>SocketBuffer::writeLine</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Send a message to a connected socket. <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> sends a message that will be received by a single call of <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> on the other side,</para>
+<para><simplesect kind="return"><para>see <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>if <emphasis>message</emphasis> contains one or several occurences of the separator, <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> will be called as many times on the other side. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="309" column="12" bodyfile="CPP/ccsocket.cpp" bodystart="433" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE SocketBuffer::read</definition>
+        <argsstring>(char *buffer, size_t len)</argsstring>
+        <name>read</name>
+        <qualifiedname>SocketBuffer::read</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads exactly <emphasis>len</emphasis> bytes from the socket, blocks otherwise. <simplesect kind="return"><para>see <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="313" column="12" bodyfile="CPP/ccsocket.cpp" bodystart="483" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE SocketBuffer::write</definition>
+        <argsstring>(const char *str, size_t len)</argsstring>
+        <name>write</name>
+        <qualifiedname>SocketBuffer::write</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes <emphasis>len</emphasis> bytes to the socket. <simplesect kind="return"><para>see <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="317" column="12" bodyfile="CPP/ccsocket.cpp" bodystart="464" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_socket" kindref="compound">Socket</ref> *</type>
+        <definition>Socket * SocketBuffer::socket</definition>
+        <argsstring>()</argsstring>
+        <name>socket</name>
+        <qualifiedname>SocketBuffer::socket</qualifiedname>
+        <briefdescription>
+<para>Returns the associated socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="320" column="10" bodyfile="CPP/ccsocket.h" bodystart="320" bodyend="320"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Preserves record boundaries when exchanging messages between connected TCP/IP sockets. Ensures that one call to <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> corresponds to one and exactly one call to <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> on the other side. By default, <ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine()</ref> adds <linebreak/>
+ at the end of each message and <ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine()</ref> searches for <linebreak/>
+, \r or <linebreak/>
+\r so that it can retreive the entire record. Beware messages should thus not contain these charecters.</para>
+<para><programlisting><codeline><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Socket<sp/>sock;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref><sp/>sockbuf(sock);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>sock.<ref refid="class_socket_1a772419bd74c4fe4987d190506a64ff87" kindref="member">connect</ref>(</highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">,<sp/>3331);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>connect&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cin)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>request,<sp/>response;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Request:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>getline(cin,<sp/>request);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sockbuf.writeLine(request)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>send<sp/>message&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sockbuf.readLine(response)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>receive<sp/>message&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>3;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>InputBuffer</label>
+        <link refid="struct_input_buffer"/>
+      </node>
+      <node id="2">
+        <label>Socket</label>
+        <link refid="class_socket"/>
+      </node>
+      <node id="1">
+        <label>SocketBuffer</label>
+        <link refid="class_socket_buffer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>sock_</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>in_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="CPP/ccsocket.h" line="276" column="1" bodyfile="CPP/ccsocket.h" bodystart="276" bodyend="351"/>
+    <listofallmembers>
+      <member refid="class_socket_buffer_1a78504f4a49e11250977fab9fb56f387f" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>in_</name></member>
+      <member refid="class_socket_buffer_1a9103ba29f1740eb1ef20500f3d1eeb92" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>insep_</name></member>
+      <member refid="class_socket_buffer_1a079fdc120086897d487fd5542fe57c7e" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>insize_</name></member>
+      <member refid="class_socket_buffer_1a72dea820c5cfe0bca83ca0344dfe9f95" prot="private" virt="non-virtual"><scope>SocketBuffer</scope><name>operator=</name></member>
+      <member refid="class_socket_buffer_1aec1a6777a4a2a49ef1c48924f0a6fa64" prot="private" virt="non-virtual"><scope>SocketBuffer</scope><name>operator=</name></member>
+      <member refid="class_socket_buffer_1a2ce505eb4c7d94f92d910e695b327d40" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>outsep_</name></member>
+      <member refid="class_socket_buffer_1a2e6112608ced0e269808fe454fa2ff81" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>outsize_</name></member>
+      <member refid="class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>read</name></member>
+      <member refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>readLine</name></member>
+      <member refid="class_socket_buffer_1a81a0088b93fc30ebcdde8dc6841fc03d" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>readSeparator</name></member>
+      <member refid="class_socket_buffer_1afed3bfc9187c207578f8ffe37c811a83" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>retrieveLine</name></member>
+      <member refid="class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>setReadSeparator</name></member>
+      <member refid="class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>setWriteSeparator</name></member>
+      <member refid="class_socket_buffer_1a78f7f3187813c123cac254f6e914b9ae" prot="protected" virt="non-virtual"><scope>SocketBuffer</scope><name>sock_</name></member>
+      <member refid="class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>socket</name></member>
+      <member refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>SocketBuffer</name></member>
+      <member refid="class_socket_buffer_1a739a80a7bb5d2603d8d0d9a88293bad8" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>SocketBuffer</name></member>
+      <member refid="class_socket_buffer_1aa88689ce663aa53a0907834e149a55fb" prot="private" virt="non-virtual"><scope>SocketBuffer</scope><name>SocketBuffer</name></member>
+      <member refid="class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>write</name></member>
+      <member refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>writeLine</name></member>
+      <member refid="class_socket_buffer_1a8ec7db971ba2a8b11c37b55a56f77c25" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>writeSeparator</name></member>
+      <member refid="class_socket_buffer_1a0ad263e938dccba0493d1d3e98f1c574" prot="public" virt="non-virtual"><scope>SocketBuffer</scope><name>~SocketBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

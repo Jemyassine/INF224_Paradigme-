@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classswing_1_1src_1_1swing_1_1_window" xml:lang="en-US">
+<title>swing.src.swing.Window Class Reference</title>
+<indexterm><primary>swing.src.swing.Window</primary></indexterm>
+<para>Inheritance diagram for swing.src.swing.Window:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classswing_1_1src_1_1swing_1_1_window.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classswing_1_1src_1_1swing_1_1_window_1a6cc0cace3c229213466a2d6a98ffb3d2">Window</link> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classswing_1_1src_1_1swing_1_1_window_1abe093d913cacb153f92532abc9462a43"/>void <emphasis role="strong">actionPerformed</emphasis> (ActionEvent e)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classswing_1_1src_1_1swing_1_1_window_1a71e155ddff15de6d9b2d6c491e6cc9c7"/>static void <emphasis role="strong">setClient</emphasis> (<link linkend="_classswing_1_1src_1_1swing_1_1_client">Client</link> client)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classswing_1_1src_1_1swing_1_1_window_1a6cc0cace3c229213466a2d6a98ffb3d2"/><section>
+    <title>Window()</title>
+<indexterm><primary>Window</primary><secondary>swing.src.swing.Window</secondary></indexterm>
+<indexterm><primary>swing.src.swing.Window</primary><secondary>Window</secondary></indexterm>
+<para><computeroutput>swing.src.swing.Window.Window ( )<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Ajouter des ascenseurs à un JTextArea</para>
+
+<para>Insertion des boutons dans l&apos;interface</para>
+
+<para>Champs de saisie de texte</para>
+
+<para>Menu liste en haut à gauche</para>
+
+<para>Barre d&apos;outils supérieure</para>
+
+<para>Barre d&apos;outils inférieure</para>
+
+<para>Méthodes de JFrame</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+swing/src/swing/Window.java</section>
+</section>

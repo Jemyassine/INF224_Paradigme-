@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_t_c_p_server" kind="class" language="C++" prot="public">
+    <compoundname>TCPServer</compoundname>
+    <includes refid="tcpserver_8h" local="no">tcpserver.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_t_c_p_server_1aaf1f42d2d5c7593e2a0349fea7c7648a" prot="public" static="no">
+        <type>std::function&lt; bool(std::string const  &amp;request, std::string &amp;response) &gt;</type>
+        <definition>using TCPServer::Callback = 
+  std::function&lt; bool(std::string const&amp; request, std::string&amp; response) &gt;</definition>
+        <argsstring></argsstring>
+        <name>Callback</name>
+        <qualifiedname>TCPServer::Callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="23" column="3" bodyfile="CPP/tcpserver.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_t_c_p_server_1a94abdeb80587f39a869fde6f24522a78" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class TCPLock</definition>
+        <argsstring></argsstring>
+        <name>TCPLock</name>
+        <qualifiedname>TCPServer::TCPLock</qualifiedname>
+        <param>
+          <type>TCPLock</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="43" column="16" bodyfile="CPP/tcpserver.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_t_c_p_server_1aff1ba1873083d214cbcb808b8091757a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class SocketCnx</definition>
+        <argsstring></argsstring>
+        <name>SocketCnx</name>
+        <qualifiedname>TCPServer::SocketCnx</qualifiedname>
+        <param>
+          <type><ref refid="class_socket_cnx" kindref="compound">SocketCnx</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="44" column="16" bodyfile="CPP/tcpserver.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_t_c_p_server_1a3c61133d29aae2cb2b8a0d0b8b7dadaf" prot="private" static="no" mutable="no">
+        <type><ref refid="class_server_socket" kindref="compound">ServerSocket</ref></type>
+        <definition>ServerSocket TCPServer::servsock_</definition>
+        <argsstring></argsstring>
+        <name>servsock_</name>
+        <qualifiedname>TCPServer::servsock_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="50" column="16" bodyfile="CPP/tcpserver.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_t_c_p_server_1a09d0401db192e78acbc9468945ccc00c" prot="private" static="no" mutable="no">
+        <type>Callback</type>
+        <definition>Callback TCPServer::callback_</definition>
+        <argsstring></argsstring>
+        <name>callback_</name>
+        <qualifiedname>TCPServer::callback_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="51" column="12" bodyfile="CPP/tcpserver.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TCPServer::TCPServer</definition>
+        <argsstring>(Callback const &amp;callback)</argsstring>
+        <name>TCPServer</name>
+        <qualifiedname>TCPServer::TCPServer</qualifiedname>
+        <param>
+          <type>Callback const &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>initializes the server. The callback function will be called each time the server receives a request from a client.<itemizedlist>
+<listitem><para><emphasis>request</emphasis> contains the data sent by the client</para>
+</listitem><listitem><para><emphasis>response</emphasis> will be sent to the client as a response The connection with the client is closed if the callback returns false. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="31" column="3" bodyfile="CPP/tcpserver.cpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_c_p_server_1abc497ac52355e53986a6a1bd1acb9581" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TCPServer::~TCPServer</definition>
+        <argsstring>()</argsstring>
+        <name>~TCPServer</name>
+        <qualifiedname>TCPServer::~TCPServer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="33" column="11" bodyfile="CPP/tcpserver.cpp" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int TCPServer::run</definition>
+        <argsstring>(int port)</argsstring>
+        <name>run</name>
+        <qualifiedname>TCPServer::run</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts the server. Binds an internal <ref refid="class_server_socket" kindref="compound">ServerSocket</ref> to <emphasis>port</emphasis> then starts an infinite loop that processes connection requests from clients. <simplesect kind="return"><para>0 on normal termination, or a negative value if the <ref refid="class_server_socket" kindref="compound">ServerSocket</ref> could not be bound (value is then one of <ref refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kindref="member">Socket::Errors</ref>). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="40" column="15" bodyfile="CPP/tcpserver.cpp" bodystart="101" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_t_c_p_server_1a92a79bdd5f489dbeaea65b03b4e7a630" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TCPServer::TCPServer</definition>
+        <argsstring>(TCPServer const &amp;)=delete</argsstring>
+        <name>TCPServer</name>
+        <qualifiedname>TCPServer::TCPServer</qualifiedname>
+        <param>
+          <type><ref refid="class_t_c_p_server" kindref="compound">TCPServer</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="46" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_c_p_server_1a8412bfde545abe3234ddc2bfaef88600" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_t_c_p_server" kindref="compound">TCPServer</ref> &amp;</type>
+        <definition>TCPServer &amp; TCPServer::operator=</definition>
+        <argsstring>(TCPServer const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>TCPServer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_t_c_p_server" kindref="compound">TCPServer</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="47" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_t_c_p_server_1a3dfcdb3bb20667b1d3cde93c84a4c024" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TCPServer::error</definition>
+        <argsstring>(std::string const &amp;msg)</argsstring>
+        <name>error</name>
+        <qualifiedname>TCPServer::error</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/tcpserver.h" line="48" column="8" bodyfile="CPP/tcpserver.cpp" bodystart="120" bodyend="122"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>TCP/IP IPv4 server. Supports TCP/IP AF_INET IPv4 connections with multiple clients. One thread is used per client. </para>
+    </detaileddescription>
+    <location file="CPP/tcpserver.h" line="20" column="1" bodyfile="CPP/tcpserver.h" bodystart="20" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_t_c_p_server_1aaf1f42d2d5c7593e2a0349fea7c7648a" prot="public" virt="non-virtual"><scope>TCPServer</scope><name>Callback</name></member>
+      <member refid="class_t_c_p_server_1a09d0401db192e78acbc9468945ccc00c" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>callback_</name></member>
+      <member refid="class_t_c_p_server_1a3dfcdb3bb20667b1d3cde93c84a4c024" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>error</name></member>
+      <member refid="class_t_c_p_server_1a8412bfde545abe3234ddc2bfaef88600" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>operator=</name></member>
+      <member refid="class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23" prot="public" virt="virtual"><scope>TCPServer</scope><name>run</name></member>
+      <member refid="class_t_c_p_server_1a3c61133d29aae2cb2b8a0d0b8b7dadaf" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>servsock_</name></member>
+      <member refid="class_t_c_p_server_1aff1ba1873083d214cbcb808b8091757a" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>SocketCnx</name></member>
+      <member refid="class_t_c_p_server_1a94abdeb80587f39a869fde6f24522a78" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>TCPLock</name></member>
+      <member refid="class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7" prot="public" virt="non-virtual"><scope>TCPServer</scope><name>TCPServer</name></member>
+      <member refid="class_t_c_p_server_1a92a79bdd5f489dbeaea65b03b4e7a630" prot="private" virt="non-virtual"><scope>TCPServer</scope><name>TCPServer</name></member>
+      <member refid="class_t_c_p_server_1abc497ac52355e53986a6a1bd1acb9581" prot="public" virt="virtual"><scope>TCPServer</scope><name>~TCPServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

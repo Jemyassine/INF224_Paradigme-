@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_2ea739fe366135ec15f610d081b5ff33" kind="dir">
+    <compoundname>CPP</compoundname>
+    <innerfile refid="ccsocket_8cpp">ccsocket.cpp</innerfile>
+    <innerfile refid="ccsocket_8h">ccsocket.h</innerfile>
+    <innerfile refid="client_8cpp">client.cpp</innerfile>
+    <innerfile refid="_film_8cpp">Film.cpp</innerfile>
+    <innerfile refid="_film_8h">Film.h</innerfile>
+    <innerfile refid="_group_8cpp">Group.cpp</innerfile>
+    <innerfile refid="_group_8h">Group.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="_multimedia_8cpp">Multimedia.cpp</innerfile>
+    <innerfile refid="_multimedia_8h">Multimedia.h</innerfile>
+    <innerfile refid="_multimedia_manager_8cpp">MultimediaManager.cpp</innerfile>
+    <innerfile refid="_multimedia_manager_8h">MultimediaManager.h</innerfile>
+    <innerfile refid="_multimedia_manager_test_8h">MultimediaManagerTest.h</innerfile>
+    <innerfile refid="_photo_8cpp">Photo.cpp</innerfile>
+    <innerfile refid="_photo_8h">Photo.h</innerfile>
+    <innerfile refid="server_8cpp">server.cpp</innerfile>
+    <innerfile refid="_server_tools_8h">ServerTools.h</innerfile>
+    <innerfile refid="tcpserver_8cpp">tcpserver.cpp</innerfile>
+    <innerfile refid="tcpserver_8h">tcpserver.h</innerfile>
+    <innerfile refid="_test_polymorphisme_8h">TestPolymorphisme.h</innerfile>
+    <innerfile refid="_video_8cpp">Video.cpp</innerfile>
+    <innerfile refid="_video_8h">Video.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CPP/"/>
+  </compounddef>
+</doxygen>

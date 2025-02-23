@@ -1,0 +1,35 @@
+\doxysection{Multimedia\+Manager\+Test.\+h}
+\hypertarget{_multimedia_manager_test_8h_source}{}\label{_multimedia_manager_test_8h_source}\index{CPP/MultimediaManagerTest.h@{CPP/MultimediaManagerTest.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MULTIMEDIA\_MANAGER\_TEST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MULTIMEDIA\_MANAGER\_TEST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Photo.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Video.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Film.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Group.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}MultimediaManager.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }MultimediaManagerTest\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ MultimediaManagerTest()\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}}*\ manager\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ some\ multimedia\ objects}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ photo1\ =\ manager-\/>createPhoto(\textcolor{stringliteral}{"{}Photo1"{}},\ \textcolor{stringliteral}{"{}D:\(\backslash\)\(\backslash\)time\_money\_phrase\_219589\_938x1668.jpg"{}},\ 48.858844,\ 2.294351);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ photo2\ =\ manager-\/>createPhoto(\textcolor{stringliteral}{"{}Photo2"{}},\ \textcolor{stringliteral}{"{}D:\(\backslash\)\(\backslash\)time\_money\_phrase\_219589\_938x1668.jpg"{}},\ 40.748817,\ -\/73.985428);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ video1\ =\ manager-\/>createVideo(\textcolor{stringliteral}{"{}Video1"{}},\ \textcolor{stringliteral}{"{}D:\(\backslash\)\(\backslash\)Samara.mp4"{}},\ 120);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ display\ video1}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ manager-\/>displayMultimedia(\textcolor{stringliteral}{"{}Video1"{}},\ std::cout);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ play\ video1}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ manager-\/>playMultimedia(\textcolor{stringliteral}{"{}Video1"{}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_9ed349ed41b9fdae9123551de7d098d4" kind="dir">
+    <compoundname>swing/src/swing</compoundname>
+    <innerfile refid="_client_8java">Client.java</innerfile>
+    <innerfile refid="_window_8java">Window.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="swing/src/swing/"/>
+  </compounddef>
+</doxygen>

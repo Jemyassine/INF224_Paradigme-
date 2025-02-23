@@ -1,0 +1,75 @@
+.TH "TCPServer" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TCPServer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <tcpserver\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBCallback\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPServer\fP (Callback const &callback)"
+.br
+.ti -1c
+.RI "virtual int \fBrun\fP (int port)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTCPLock\fP"
+.br
+.ti -1c
+.RI "class \fBSocketCnx\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCP/IP IPv4 server\&. Supports TCP/IP AF_INET IPv4 connections with multiple clients\&. One thread is used per client\&. 
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using TCPServer::Callback"
+\fBInitial value:\fP
+.nf
+
+  std::function< bool(std::string const& request, std::string& response) >
+.PP
+.fi
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TCPServer::TCPServer (Callback const & callback)"
+initializes the server\&. The callback function will be called each time the server receives a request from a client\&.
+.IP "\(bu" 2
+\fIrequest\fP contains the data sent by the client
+.IP "\(bu" 2
+\fIresponse\fP will be sent to the client as a response The connection with the client is closed if the callback returns false\&. 
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int TCPServer::run (int port)\fR [virtual]\fP"
+Starts the server\&. Binds an internal \fBServerSocket\fP to \fIport\fP then starts an infinite loop that processes connection requests from clients\&. 
+.PP
+\fBReturns\fP
+.RS 4
+0 on normal termination, or a negative value if the \fBServerSocket\fP could not be bound (value is then one of \fBSocket::Errors\fP)\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

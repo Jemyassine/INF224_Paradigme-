@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__test_polymorphisme_8h_source" xml:lang="en-US">
+<title>TestPolymorphisme.h</title>
+<indexterm><primary>CPP/TestPolymorphisme.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;TestPolymorphisme_h</emphasis>
+2 <emphasis role="preprocessor">#define&#32;TestPolymorphisme_h</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&quot;Photo.h&quot;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&quot;Video.h&quot;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+7 <emphasis role="keyword">class&#32;</emphasis>TestPolymorphisme&#32;{
+8 <emphasis role="keyword">public</emphasis>:
+9 &#32;&#32;&#32;&#32;TestPolymorphisme()&#32;{test();};&#32;
+10 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;test&#32;(){
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;Multimedia*&gt;&#32;multimediaList;
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;pathname1&#32;=&#32;<emphasis role="stringliteral">&quot;D:\\time_money_phrase_219589_938x1668.jpg&quot;</emphasis>;
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;pathname2&#32;=&#32;<emphasis role="stringliteral">&quot;D:\\Samara.mp4&quot;</emphasis>;
+14 
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Ajout&#32;d&apos;objets&#32;de&#32;type&#32;Photo&#32;et&#32;Video</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multimediaList.push_back(<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_photo">Photo</link>(<emphasis role="stringliteral">&quot;time_money&quot;</emphasis>,pathname1,&#32;48.8566,&#32;2.3522));
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;multimediaList.push_back(<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_video">Video</link>(<emphasis role="stringliteral">&quot;Samara&quot;</emphasis>,&#32;pathname2,&#32;120));
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Boucle&#32;pour&#32;afficher&#32;et&#32;jouer&#32;chaque&#32;élément</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;&amp;&#32;it&#32;:&#32;multimediaList)&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it-&gt;display(std::cout);
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it-&gt;play();
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+25 
+26 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Libération&#32;de&#32;la&#32;mémoire</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;&amp;&#32;it&#32;:&#32;multimediaList)&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;it;&#32;&#32;<emphasis role="comment">//&#32;Appelle&#32;le&#32;destructeur&#32;virtuel&#32;correctement</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+30 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;la&#32;prpriété&#32;cracteristique&#32;de&#32;polymorphisme&#32;est&#32;que&#32;le&#32;type&#32;de&#32;l&apos;objet&#32;est&#32;déterminé&#32;à&#32;l&apos;exécution&#32;et&#32;non&#32;à&#32;la&#32;compilation</emphasis>
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;les&#32;elements&#32;de&#32;la&#32;liste&#32;multimediaList&#32;sont&#32;de&#32;type&#32;Multimedia*&#32;mais&#32;ils&#32;peuvent&#32;pointer&#32;vers&#32;des&#32;objets&#32;de&#32;type&#32;Photo&#32;ou&#32;Video</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;par&#32;rapport&#32;au&#32;java&#32;le&#32;polymorphisme&#32;en&#32;C++&#32;est&#32;plus&#32;puissant&#32;car&#32;il&#32;peut&#32;être&#32;utilisé&#32;avec&#32;des&#32;pointeurs&#32;et&#32;des&#32;références</emphasis>
+33 &#32;&#32;&#32;&#32;
+34 &#32;&#32;&#32;&#32;}
+35 };
+36 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

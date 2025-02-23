@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_socket_cnx" xml:lang="en-US">
+<title>SocketCnx Class Reference</title>
+<indexterm><primary>SocketCnx</primary></indexterm>
+<para>
+
+<para>Connection with a given client. Each <link linkend="_class_socket_cnx">SocketCnx</link> uses a different thread. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1acd004e809a99928860ffa94cbde99ae1"/><emphasis role="strong">SocketCnx</emphasis> (<link linkend="_class_t_c_p_server">TCPServer</link> &amp;, <link linkend="_class_socket">Socket</link> *)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1aa2ad22fb4fe4b78b3a9337e09475f10e"/>void <emphasis role="strong">processRequests</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1ad46b42915ee50072a0307f0116403587"/><link linkend="_class_t_c_p_server">TCPServer</link> &amp; <emphasis role="strong">server_</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1a51d23b906608701ef811a7d73f0de43e"/><link linkend="_class_socket">Socket</link> * <emphasis role="strong">sock_</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1af5f1e7aef17b14deb89f65d8c89eb619"/><link linkend="_class_socket_buffer">SocketBuffer</link> * <emphasis role="strong">sockbuf_</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_cnx_1a0b358d64acd070e4f54123bd7a011183"/>std::thread <emphasis role="strong">thread_</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Connection with a given client. Each <link linkend="_class_socket_cnx">SocketCnx</link> uses a different thread. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+CPP/tcpserver.cpp</section>
+</section>

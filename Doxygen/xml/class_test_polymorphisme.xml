@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_test_polymorphisme" kind="class" language="C++" prot="public">
+    <compoundname>TestPolymorphisme</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_test_polymorphisme_1a216f9307ae37f2972546e1e9be5acd95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TestPolymorphisme::TestPolymorphisme</definition>
+        <argsstring>()</argsstring>
+        <name>TestPolymorphisme</name>
+        <qualifiedname>TestPolymorphisme::TestPolymorphisme</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/TestPolymorphisme.h" line="9" column="5" bodyfile="CPP/TestPolymorphisme.h" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_test_polymorphisme_1a418595a9426a363fb564ef6357501512" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TestPolymorphisme::test</definition>
+        <argsstring>()</argsstring>
+        <name>test</name>
+        <qualifiedname>TestPolymorphisme::test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/TestPolymorphisme.h" line="10" column="10" bodyfile="CPP/TestPolymorphisme.h" bodystart="10" bodyend="34"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CPP/TestPolymorphisme.h" line="7" column="1" bodyfile="CPP/TestPolymorphisme.h" bodystart="7" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_test_polymorphisme_1a418595a9426a363fb564ef6357501512" prot="public" virt="non-virtual"><scope>TestPolymorphisme</scope><name>test</name></member>
+      <member refid="class_test_polymorphisme_1a216f9307ae37f2972546e1e9be5acd95" prot="public" virt="non-virtual"><scope>TestPolymorphisme</scope><name>TestPolymorphisme</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

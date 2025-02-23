@@ -1,0 +1,77 @@
+.TH "Photo" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Photo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMultimedia\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPhoto\fP (const std::string &name, const std::string &pathname, double latitude, double longitude)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (std::ostream &os) const override"
+.br
+.ti -1c
+.RI "void \fBplay\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (std::ofstream &ofs) const override"
+.br
+.ti -1c
+.RI "void \fBread\fP (std::ifstream &ifs) override"
+.br
+.ti -1c
+.RI "std::string \fBgetClassName\fP () const override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBMultimedia\fP
+.in +1c
+.ti -1c
+.RI "\fBMultimedia\fP (std::string name, std::string pathname)"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetPathname\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBsetPathname\fP (const std::string &pathname)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void Photo::display (std::ostream & os) const\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBMultimedia\fP\&.
+.SS "std::string Photo::getClassName () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBMultimedia\fP\&.
+.SS "void Photo::play () const\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBMultimedia\fP\&.
+.SS "void Photo::read (std::ifstream & ifs)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Reimplemented from \fBMultimedia\fP\&.
+.SS "void Photo::write (std::ofstream & ofs) const\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Reimplemented from \fBMultimedia\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

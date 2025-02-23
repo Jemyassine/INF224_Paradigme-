@@ -1,0 +1,830 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_socket" kind="class" language="C++" prot="public">
+    <compoundname>Socket</compoundname>
+    <includes refid="ccsocket_8h" local="no">ccsocket.h</includes>
+    <sectiondef kind="user-defined">
+      <memberdef kind="function" id="class_socket_1a1a662407744738aa56d1ccb6d7be26eb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Socket::startup</definition>
+        <argsstring>()</argsstring>
+        <name>startup</name>
+        <qualifiedname>Socket::startup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>initialisation and cleanup of sockets on Widows. <simplesect kind="note"><para>startup is automaticcaly called when a <ref refid="class_socket" kindref="compound">Socket</ref> or a <ref refid="class_server_socket" kindref="compound">ServerSocket</ref> is created </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="57" column="15" bodyfile="CPP/ccsocket.cpp" bodystart="50" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a744a91706b9510d266b7c07e31f3e028" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Socket::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>Socket::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="58" column="15" bodyfile="CPP/ccsocket.cpp" bodystart="62" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_socket_1a9f68308228badcdd299cd83e62e36976" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Errors</name>
+        <qualifiedname>Socket::Errors</qualifiedname>
+        <enumvalue id="class_socket_1a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb" prot="public">
+          <name>Failed</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_socket_1a9f68308228badcdd299cd83e62e36976ae3fcc87ee9b909ea92c751f70df4c9ac" prot="public">
+          <name>InvalidSocket</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_socket_1a9f68308228badcdd299cd83e62e36976ab8eb7f6e1d237e242921ef128c01491c" prot="public">
+          <name>UnknownHost</name>
+          <initializer>= -3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_socket" kindref="compound">Socket</ref> errors.<itemizedlist>
+<listitem><para>Socket::Failed (-1): could not connect, could not bind, etc.</para>
+</listitem><listitem><para>Socket::InvalidSocket (-2): invalid socket or wrong socket type</para>
+</listitem><listitem><para>Socket::UnknownHost (-3): could not reach host </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="52" column="3" bodyfile="CPP/ccsocket.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_socket_1a11a8bb11feaafab939278a8285afa567" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ServerSocket</definition>
+        <argsstring></argsstring>
+        <name>ServerSocket</name>
+        <qualifiedname>Socket::ServerSocket</qualifiedname>
+        <param>
+          <type><ref refid="class_server_socket" kindref="compound">ServerSocket</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="174" column="16" bodyfile="CPP/ccsocket.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_socket_1afae007041d3bb70fa141b79791019d2d" prot="private" static="no" mutable="no">
+        <type>SOCKET</type>
+        <definition>SOCKET Socket::sockfd_</definition>
+        <argsstring></argsstring>
+        <name>sockfd_</name>
+        <qualifiedname>Socket::sockfd_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="181" column="10" bodyfile="CPP/ccsocket.h" bodystart="181" bodyend="181"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Socket::Socket</definition>
+        <argsstring>(int type=SOCK_STREAM)</argsstring>
+        <name>Socket</name>
+        <qualifiedname>Socket::Socket</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+          <defval>SOCK_STREAM</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_socket" kindref="compound">Socket</ref>. Creates a AF_INET socket using the IPv4 Internet protocol. Type can be:<itemizedlist>
+<listitem><para>SOCK_STREAM (the default) for TCP/IP connected stream sockets</para>
+</listitem><listitem><para>SOCK_DGRAM for UDP/datagram sockets (available only or Unix/Linux) </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="65" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="73" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a8e3f095dfe84d6599761c4ca54900487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Socket::Socket</definition>
+        <argsstring>(int type, SOCKET sockfd)</argsstring>
+        <name>Socket</name>
+        <qualifiedname>Socket::Socket</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>SOCKET</type>
+          <declname>sockfd</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="class_socket" kindref="compound">Socket</ref> from an existing socket file descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="68" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aeac4eb6379a543d38ed88977d3b6630a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Socket::~Socket</definition>
+        <argsstring>()</argsstring>
+        <name>~Socket</name>
+        <qualifiedname>Socket::~Socket</qualifiedname>
+        <briefdescription>
+<para>Destructor (closes the socket). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="71" column="3" bodyfile="CPP/ccsocket.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a772419bd74c4fe4987d190506a64ff87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::connect</definition>
+        <argsstring>(const std::string &amp;host, int port)</argsstring>
+        <name>connect</name>
+        <qualifiedname>Socket::connect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connects the socket to an address. Typically used for connecting TCP/IP clients to a <ref refid="class_server_socket" kindref="compound">ServerSocket</ref>. On Unix/Linux host can be a hostname, on Windows it can only be an IP address. <simplesect kind="return"><para>0 on success or a negative value on error which is one of <ref refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kindref="member">Socket::Errors</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="77" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="149" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aff8a77c02a44937db59c8c8a057072d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::bind</definition>
+        <argsstring>(int port)</argsstring>
+        <name>bind</name>
+        <qualifiedname>Socket::bind</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns the socket to localhost. <simplesect kind="return"><para>0 on success or a negative value on error, see <ref refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kindref="member">Socket::Errors</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="81" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="129" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1acdffcdd08c888132e95da022e0710b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::bind</definition>
+        <argsstring>(const std::string &amp;host, int port)</argsstring>
+        <name>bind</name>
+        <qualifiedname>Socket::bind</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns the socket to an IP address. On Unix/Linux host can be a hostname, on Windows it can only be an IP address. <simplesect kind="return"><para>0 on success or a negative value on error, see <ref refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kindref="member">Socket::Errors</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="86" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aef06605c6725958004116983f1a2051f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <qualifiedname>Socket::close</qualifiedname>
+        <briefdescription>
+<para>Closes the socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="89" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="159" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1af82b21921f44a5c210f8aaedc26ca1c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Socket::isClosed</definition>
+        <argsstring>() const</argsstring>
+        <name>isClosed</name>
+        <qualifiedname>Socket::isClosed</qualifiedname>
+        <briefdescription>
+<para>Returns true if the socket has been closed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="92" column="8" bodyfile="CPP/ccsocket.h" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a1f3bad4217fea24f81d39f57406a0ec8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SOCKET</type>
+        <definition>SOCKET Socket::descriptor</definition>
+        <argsstring>()</argsstring>
+        <name>descriptor</name>
+        <qualifiedname>Socket::descriptor</qualifiedname>
+        <briefdescription>
+<para>Returns the descriptor of the socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="95" column="10" bodyfile="CPP/ccsocket.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a417b47af24de10184192de00d9112589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Socket::shutdownInput</definition>
+        <argsstring>()</argsstring>
+        <name>shutdownInput</name>
+        <qualifiedname>Socket::shutdownInput</qualifiedname>
+        <briefdescription>
+<para>Disables further receive operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="98" column="8" bodyfile="CPP/ccsocket.cpp" bodystart="174" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a650128aee2581e6695c6812d8afe14b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Socket::shutdownOutput</definition>
+        <argsstring>()</argsstring>
+        <name>shutdownOutput</name>
+        <qualifiedname>Socket::shutdownOutput</qualifiedname>
+        <briefdescription>
+<para>Disables further send operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="101" column="8" bodyfile="CPP/ccsocket.cpp" bodystart="178" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE Socket::send</definition>
+        <argsstring>(const SOCKDATA *buf, size_t len, int flags=0)</argsstring>
+        <name>send</name>
+        <qualifiedname>Socket::send</qualifiedname>
+        <param>
+          <type>const SOCKDATA *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Send sdata to a connected (TCP/IP) socket. Sends the first <emphasis>len</emphasis> bytes in <emphasis>buf</emphasis>. <simplesect kind="return"><para>the number of bytes that were sent, or 0 or <ref refid="class_socket_1a417b47af24de10184192de00d9112589" kindref="member">shutdownInput()</ref> was called on the other side, or Socket::Failed (-1) if an error occured. </para>
+</simplesect>
+<simplesect kind="note"><para>TCP/IP sockets do not preserve record boundaries, see <ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="108" column="12" bodyfile="CPP/ccsocket.h" bodystart="108" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a01b463d51433a10658854446bde71c40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE Socket::receive</definition>
+        <argsstring>(SOCKDATA *buf, size_t len, int flags=0)</argsstring>
+        <name>receive</name>
+        <qualifiedname>Socket::receive</qualifiedname>
+        <param>
+          <type>SOCKDATA *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Receives data from a connected (TCP/IP) socket. Reads at most <emphasis>len</emphasis> bytes fand stores them in <emphasis>buf</emphasis>. By default, this function blocks the caller until thre is availbale data. <simplesect kind="return"><para>the number of bytes that were received, or 0 or <ref refid="class_socket_1a650128aee2581e6695c6812d8afe14b5" kindref="member">shutdownOutput()</ref> was called on the other side, or Socket::Failed (-1) if an error occured. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="117" column="12" bodyfile="CPP/ccsocket.h" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aef5c4ba848f475f117b89bac531ac150" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE Socket::sendTo</definition>
+        <argsstring>(void const *buf, size_t len, int flags, SOCKADDR const *to, socklen_t addrlen)</argsstring>
+        <name>sendTo</name>
+        <qualifiedname>Socket::sendTo</qualifiedname>
+        <param>
+          <type>void const *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>SOCKADDR const *</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>socklen_t</type>
+          <declname>addrlen</declname>
+        </param>
+        <briefdescription>
+<para>Sends data to a datagram socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="124" column="12" bodyfile="CPP/ccsocket.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aa19f1c03af97458c042880c6be638151" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SOCKSIZE</type>
+        <definition>SOCKSIZE Socket::receiveFrom</definition>
+        <argsstring>(void *buf, size_t len, int flags, SOCKADDR *from, socklen_t *addrlen)</argsstring>
+        <name>receiveFrom</name>
+        <qualifiedname>Socket::receiveFrom</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>SOCKADDR *</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>socklen_t *</type>
+          <declname>addrlen</declname>
+        </param>
+        <briefdescription>
+<para>Receives data from datagram socket. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="130" column="12" bodyfile="CPP/ccsocket.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a06ff0dd6837c9f51948df655fc2713cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setReceiveBufferSize</definition>
+        <argsstring>(int size)</argsstring>
+        <name>setReceiveBufferSize</name>
+        <qualifiedname>Socket::setReceiveBufferSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Set the size of the TCP/IP input buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="136" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1ab02b997fa7e251d596116e95c9ccaf97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setReuseAddress</definition>
+        <argsstring>(bool)</argsstring>
+        <name>setReuseAddress</name>
+        <qualifiedname>Socket::setReuseAddress</qualifiedname>
+        <param>
+          <type>bool</type>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+<para>Enable/disable the SO_REUSEADDR socket option. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="139" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1afc49ad6cc259a0006ca13bb22fdd7383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setSendBufferSize</definition>
+        <argsstring>(int size)</argsstring>
+        <name>setSendBufferSize</name>
+        <qualifiedname>Socket::setSendBufferSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Set the size of the TCP/IP output buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="142" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="188" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a41cc1caae51e3e83e16ce2c20689ed03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setSoLinger</definition>
+        <argsstring>(bool, int linger)</argsstring>
+        <name>setSoLinger</name>
+        <qualifiedname>Socket::setSoLinger</qualifiedname>
+        <param>
+          <type>bool</type>
+          <defname>on</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>linger</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable SO_LINGER with the specified linger time in seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="145" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="197" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setSoTimeout</definition>
+        <argsstring>(int timeout)</argsstring>
+        <name>setSoTimeout</name>
+        <qualifiedname>Socket::setSoTimeout</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Enable/disable SO_TIMEOUT with the specified timeout (in milliseconds). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="148" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="204" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a7bc0110f3bedbb18f26b05ece01553fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setTcpNoDelay</definition>
+        <argsstring>(bool)</argsstring>
+        <name>setTcpNoDelay</name>
+        <qualifiedname>Socket::setTcpNoDelay</qualifiedname>
+        <param>
+          <type>bool</type>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+<para>Enable/disable TCP_NODELAY (turns on/off TCP coalescence). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="151" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a53a0a6980058ce02034033b05f6ca389" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::getReceiveBufferSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getReceiveBufferSize</name>
+        <qualifiedname>Socket::getReceiveBufferSize</qualifiedname>
+        <briefdescription>
+<para>Return the size of the TCP/IP input buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="154" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a440e7ee9303d454df0c51fe6125cd2af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Socket::getReuseAddress</definition>
+        <argsstring>() const</argsstring>
+        <name>getReuseAddress</name>
+        <qualifiedname>Socket::getReuseAddress</qualifiedname>
+        <briefdescription>
+<para>Return SO_REUSEADDR state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="157" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::getSendBufferSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSendBufferSize</name>
+        <qualifiedname>Socket::getSendBufferSize</qualifiedname>
+        <briefdescription>
+<para>Return the size of the TCP/IP output buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="160" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1ae3545855771edf076843e2e07fa7d3cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Socket::getSoLinger</definition>
+        <argsstring>(int &amp;linger) const</argsstring>
+        <name>getSoLinger</name>
+        <qualifiedname>Socket::getSoLinger</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>linger</declname>
+        </param>
+        <briefdescription>
+<para>Return SO_LINGER state and the specified linger time in seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="163" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a38b17de459b22ab45db16e538b963c49" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::getSoTimeout</definition>
+        <argsstring>() const</argsstring>
+        <name>getSoTimeout</name>
+        <qualifiedname>Socket::getSoTimeout</qualifiedname>
+        <briefdescription>
+<para>Return SO_TIMEOUT value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="166" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a2539928ed0829df5070384f907ea48f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Socket::getTcpNoDelay</definition>
+        <argsstring>() const</argsstring>
+        <name>getTcpNoDelay</name>
+        <qualifiedname>Socket::getTcpNoDelay</qualifiedname>
+        <briefdescription>
+<para>Return TCP_NODELAY state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="169" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_socket_1ae65efac394eb49594cbb5b2db957e056" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setLocalAddress</definition>
+        <argsstring>(SOCKADDR_IN &amp;addr, int port)</argsstring>
+        <name>setLocalAddress</name>
+        <qualifiedname>Socket::setLocalAddress</qualifiedname>
+        <param>
+          <type>SOCKADDR_IN &amp;</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="177" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="99" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1afa64e345564506760728d2b545fcbe0c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Socket::setAddress</definition>
+        <argsstring>(SOCKADDR_IN &amp;addr, const std::string &amp;host, int port)</argsstring>
+        <name>setAddress</name>
+        <qualifiedname>Socket::setAddress</qualifiedname>
+        <param>
+          <type>SOCKADDR_IN &amp;</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="179" column="7" bodyfile="CPP/ccsocket.cpp" bodystart="109" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1aae1f09b930bb7118172baa0abb15543e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Socket::Socket</definition>
+        <argsstring>(const Socket &amp;)=delete</argsstring>
+        <name>Socket</name>
+        <qualifiedname>Socket::Socket</qualifiedname>
+        <param>
+          <type>const <ref refid="class_socket" kindref="compound">Socket</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="182" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1afcd91bc8b2b102813d22e00c1cf03a59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_socket" kindref="compound">Socket</ref> &amp;</type>
+        <definition>Socket &amp; Socket::operator=</definition>
+        <argsstring>(const Socket &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Socket::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_socket" kindref="compound">Socket</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="183" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_socket_1a9167eb93bf87c7c7fb2a408c0e0e3101" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_socket" kindref="compound">Socket</ref> &amp;</type>
+        <definition>Socket &amp; Socket::operator=</definition>
+        <argsstring>(Socket &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Socket::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_socket" kindref="compound">Socket</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="184" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>TCP/IP or UDP/Datagram IPv4 socket. AF_INET connections following the IPv4 Internet protocol are supported. <simplesect kind="note"><para><itemizedlist>
+<listitem><para><ref refid="class_server_socket" kindref="compound">ServerSocket</ref> should be used on the server side.</para>
+</listitem><listitem><para>SIGPIPE signals are ignored when using Linux, BSD or MACOSX.</para>
+</listitem><listitem><para>TCP/IP sockets do not preserve record boundaries but <ref refid="class_socket_buffer" kindref="compound">SocketBuffer</ref> solves this problem. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="CPP/ccsocket.h" line="46" column="1" bodyfile="CPP/ccsocket.h" bodystart="46" bodyend="185"/>
+    <listofallmembers>
+      <member refid="class_socket_1aff8a77c02a44937db59c8c8a057072d9" prot="public" virt="non-virtual"><scope>Socket</scope><name>bind</name></member>
+      <member refid="class_socket_1acdffcdd08c888132e95da022e0710b1d" prot="public" virt="non-virtual"><scope>Socket</scope><name>bind</name></member>
+      <member refid="class_socket_1a744a91706b9510d266b7c07e31f3e028" prot="public" virt="non-virtual"><scope>Socket</scope><name>cleanup</name></member>
+      <member refid="class_socket_1aef06605c6725958004116983f1a2051f" prot="public" virt="non-virtual"><scope>Socket</scope><name>close</name></member>
+      <member refid="class_socket_1a772419bd74c4fe4987d190506a64ff87" prot="public" virt="non-virtual"><scope>Socket</scope><name>connect</name></member>
+      <member refid="class_socket_1a1f3bad4217fea24f81d39f57406a0ec8" prot="public" virt="non-virtual"><scope>Socket</scope><name>descriptor</name></member>
+      <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976" prot="public" virt="non-virtual"><scope>Socket</scope><name>Errors</name></member>
+      <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb" prot="public" virt="non-virtual"><scope>Socket</scope><name>Failed</name></member>
+      <member refid="class_socket_1a53a0a6980058ce02034033b05f6ca389" prot="public" virt="non-virtual"><scope>Socket</scope><name>getReceiveBufferSize</name></member>
+      <member refid="class_socket_1a440e7ee9303d454df0c51fe6125cd2af" prot="public" virt="non-virtual"><scope>Socket</scope><name>getReuseAddress</name></member>
+      <member refid="class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897" prot="public" virt="non-virtual"><scope>Socket</scope><name>getSendBufferSize</name></member>
+      <member refid="class_socket_1ae3545855771edf076843e2e07fa7d3cd" prot="public" virt="non-virtual"><scope>Socket</scope><name>getSoLinger</name></member>
+      <member refid="class_socket_1a38b17de459b22ab45db16e538b963c49" prot="public" virt="non-virtual"><scope>Socket</scope><name>getSoTimeout</name></member>
+      <member refid="class_socket_1a2539928ed0829df5070384f907ea48f7" prot="public" virt="non-virtual"><scope>Socket</scope><name>getTcpNoDelay</name></member>
+      <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976ae3fcc87ee9b909ea92c751f70df4c9ac" prot="public" virt="non-virtual"><scope>Socket</scope><name>InvalidSocket</name></member>
+      <member refid="class_socket_1af82b21921f44a5c210f8aaedc26ca1c3" prot="public" virt="non-virtual"><scope>Socket</scope><name>isClosed</name></member>
+      <member refid="class_socket_1afcd91bc8b2b102813d22e00c1cf03a59" prot="private" virt="non-virtual"><scope>Socket</scope><name>operator=</name></member>
+      <member refid="class_socket_1a9167eb93bf87c7c7fb2a408c0e0e3101" prot="private" virt="non-virtual"><scope>Socket</scope><name>operator=</name></member>
+      <member refid="class_socket_1a01b463d51433a10658854446bde71c40" prot="public" virt="non-virtual"><scope>Socket</scope><name>receive</name></member>
+      <member refid="class_socket_1aa19f1c03af97458c042880c6be638151" prot="public" virt="non-virtual"><scope>Socket</scope><name>receiveFrom</name></member>
+      <member refid="class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49" prot="public" virt="non-virtual"><scope>Socket</scope><name>send</name></member>
+      <member refid="class_socket_1aef5c4ba848f475f117b89bac531ac150" prot="public" virt="non-virtual"><scope>Socket</scope><name>sendTo</name></member>
+      <member refid="class_socket_1a11a8bb11feaafab939278a8285afa567" prot="private" virt="non-virtual"><scope>Socket</scope><name>ServerSocket</name></member>
+      <member refid="class_socket_1afa64e345564506760728d2b545fcbe0c" prot="private" virt="non-virtual"><scope>Socket</scope><name>setAddress</name></member>
+      <member refid="class_socket_1ae65efac394eb49594cbb5b2db957e056" prot="private" virt="non-virtual"><scope>Socket</scope><name>setLocalAddress</name></member>
+      <member refid="class_socket_1a06ff0dd6837c9f51948df655fc2713cd" prot="public" virt="non-virtual"><scope>Socket</scope><name>setReceiveBufferSize</name></member>
+      <member refid="class_socket_1ab02b997fa7e251d596116e95c9ccaf97" prot="public" virt="non-virtual"><scope>Socket</scope><name>setReuseAddress</name></member>
+      <member refid="class_socket_1afc49ad6cc259a0006ca13bb22fdd7383" prot="public" virt="non-virtual"><scope>Socket</scope><name>setSendBufferSize</name></member>
+      <member refid="class_socket_1a41cc1caae51e3e83e16ce2c20689ed03" prot="public" virt="non-virtual"><scope>Socket</scope><name>setSoLinger</name></member>
+      <member refid="class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99" prot="public" virt="non-virtual"><scope>Socket</scope><name>setSoTimeout</name></member>
+      <member refid="class_socket_1a7bc0110f3bedbb18f26b05ece01553fa" prot="public" virt="non-virtual"><scope>Socket</scope><name>setTcpNoDelay</name></member>
+      <member refid="class_socket_1a417b47af24de10184192de00d9112589" prot="public" virt="non-virtual"><scope>Socket</scope><name>shutdownInput</name></member>
+      <member refid="class_socket_1a650128aee2581e6695c6812d8afe14b5" prot="public" virt="non-virtual"><scope>Socket</scope><name>shutdownOutput</name></member>
+      <member refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" prot="public" virt="non-virtual"><scope>Socket</scope><name>Socket</name></member>
+      <member refid="class_socket_1a8e3f095dfe84d6599761c4ca54900487" prot="public" virt="non-virtual"><scope>Socket</scope><name>Socket</name></member>
+      <member refid="class_socket_1aae1f09b930bb7118172baa0abb15543e" prot="private" virt="non-virtual"><scope>Socket</scope><name>Socket</name></member>
+      <member refid="class_socket_1afae007041d3bb70fa141b79791019d2d" prot="private" virt="non-virtual"><scope>Socket</scope><name>sockfd_</name></member>
+      <member refid="class_socket_1a1a662407744738aa56d1ccb6d7be26eb" prot="public" virt="non-virtual"><scope>Socket</scope><name>startup</name></member>
+      <member refid="class_socket_1a9f68308228badcdd299cd83e62e36976ab8eb7f6e1d237e242921ef128c01491c" prot="public" virt="non-virtual"><scope>Socket</scope><name>UnknownHost</name></member>
+      <member refid="class_socket_1aeac4eb6379a543d38ed88977d3b6630a" prot="public" virt="non-virtual"><scope>Socket</scope><name>~Socket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

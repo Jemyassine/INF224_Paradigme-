@@ -1,0 +1,73 @@
+\doxysection{Multimedia\+Manager.\+h}
+\hypertarget{_multimedia_manager_8h_source}{}\label{_multimedia_manager_8h_source}\index{CPP/MultimediaManager.h@{CPP/MultimediaManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MULTIMEDIA\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MULTIMEDIA\_MANAGER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ version\_etape\_9}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Photo.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Video.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Film.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Group.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }MultimediaPtr\ =\ std::shared\_ptr<Multimedia>;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }PhotoPtr\ =\ std::shared\_ptr<Photo>;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }VideoPtr\ =\ std::shared\_ptr<Video>;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }FilmPtr\ =\ std::shared\_ptr<Film>;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }GroupPtr\ =\ std::shared\_ptr<Group>;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }multimediaTable\ =\ std::map<std::string,\ MultimediaPtr>;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }groupTable\ =\ std::map<std::string,\ GroupPtr>;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }MultimediaManager\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ multimediaTable\ multimediaTable;}
+\DoxyCodeLine{00028\ \ \ \ \ groupTable\ groupTable;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//constructor}}
+\DoxyCodeLine{00032\ \ \ \ \ MultimediaManager()\ \{\};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ destructor}}
+\DoxyCodeLine{00034\ \ \ \ \ \string~MultimediaManager()\{\};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Methods\ to\ create\ and\ add\ objects\ to\ the\ tables}}
+\DoxyCodeLine{00037\ \ \ \ \ PhotoPtr\ createPhoto(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ pathname,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00038\ \ \ \ \ VideoPtr\ createVideo(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ pathname,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00039\ \ \ \ \ FilmPtr\ createFilm(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ pathname,\ \textcolor{keywordtype}{int}\ duration,\ \textcolor{keywordtype}{int}*\ chapters,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00040\ \ \ \ \ GroupPtr\ createGroup\ (\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Methods\ to\ find\ and\ display\ objects\ or\ groups}}
+\DoxyCodeLine{00043\ \ \ \ \ MultimediaPtr\ findMultimedia(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ displayMultimedia(\textcolor{keyword}{const}\ std::string\&\ name,\ std::ostream\&\ os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ displayGroup(\textcolor{keyword}{const}\ std::string\&\ name,\ std::ostream\&\ os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ play\ a\ multimedia\ object}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ playMultimedia(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ playGroup(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Methods\ to\ remove\ objects\ or\ groups}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ removeMultimedia(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ removeGroup(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ list\ all\ multimedia\ objects}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ listAllMultimedias(std::ostream\&\ os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ list\ all\ groups}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ listALLGroups(std::ostream\&\ os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Serialization}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ save(\textcolor{keyword}{const}\ std::string\&\ filename)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ load(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Factory\ method}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ MultimediaPtr\ createObject(\textcolor{keyword}{const}\ std::string\&\ className);}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

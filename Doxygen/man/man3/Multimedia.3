@@ -1,0 +1,48 @@
+.TH "Multimedia" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Multimedia
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBPhoto\fP, and \fBVideo\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultimedia\fP (std::string name, std::string pathname)"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetPathname\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBsetPathname\fP (const std::string &pathname)"
+.br
+.ti -1c
+.RI "virtual void \fBdisplay\fP (std::ostream &os) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBplay\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (std::ofstream &ofs) const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (std::ifstream &ifs)"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetClassName\fP () const =0"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

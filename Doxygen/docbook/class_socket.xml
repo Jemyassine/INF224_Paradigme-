@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_socket" xml:lang="en-US">
+<title>Socket Class Reference</title>
+<indexterm><primary>Socket</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ccsocket.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Errors</link> { <emphasis role="strong">Failed</emphasis> = -1
+, <emphasis role="strong">InvalidSocket</emphasis> = -2
+, <emphasis role="strong">UnknownHost</emphasis> = -3
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec">Socket</link> (int type=SOCK_STREAM)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a8e3f095dfe84d6599761c4ca54900487"/><emphasis role="strong">Socket</emphasis> (int type, SOCKET sockfd)</para>
+
+<para>Creates a <link linkend="_class_socket">Socket</link> from an existing socket file descriptor. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1aeac4eb6379a543d38ed88977d3b6630a"/><emphasis role="strong">~Socket</emphasis> ()</para>
+
+<para>Destructor (closes the socket). </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_socket_1a772419bd74c4fe4987d190506a64ff87">connect</link> (const std::string &amp;host, int port)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_socket_1aff8a77c02a44937db59c8c8a057072d9">bind</link> (int port)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_socket_1acdffcdd08c888132e95da022e0710b1d">bind</link> (const std::string &amp;host, int port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1aef06605c6725958004116983f1a2051f"/>int <emphasis role="strong">close</emphasis> ()</para>
+
+<para>Closes the socket. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1af82b21921f44a5c210f8aaedc26ca1c3"/>bool <emphasis role="strong">isClosed</emphasis> () const</para>
+
+<para>Returns true if the socket has been closed. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a1f3bad4217fea24f81d39f57406a0ec8"/>SOCKET <emphasis role="strong">descriptor</emphasis> ()</para>
+
+<para>Returns the descriptor of the socket. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a417b47af24de10184192de00d9112589"/>void <emphasis role="strong">shutdownInput</emphasis> ()</para>
+
+<para>Disables further receive operations. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a650128aee2581e6695c6812d8afe14b5"/>void <emphasis role="strong">shutdownOutput</emphasis> ()</para>
+
+<para>Disables further send operations. </para>
+</listitem>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49">send</link> (const SOCKDATA *buf, size_t len, int flags=0)</para>
+</listitem>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_1a01b463d51433a10658854446bde71c40">receive</link> (SOCKDATA *buf, size_t len, int flags=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1aef5c4ba848f475f117b89bac531ac150"/>SOCKSIZE <emphasis role="strong">sendTo</emphasis> (void const *buf, size_t len, int flags, SOCKADDR const *to, socklen_t addrlen)</para>
+
+<para>Sends data to a datagram socket. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1aa19f1c03af97458c042880c6be638151"/>SOCKSIZE <emphasis role="strong">receiveFrom</emphasis> (void *buf, size_t len, int flags, SOCKADDR *from, socklen_t *addrlen)</para>
+
+<para>Receives data from datagram socket. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a06ff0dd6837c9f51948df655fc2713cd"/>int <emphasis role="strong">setReceiveBufferSize</emphasis> (int size)</para>
+
+<para>Set the size of the TCP/IP input buffer. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1ab02b997fa7e251d596116e95c9ccaf97"/>int <emphasis role="strong">setReuseAddress</emphasis> (bool)</para>
+
+<para>Enable/disable the SO_REUSEADDR socket option. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1afc49ad6cc259a0006ca13bb22fdd7383"/>int <emphasis role="strong">setSendBufferSize</emphasis> (int size)</para>
+
+<para>Set the size of the TCP/IP output buffer. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a41cc1caae51e3e83e16ce2c20689ed03"/>int <emphasis role="strong">setSoLinger</emphasis> (bool, int linger)</para>
+
+<para>Enable/disable SO_LINGER with the specified linger time in seconds. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99"/>int <emphasis role="strong">setSoTimeout</emphasis> (int timeout)</para>
+
+<para>Enable/disable SO_TIMEOUT with the specified timeout (in milliseconds). </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a7bc0110f3bedbb18f26b05ece01553fa"/>int <emphasis role="strong">setTcpNoDelay</emphasis> (bool)</para>
+
+<para>Enable/disable TCP_NODELAY (turns on/off TCP coalescence). </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a53a0a6980058ce02034033b05f6ca389"/>int <emphasis role="strong">getReceiveBufferSize</emphasis> () const</para>
+
+<para>Return the size of the TCP/IP input buffer. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a440e7ee9303d454df0c51fe6125cd2af"/>bool <emphasis role="strong">getReuseAddress</emphasis> () const</para>
+
+<para>Return SO_REUSEADDR state. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897"/>int <emphasis role="strong">getSendBufferSize</emphasis> () const</para>
+
+<para>Return the size of the TCP/IP output buffer. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1ae3545855771edf076843e2e07fa7d3cd"/>bool <emphasis role="strong">getSoLinger</emphasis> (int &amp;linger) const</para>
+
+<para>Return SO_LINGER state and the specified linger time in seconds. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a38b17de459b22ab45db16e538b963c49"/>int <emphasis role="strong">getSoTimeout</emphasis> () const</para>
+
+<para>Return SO_TIMEOUT value. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a2539928ed0829df5070384f907ea48f7"/>bool <emphasis role="strong">getTcpNoDelay</emphasis> () const</para>
+
+<para>Return TCP_NODELAY state. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+<simplesect><title></title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_class_socket_1a1a662407744738aa56d1ccb6d7be26eb">startup</link> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_1a744a91706b9510d266b7c07e31f3e028"/>static void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_socket_1a11a8bb11feaafab939278a8285afa567"/>class <emphasis role="strong">ServerSocket</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>TCP/IP or UDP/Datagram IPv4 socket. AF_INET connections following the IPv4 Internet protocol are supported. <note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para><link linkend="_class_server_socket">ServerSocket</link> should be used on the server side.</para>
+</listitem><listitem>
+<para>SIGPIPE signals are ignored when using Linux, BSD or MACOSX.</para>
+</listitem><listitem>
+<para>TCP/IP sockets do not preserve record boundaries but <link linkend="_class_socket_buffer">SocketBuffer</link> solves this problem. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_class_socket_1a9f68308228badcdd299cd83e62e36976"/><section>
+    <title>Errors</title>
+<indexterm><primary>Errors</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>Errors</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Socket::Errors</link></computeroutput></para>
+<para><link linkend="_class_socket">Socket</link> errors.<itemizedlist>
+<listitem>
+<para>Socket::Failed (-1): could not connect, could not bind, etc.</para>
+</listitem><listitem>
+<para>Socket::InvalidSocket (-2): invalid socket or wrong socket type</para>
+</listitem><listitem>
+<para>Socket::UnknownHost (-3): could not reach host </para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec"/><section>
+    <title>Socket()</title>
+<indexterm><primary>Socket</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>Socket</secondary></indexterm>
+<para><computeroutput>Socket::Socket (int type = <computeroutput>SOCK_STREAM</computeroutput>
+)</computeroutput></para>
+<para>Creates a new <link linkend="_class_socket">Socket</link>. Creates a AF_INET socket using the IPv4 Internet protocol. Type can be:<itemizedlist>
+<listitem>
+<para>SOCK_STREAM (the default) for TCP/IP connected stream sockets</para>
+</listitem><listitem>
+<para>SOCK_DGRAM for UDP/datagram sockets (available only or Unix/Linux) </para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_socket_1acdffcdd08c888132e95da022e0710b1d"/><section>
+    <title>bind()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>bind</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>bind</secondary></indexterm>
+<para><computeroutput>int Socket::bind (const std::string &amp; host, int port)</computeroutput></para>
+<para>Assigns the socket to an IP address. On Unix/Linux host can be a hostname, on Windows it can only be an IP address. <formalpara><title>Returns</title>
+
+<para>0 on success or a negative value on error, see <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Socket::Errors</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_1aff8a77c02a44937db59c8c8a057072d9"/><section>
+    <title>bind()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>bind</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>bind</secondary></indexterm>
+<para><computeroutput>int Socket::bind (int port)</computeroutput></para>
+<para>Assigns the socket to localhost. <formalpara><title>Returns</title>
+
+<para>0 on success or a negative value on error, see <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Socket::Errors</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_1a772419bd74c4fe4987d190506a64ff87"/><section>
+    <title>connect()</title>
+<indexterm><primary>connect</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>connect</secondary></indexterm>
+<para><computeroutput>int Socket::connect (const std::string &amp; host, int port)</computeroutput></para>
+<para>Connects the socket to an address. Typically used for connecting TCP/IP clients to a <link linkend="_class_server_socket">ServerSocket</link>. On Unix/Linux host can be a hostname, on Windows it can only be an IP address. <formalpara><title>Returns</title>
+
+<para>0 on success or a negative value on error which is one of <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Socket::Errors</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_1a01b463d51433a10658854446bde71c40"/><section>
+    <title>receive()</title>
+<indexterm><primary>receive</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>receive</secondary></indexterm>
+<para><computeroutput>SOCKSIZE Socket::receive (SOCKDATA * buf, size_t len, int flags = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Receives data from a connected (TCP/IP) socket. Reads at most <emphasis>len</emphasis> bytes fand stores them in <emphasis>buf</emphasis>. By default, this function blocks the caller until thre is availbale data. <formalpara><title>Returns</title>
+
+<para>the number of bytes that were received, or 0 or <link linkend="_class_socket_1a650128aee2581e6695c6812d8afe14b5">shutdownOutput()</link> was called on the other side, or Socket::Failed (-1) if an error occured. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49"/><section>
+    <title>send()</title>
+<indexterm><primary>send</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>send</secondary></indexterm>
+<para><computeroutput>SOCKSIZE Socket::send (const SOCKDATA * buf, size_t len, int flags = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Send sdata to a connected (TCP/IP) socket. Sends the first <emphasis>len</emphasis> bytes in <emphasis>buf</emphasis>. <formalpara><title>Returns</title>
+
+<para>the number of bytes that were sent, or 0 or <link linkend="_class_socket_1a417b47af24de10184192de00d9112589">shutdownInput()</link> was called on the other side, or Socket::Failed (-1) if an error occured. </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>TCP/IP sockets do not preserve record boundaries, see <link linkend="_class_socket_buffer">SocketBuffer</link>. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_class_socket_1a1a662407744738aa56d1ccb6d7be26eb"/><section>
+    <title>startup()</title>
+<indexterm><primary>startup</primary><secondary>Socket</secondary></indexterm>
+<indexterm><primary>Socket</primary><secondary>startup</secondary></indexterm>
+<para><computeroutput>void Socket::startup ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>initialisation and cleanup of sockets on Widows. <note><title>Note</title>
+
+<para>startup is automaticcaly called when a <link linkend="_class_socket">Socket</link> or a <link linkend="_class_server_socket">ServerSocket</link> is created </para>
+</note>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/ccsocket.hCPP/ccsocket.cpp</section>
+</section>

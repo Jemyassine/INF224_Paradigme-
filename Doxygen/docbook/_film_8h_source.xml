@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__film_8h_source" xml:lang="en-US">
+<title>Film.h</title>
+<indexterm><primary>CPP/Film.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;FILM_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;FILM_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&quot;Video.h&quot;</emphasis>
+5 
+6 <emphasis role="keyword">class&#32;</emphasis>Film&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;Video&#32;{
+7 <emphasis role="keyword">private</emphasis>:
+8 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>*&#32;chapterDurations;
+9 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;chapterCount;
+10 
+11 <emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;Film()&#32;:&#32;Video::Video(),&#32;chapterDurations(<emphasis role="keyword">nullptr</emphasis>),&#32;chapterCount(0){};
+13 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Constructor</emphasis>
+14 &#32;&#32;&#32;&#32;Film(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;pathname,&#32;<emphasis role="keywordtype">int</emphasis>&#32;duration,&#32;<emphasis role="keywordtype">int</emphasis>*&#32;chapters&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;count&#32;=&#32;0);
+15 
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destructor</emphasis>
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;~Film();
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Modifier&#32;to&#32;set&#32;chapter&#32;durations</emphasis>
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setChapters(<emphasis role="keywordtype">int</emphasis>*&#32;chapters,&#32;<emphasis role="keywordtype">int</emphasis>&#32;count);
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Accessor&#32;to&#32;get&#32;chapter&#32;durations</emphasis>
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>*&#32;getChapters()&#32;<emphasis role="keyword">const</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Accessor&#32;to&#32;get&#32;chapter&#32;count</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;getChapterCount()&#32;<emphasis role="keyword">const</emphasis>;
+27 
+28 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Accessor&#32;to&#32;get&#32;the&#32;duration&#32;of&#32;a&#32;specific&#32;chapter</emphasis>
+29 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;getChapterDuration(<emphasis role="keywordtype">int</emphasis>&#32;index)&#32;<emphasis role="keyword">const</emphasis>;
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Method&#32;to&#32;display&#32;chapter&#32;durations</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;displayChapters()&#32;<emphasis role="keyword">const</emphasis>;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Overriding&#32;the&#32;display&#32;method&#32;from&#32;Video&#32;class</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;display(std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const&#32;override</emphasis>;
+36 &#32;&#32;&#32;&#32;
+37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;constructor</emphasis>
+38 &#32;&#32;&#32;&#32;Film(<emphasis role="keyword">const</emphasis>&#32;Film&amp;&#32;other);
+39 
+40 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;assignment&#32;operator</emphasis>
+41 &#32;&#32;&#32;&#32;Film&amp;&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;Film&amp;&#32;other);
+42 
+43 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Serialization</emphasis>
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;write(std::ofstream&amp;&#32;ofs)&#32;<emphasis role="keyword">const&#32;override</emphasis>;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;read(std::ifstream&amp;&#32;ifs)&#32;<emphasis role="keyword">override</emphasis>;
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Factory&#32;method</emphasis>
+48 &#32;&#32;&#32;&#32;std::string&#32;getClassName()<emphasis role="keyword">&#32;const&#32;override&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Film&quot;</emphasis>;&#32;}
+49 };
+50 
+51 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

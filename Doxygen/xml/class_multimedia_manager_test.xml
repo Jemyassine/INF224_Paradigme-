@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_multimedia_manager_test" kind="class" language="C++" prot="public">
+    <compoundname>MultimediaManagerTest</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_multimedia_manager_test_1a1a2c30c9188bf9ff0d80b4364dae644b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MultimediaManagerTest::MultimediaManagerTest</definition>
+        <argsstring>()</argsstring>
+        <name>MultimediaManagerTest</name>
+        <qualifiedname>MultimediaManagerTest::MultimediaManagerTest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/MultimediaManagerTest.h" line="15" column="5" bodyfile="CPP/MultimediaManagerTest.h" bodystart="15" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CPP/MultimediaManagerTest.h" line="13" column="1" bodyfile="CPP/MultimediaManagerTest.h" bodystart="13" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_multimedia_manager_test_1a1a2c30c9188bf9ff0d80b4364dae644b" prot="public" virt="non-virtual"><scope>MultimediaManagerTest</scope><name>MultimediaManagerTest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

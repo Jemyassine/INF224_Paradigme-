@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="ccsocket_8h" kind="file" language="C++">
+    <compoundname>ccsocket.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includedby refid="ccsocket_8cpp" local="yes">CPP/ccsocket.cpp</includedby>
+    <includedby refid="client_8cpp" local="yes">CPP/client.cpp</includedby>
+    <includedby refid="tcpserver_8h" local="yes">CPP/tcpserver.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>CPP/ccsocket.h</label>
+        <link refid="ccsocket_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="3">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>CPP/ServerTools.h</label>
+        <link refid="_server_tools_8h_source"/>
+      </node>
+      <node id="1">
+        <label>CPP/ccsocket.h</label>
+        <link refid="ccsocket_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>CPP/tcpserver.h</label>
+        <link refid="tcpserver_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_socket" prot="public">Socket</innerclass>
+    <innerclass refid="class_server_socket" prot="public">ServerSocket</innerclass>
+    <innerclass refid="class_socket_buffer" prot="public">SocketBuffer</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="ccsocket_8h_1aff55fe551a9992a54ec54621c524d0a4" prot="public" static="no">
+        <name>SOCKET</name>
+        <initializer>int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="24" column="12" bodyfile="CPP/ccsocket.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1a964e73b2a42e87b1e20c8ffa730952a2" prot="public" static="no">
+        <name>SOCKADDR</name>
+        <initializer>struct sockaddr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="25" column="9" bodyfile="CPP/ccsocket.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1a91d11a5e66bd1e10b0e62aadb7775c9d" prot="public" static="no">
+        <name>SOCKADDR_IN</name>
+        <initializer>struct sockaddr_in</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="26" column="9" bodyfile="CPP/ccsocket.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1a26769957ec1a2beaf223f33b66ee64ab" prot="public" static="no">
+        <name>INVALID_SOCKET</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="27" column="9" bodyfile="CPP/ccsocket.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1a8bc56bf597ba32a5c8d828c75b4c9566" prot="public" static="no">
+        <name>SOCKSIZE</name>
+        <initializer>ssize_t</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="28" column="9" bodyfile="CPP/ccsocket.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1a3849e30868a59da338c76e51820877c1" prot="public" static="no">
+        <name>SOCKDATA</name>
+        <initializer>void</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="29" column="9" bodyfile="CPP/ccsocket.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccsocket_8h_1aca62ccba376682a3d25ca6f17a01d607" prot="public" static="no">
+        <name>NO_SIGPIPE_</name>
+        <param><defname>flags</defname></param>
+        <initializer>(flags)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ccsocket.h" line="36" column="12" bodyfile="CPP/ccsocket.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ccsocket:<sp/>C++<sp/>Classes<sp/>for<sp/>TCP/IP<sp/>and<sp/>UDP<sp/>Datagram<sp/>INET<sp/>Sockets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>(c)<sp/>Eric<sp/>Lecolinet<sp/>2016/2020<sp/>-<sp/>https://www.telecom-paris.fr/~elc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>-<sp/>Socket:<sp/>TCP/IP<sp/>or<sp/>UDP/Datagram<sp/>IPv4<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>-<sp/>ServerSocket:<sp/>TCP/IP<sp/>Socket<sp/>Server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>-<sp/>SocketBuffer:<sp/>preserves<sp/>record<sp/>boundaries<sp/>when<sp/>exchanging<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>between<sp/>TCP/IP<sp/>sockets.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ccuty_ccsocket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ccuty_ccsocket<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)<sp/>||<sp/>defined(_WIN64)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKSIZE<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKDATA<sp/>char</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKET<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKADDR<sp/>struct<sp/>sockaddr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKADDR_IN<sp/>struct<sp/>sockaddr_in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INVALID_SOCKET<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKSIZE<sp/>ssize_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKDATA<sp/>void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ignore<sp/>SIGPIPES<sp/>when<sp/>possible</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MSG_NOSIGNAL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>NO_SIGPIPE_(flags)<sp/>(flags<sp/>|<sp/>MSG_NOSIGNAL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>NO_SIGPIPE_(flags)<sp/>(flags)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_socket" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" kindref="member">Socket</ref><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52" refid="class_socket_1a9f68308228badcdd299cd83e62e36976" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a9f68308228badcdd299cd83e62e36976" kindref="member">Errors</ref><sp/>{<sp/>Failed<sp/>=<sp/>-1,<sp/>InvalidSocket<sp/>=<sp/>-2,<sp/>UnknownHost<sp/>=<sp/>-3<sp/>};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a1a662407744738aa56d1ccb6d7be26eb" kindref="member">startup</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanup();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" kindref="member">Socket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type<sp/>=<sp/>SOCK_STREAM);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" kindref="member">Socket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/>SOCKET<sp/>sockfd);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><ref refid="class_socket_1aeac4eb6379a543d38ed88977d3b6630a" kindref="member">~Socket</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a772419bd74c4fe4987d190506a64ff87" kindref="member">connect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1aff8a77c02a44937db59c8c8a057072d9" kindref="member">bind</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_socket_1acdffcdd08c888132e95da022e0710b1d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1acdffcdd08c888132e95da022e0710b1d" kindref="member">bind</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1aef06605c6725958004116983f1a2051f" kindref="member">close</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_socket_1af82b21921f44a5c210f8aaedc26ca1c3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_socket_1af82b21921f44a5c210f8aaedc26ca1c3" kindref="member">isClosed</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sockfd_<sp/>==<sp/>INVALID_SOCKET;<sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="class_socket_1a1f3bad4217fea24f81d39f57406a0ec8" refkind="member"><highlight class="normal"><sp/><sp/>SOCKET<sp/><ref refid="class_socket_1a1f3bad4217fea24f81d39f57406a0ec8" kindref="member">descriptor</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sockfd_;<sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a417b47af24de10184192de00d9112589" kindref="member">shutdownInput</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a650128aee2581e6695c6812d8afe14b5" kindref="member">shutdownOutput</ref>();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49" refkind="member"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49" kindref="member">send</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SOCKDATA*<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>::send(sockfd_,<sp/>buf,<sp/>len,<sp/>NO_SIGPIPE_(flags));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_socket_1a01b463d51433a10658854446bde71c40" refkind="member"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_1a01b463d51433a10658854446bde71c40" kindref="member">receive</ref>(SOCKDATA*<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>::recv(sockfd_,<sp/>buf,<sp/>len,<sp/>flags);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(_WIN32)<sp/>&amp;&amp;<sp/>!defined(_WIN64)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_socket_1aef5c4ba848f475f117b89bac531ac150" refkind="member"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_1aef5c4ba848f475f117b89bac531ac150" kindref="member">sendTo</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SOCKADDR<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>to,<sp/>socklen_t<sp/>addrlen)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>::sendto(sockfd_,<sp/>buf,<sp/>len,<sp/>NO_SIGPIPE_(flags),<sp/>to,<sp/>addrlen);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="class_socket_1aa19f1c03af97458c042880c6be638151" refkind="member"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_1aa19f1c03af97458c042880c6be638151" kindref="member">receiveFrom</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SOCKADDR*<sp/>from,<sp/>socklen_t*<sp/>addrlen)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>::recvfrom(sockfd_,<sp/>buf,<sp/>len,<sp/>flags,<sp/>from,<sp/>addrlen);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a06ff0dd6837c9f51948df655fc2713cd" kindref="member">setReceiveBufferSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1ab02b997fa7e251d596116e95c9ccaf97" kindref="member">setReuseAddress</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1afc49ad6cc259a0006ca13bb22fdd7383" kindref="member">setSendBufferSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a41cc1caae51e3e83e16ce2c20689ed03" kindref="member">setSoLinger</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linger);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99" kindref="member">setSoTimeout</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a7bc0110f3bedbb18f26b05ece01553fa" kindref="member">setTcpNoDelay</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="class_socket_1a53a0a6980058ce02034033b05f6ca389" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a53a0a6980058ce02034033b05f6ca389" kindref="member">getReceiveBufferSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="class_socket_1a440e7ee9303d454df0c51fe6125cd2af" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a440e7ee9303d454df0c51fe6125cd2af" kindref="member">getReuseAddress</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897" kindref="member">getSendBufferSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="class_socket_1ae3545855771edf076843e2e07fa7d3cd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_socket_1ae3545855771edf076843e2e07fa7d3cd" kindref="member">getSoLinger</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>linger)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="class_socket_1a38b17de459b22ab45db16e538b963c49" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a38b17de459b22ab45db16e538b963c49" kindref="member">getSoTimeout</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="class_socket_1a2539928ed0829df5070384f907ea48f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_socket_1a2539928ed0829df5070384f907ea48f7" kindref="member">getTcpNoDelay</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ServerSocket;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initializes<sp/>a<sp/>local<sp/>INET4<sp/>address,<sp/>returns<sp/>0<sp/>on<sp/>success,<sp/>-1<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setLocalAddress(SOCKADDR_IN&amp;<sp/>addr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initializes<sp/>a<sp/>remote<sp/>INET4<sp/>address,<sp/>returns<sp/>0<sp/>on<sp/>success,<sp/>-1<sp/>otherwise.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setAddress(SOCKADDR_IN&amp;<sp/>addr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>host,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>SOCKET<sp/>sockfd_{};</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><ref refid="class_socket_1acd3cb39bc957be2f34c91b9e262e1cec" kindref="member">Socket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_socket" kindref="compound">Socket</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><ref refid="class_socket" kindref="compound">Socket</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_socket" kindref="compound">Socket</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><ref refid="class_socket" kindref="compound">Socket</ref>&amp;<sp/>operator=(<ref refid="class_socket" kindref="compound">Socket</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="class_server_socket" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">~ServerSocket</ref>();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><ref refid="class_socket" kindref="compound">Socket</ref>*<sp/><ref refid="class_server_socket_1accc3d56d42aa50a5f3c920cf0b26959b" kindref="member">accept</ref>();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1ad5281fe6c005bca007a9a758bd612481" kindref="member">bind</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backlog<sp/>=<sp/>50);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1a3eac6d5571bb092622d328dbda2de2cf" kindref="member">close</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="class_server_socket_1aa1c00353c8f50697c8a4a8882e520286" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1aa1c00353c8f50697c8a4a8882e520286" kindref="member">isClosed</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sockfd_<sp/>==<sp/>INVALID_SOCKET;<sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="class_server_socket_1a42fb2ded476612b5f23c46abb74db9c2" refkind="member"><highlight class="normal"><sp/><sp/>SOCKET<sp/><ref refid="class_server_socket_1a42fb2ded476612b5f23c46abb74db9c2" kindref="member">descriptor</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sockfd_;<sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(_WIN32)<sp/>&amp;&amp;<sp/>!defined(_WIN64)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1ab34154bc6114c638ae02f5e018121099" kindref="member">setReceiveBufferSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1ae60d7cc31ad535e5d3cac42e38b8ec98" kindref="member">setReuseAddress</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1aedb9144c9c375fcb14ac47bcb9d2eb17" kindref="member">setSoTimeout</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1a9e5e1ee852ba26156c757a0086b780fe" kindref="member">setTcpNoDelay</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><ref refid="class_socket" kindref="compound">Socket</ref>*<sp/>createSocket(SOCKET);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>SOCKET<sp/>sockfd_{};<sp/><sp/></highlight><highlight class="comment">//<sp/>listening<sp/>socket.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>&amp;<sp/>operator=(<ref refid="class_server_socket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="class_socket_buffer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref><sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>(<ref refid="class_socket" kindref="compound">Socket</ref>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>inputSize<sp/>=<sp/>8192,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ouputSize<sp/>=<sp/>8192);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>(<ref refid="class_socket" kindref="compound">Socket</ref>&amp;,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>inputSize<sp/>=<sp/>8192,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ouputSize<sp/>=<sp/>8192);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">~SocketBuffer</ref>();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d" kindref="member">readLine</ref>(std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282" kindref="member">writeLine</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87" kindref="member">read</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>SOCKSIZE<sp/><ref refid="class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320" refid="class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_socket" kindref="compound">Socket</ref>*<sp/><ref refid="class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969" kindref="member">socket</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sock_;<sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16" kindref="member">setReadSeparator</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>separ);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readSeparator()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>insep_;<sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4" kindref="member">setWriteSeparator</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>separ);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>writeSeparator()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>outsep_;<sp/>}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>&amp;<sp/>operator=(<ref refid="class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38" kindref="member">SocketBuffer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>retrieveLine(std::string&amp;<sp/>str,<sp/>SOCKSIZE<sp/>received);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>insize_{},<sp/>outsize_{};</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>insep_{},<sp/>outsep_{};</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>Socket*<sp/>sock_{};</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">InputBuffer*<sp/>in_{};</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="CPP/ccsocket.h"/>
+  </compounddef>
+</doxygen>

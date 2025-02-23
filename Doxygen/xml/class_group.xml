@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_group" kind="class" language="C++" prot="public">
+    <compoundname>Group</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::list&lt; Multimedia * &gt;</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_group_1abfa8bde619513cf0768c14f2e5beeca1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Group::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>Group::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="16" column="17" bodyfile="CPP/Group.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_group_1a10fc62dd92115677976891017a943e00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Group::Group</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>Group</name>
+        <qualifiedname>Group::Group</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="20" column="5" bodyfile="CPP/Group.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_group_1aed00a22ff227ee2657ae44a5cbcedf7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Group::~Group</definition>
+        <argsstring>()</argsstring>
+        <name>~Group</name>
+        <qualifiedname>Group::~Group</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="23" column="13" bodyfile="CPP/Group.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_group_1a2441b4048116108fe8f65bdf71d02494" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Group::getName</definition>
+        <argsstring>() const</argsstring>
+        <name>getName</name>
+        <qualifiedname>Group::getName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="26" column="17" bodyfile="CPP/Group.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_group_1a661faafa833aa92388499c5f43d34dfa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::display</definition>
+        <argsstring>(std::ostream &amp;os) const</argsstring>
+        <name>display</name>
+        <qualifiedname>Group::display</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="29" column="10" bodyfile="CPP/Group.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_group_1ac1565b0b2f438f2619d8a5fd0a7a77a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Group::play</definition>
+        <argsstring>() const</argsstring>
+        <name>play</name>
+        <qualifiedname>Group::play</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Group.h" line="31" column="10" bodyfile="CPP/Group.cpp" bodystart="25" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Group</label>
+        <link refid="class_group"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::list&lt; Multimedia * &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Group</label>
+        <link refid="class_group"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::list&lt; Multimedia * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="CPP/Group.h" line="13" column="1" bodyfile="CPP/Group.h" bodystart="13" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_group_1a661faafa833aa92388499c5f43d34dfa" prot="public" virt="non-virtual"><scope>Group</scope><name>display</name></member>
+      <member refid="class_group_1a2441b4048116108fe8f65bdf71d02494" prot="public" virt="non-virtual"><scope>Group</scope><name>getName</name></member>
+      <member refid="class_group_1a10fc62dd92115677976891017a943e00" prot="public" virt="non-virtual"><scope>Group</scope><name>Group</name></member>
+      <member refid="class_group_1abfa8bde619513cf0768c14f2e5beeca1" prot="private" virt="non-virtual"><scope>Group</scope><name>name</name></member>
+      <member refid="class_group_1ac1565b0b2f438f2619d8a5fd0a7a77a2" prot="public" virt="non-virtual"><scope>Group</scope><name>play</name></member>
+      <member refid="class_group_1aed00a22ff227ee2657ae44a5cbcedf7c" prot="public" virt="virtual"><scope>Group</scope><name>~Group</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

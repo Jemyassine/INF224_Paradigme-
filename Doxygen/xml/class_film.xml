@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_film" kind="class" language="C++" prot="public">
+    <compoundname>Film</compoundname>
+    <basecompoundref refid="class_video" prot="public" virt="non-virtual">Video</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_film_1a2b5d60515dcf84e788136cc6cd4ea403" prot="private" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* Film::chapterDurations</definition>
+        <argsstring></argsstring>
+        <name>chapterDurations</name>
+        <qualifiedname>Film::chapterDurations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="8" column="9" bodyfile="CPP/Film.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_film_1acd94aec2eec811888558c43b5515b75c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Film::chapterCount</definition>
+        <argsstring></argsstring>
+        <name>chapterCount</name>
+        <qualifiedname>Film::chapterCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="9" column="9" bodyfile="CPP/Film.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_film_1af2835db2b0ef3a87aaa3222f4d9d1ae3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Film::Film</definition>
+        <argsstring>()</argsstring>
+        <name>Film</name>
+        <qualifiedname>Film::Film</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="12" column="5" bodyfile="CPP/Film.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a1c873d8e0e4b56ef4b5c4983671f4d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Film::Film</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;pathname, int duration, int *chapters=nullptr, int count=0)</argsstring>
+        <name>Film</name>
+        <qualifiedname>Film::Film</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pathname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>chapters</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="14" column="5" bodyfile="CPP/Film.cpp" bodystart="5" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a8dab653f8a6c0635ca5ddbe0bbdd9a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Film::~Film</definition>
+        <argsstring>()</argsstring>
+        <name>~Film</name>
+        <qualifiedname>Film::~Film</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="17" column="13" bodyfile="CPP/Film.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a023189ed17b7e112e6db9d6f7b767e69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Film::setChapters</definition>
+        <argsstring>(int *chapters, int count)</argsstring>
+        <name>setChapters</name>
+        <qualifiedname>Film::setChapters</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>chapters</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="20" column="10" bodyfile="CPP/Film.cpp" bodystart="49" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a7bdcc9cb81df92862f98b3b6b286ab4a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int *</type>
+        <definition>const int * Film::getChapters</definition>
+        <argsstring>() const</argsstring>
+        <name>getChapters</name>
+        <qualifiedname>Film::getChapters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="23" column="15" bodyfile="CPP/Film.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1ae2ce531d6e526ad89a52cc64a109f1a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int Film::getChapterCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getChapterCount</name>
+        <qualifiedname>Film::getChapterCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="26" column="15" bodyfile="CPP/Film.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a651777e681c98d0581a67e0fff55a879" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int Film::getChapterDuration</definition>
+        <argsstring>(int index) const</argsstring>
+        <name>getChapterDuration</name>
+        <qualifiedname>Film::getChapterDuration</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="29" column="15" bodyfile="CPP/Film.cpp" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1aa8595702a0c221bbd8c7bc6cb5c66d92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Film::displayChapters</definition>
+        <argsstring>() const</argsstring>
+        <name>displayChapters</name>
+        <qualifiedname>Film::displayChapters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="32" column="10" bodyfile="CPP/Film.cpp" bodystart="79" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a441f4fb605a7d46b906678c87040d707" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Film::display</definition>
+        <argsstring>(std::ostream &amp;os) const override</argsstring>
+        <name>display</name>
+        <qualifiedname>Film::display</qualifiedname>
+        <reimplements refid="class_multimedia_1af3d889bdbf9c04809f11195d7a17448e">display</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="35" column="10" bodyfile="CPP/Film.cpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a71002f3f02dd2e03d9059bfc86c17118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Film::Film</definition>
+        <argsstring>(const Film &amp;other)</argsstring>
+        <name>Film</name>
+        <qualifiedname>Film::Film</qualifiedname>
+        <param>
+          <type>const <ref refid="class_film" kindref="compound">Film</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="38" column="5" bodyfile="CPP/Film.cpp" bodystart="16" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a3162aa6c8d939fcd5afe49d47202cbf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_film" kindref="compound">Film</ref> &amp;</type>
+        <definition>Film &amp; Film::operator=</definition>
+        <argsstring>(const Film &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Film::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_film" kindref="compound">Film</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="41" column="10" bodyfile="CPP/Film.cpp" bodystart="26" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a64700dae3afe5511027b24c72d28888f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Film::write</definition>
+        <argsstring>(std::ofstream &amp;ofs) const override</argsstring>
+        <name>write</name>
+        <qualifiedname>Film::write</qualifiedname>
+        <reimplements refid="class_multimedia_1a866891c1ac5118d2c0d5c1ae12482d09">write</reimplements>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>ofs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="44" column="10" bodyfile="CPP/Film.cpp" bodystart="94" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1ac739dc43e2e83ec751274820e1a76a06" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Film::read</definition>
+        <argsstring>(std::ifstream &amp;ifs) override</argsstring>
+        <name>read</name>
+        <qualifiedname>Film::read</qualifiedname>
+        <reimplements refid="class_multimedia_1aabaabcf03f9b98c31b3dd9958d1be1aa">read</reimplements>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>ifs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="45" column="10" bodyfile="CPP/Film.cpp" bodystart="102" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_film_1a5d1cfd8484d03b7df2c430f8e37f1d08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Film::getClassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getClassName</name>
+        <qualifiedname>Film::getClassName</qualifiedname>
+        <reimplements refid="class_multimedia_1a142f01a2d7c1f55a4a32b53303bd692e">getClassName</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Film.h" line="48" column="17" bodyfile="CPP/Film.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Film</label>
+        <link refid="class_film"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Multimedia</label>
+        <link refid="class_multimedia"/>
+      </node>
+      <node id="2">
+        <label>Video</label>
+        <link refid="class_video"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Film</label>
+        <link refid="class_film"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Multimedia</label>
+        <link refid="class_multimedia"/>
+      </node>
+      <node id="2">
+        <label>Video</label>
+        <link refid="class_video"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="CPP/Film.h" line="6" column="1" bodyfile="CPP/Film.h" bodystart="6" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_film_1acd94aec2eec811888558c43b5515b75c" prot="private" virt="non-virtual"><scope>Film</scope><name>chapterCount</name></member>
+      <member refid="class_film_1a2b5d60515dcf84e788136cc6cd4ea403" prot="private" virt="non-virtual"><scope>Film</scope><name>chapterDurations</name></member>
+      <member refid="class_film_1a441f4fb605a7d46b906678c87040d707" prot="public" virt="virtual"><scope>Film</scope><name>display</name></member>
+      <member refid="class_film_1aa8595702a0c221bbd8c7bc6cb5c66d92" prot="public" virt="non-virtual"><scope>Film</scope><name>displayChapters</name></member>
+      <member refid="class_film_1af2835db2b0ef3a87aaa3222f4d9d1ae3" prot="public" virt="non-virtual"><scope>Film</scope><name>Film</name></member>
+      <member refid="class_film_1a1c873d8e0e4b56ef4b5c4983671f4d1d" prot="public" virt="non-virtual"><scope>Film</scope><name>Film</name></member>
+      <member refid="class_film_1a71002f3f02dd2e03d9059bfc86c17118" prot="public" virt="non-virtual"><scope>Film</scope><name>Film</name></member>
+      <member refid="class_film_1ae2ce531d6e526ad89a52cc64a109f1a4" prot="public" virt="non-virtual"><scope>Film</scope><name>getChapterCount</name></member>
+      <member refid="class_film_1a651777e681c98d0581a67e0fff55a879" prot="public" virt="non-virtual"><scope>Film</scope><name>getChapterDuration</name></member>
+      <member refid="class_film_1a7bdcc9cb81df92862f98b3b6b286ab4a" prot="public" virt="non-virtual"><scope>Film</scope><name>getChapters</name></member>
+      <member refid="class_film_1a5d1cfd8484d03b7df2c430f8e37f1d08" prot="public" virt="virtual"><scope>Film</scope><name>getClassName</name></member>
+      <member refid="class_video_1a57f903f1d582ac6ef88922c7a6cb8f7f" prot="public" virt="non-virtual"><scope>Film</scope><name>getDuration</name></member>
+      <member refid="class_multimedia_1ace0804f8019ed84df1f3c18eb28cf189" prot="public" virt="non-virtual"><scope>Film</scope><name>getName</name></member>
+      <member refid="class_multimedia_1a4b330c898974e8b62cc3220d6381bd7c" prot="public" virt="non-virtual"><scope>Film</scope><name>getPathname</name></member>
+      <member refid="class_multimedia_1a7106753d618df92d53b89328b7ecfe7f" prot="public" virt="non-virtual"><scope>Film</scope><name>Multimedia</name></member>
+      <member refid="class_multimedia_1a337b5ed495d27cd9d0319f90c898cf96" prot="public" virt="non-virtual"><scope>Film</scope><name>Multimedia</name></member>
+      <member refid="class_film_1a3162aa6c8d939fcd5afe49d47202cbf5" prot="public" virt="non-virtual"><scope>Film</scope><name>operator=</name></member>
+      <member refid="class_video_1a89e11497f4f200f387805b10bd42922d" prot="public" virt="virtual"><scope>Film</scope><name>play</name></member>
+      <member refid="class_film_1ac739dc43e2e83ec751274820e1a76a06" prot="public" virt="virtual"><scope>Film</scope><name>read</name></member>
+      <member refid="class_film_1a023189ed17b7e112e6db9d6f7b767e69" prot="public" virt="non-virtual"><scope>Film</scope><name>setChapters</name></member>
+      <member refid="class_video_1aca0f92f98c7b6377aaa23af1645b8172" prot="public" virt="non-virtual"><scope>Film</scope><name>setDuration</name></member>
+      <member refid="class_multimedia_1a7f76261a215bae20b9fafa18acb5ebd2" prot="public" virt="non-virtual"><scope>Film</scope><name>setName</name></member>
+      <member refid="class_multimedia_1a11bfaef1f1f5351b15d75fd2c2a92928" prot="public" virt="non-virtual"><scope>Film</scope><name>setPathname</name></member>
+      <member refid="class_video_1ab67336c2c5b6227a9635bc7dcd6af543" prot="public" virt="non-virtual"><scope>Film</scope><name>Video</name></member>
+      <member refid="class_video_1a35707f2f7f07e406a4c6bd1defe7c812" prot="public" virt="non-virtual"><scope>Film</scope><name>Video</name></member>
+      <member refid="class_film_1a64700dae3afe5511027b24c72d28888f" prot="public" virt="virtual"><scope>Film</scope><name>write</name></member>
+      <member refid="class_film_1a8dab653f8a6c0635ca5ddbe0bbdd9a25" prot="public" virt="virtual"><scope>Film</scope><name>~Film</name></member>
+      <member refid="class_multimedia_1ab280f9ce1d0a1291c9b1ab876e854c94" prot="public" virt="virtual"><scope>Film</scope><name>~Multimedia</name></member>
+      <member refid="class_video_1aebf7e2a8fa2bbd79335b1cf35925d190" prot="public" virt="virtual"><scope>Film</scope><name>~Video</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

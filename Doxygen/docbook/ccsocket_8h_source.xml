@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ccsocket_8h_source" xml:lang="en-US">
+<title>ccsocket.h</title>
+<indexterm><primary>CPP/ccsocket.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//</emphasis>
+2 <emphasis role="comment">//&#32;&#32;ccsocket:&#32;C++&#32;Classes&#32;for&#32;TCP/IP&#32;and&#32;UDP&#32;Datagram&#32;INET&#32;Sockets.</emphasis>
+3 <emphasis role="comment">//&#32;&#32;(c)&#32;Eric&#32;Lecolinet&#32;2016/2020&#32;-&#32;https://www.telecom-paris.fr/~elc</emphasis>
+4 <emphasis role="comment">//</emphasis>
+5 <emphasis role="comment">//&#32;&#32;-&#32;Socket:&#32;TCP/IP&#32;or&#32;UDP/Datagram&#32;IPv4&#32;socket</emphasis>
+6 <emphasis role="comment">//&#32;&#32;-&#32;ServerSocket:&#32;TCP/IP&#32;Socket&#32;Server</emphasis>
+7 <emphasis role="comment">//&#32;&#32;-&#32;SocketBuffer:&#32;preserves&#32;record&#32;boundaries&#32;when&#32;exchanging&#32;data</emphasis>
+8 <emphasis role="comment">//&#32;&#32;&#32;between&#32;TCP/IP&#32;sockets.</emphasis>
+9 <emphasis role="comment">//</emphasis>
+10 
+11 <emphasis role="preprocessor">#ifndef&#32;ccuty_ccsocket</emphasis>
+12 <emphasis role="preprocessor">#define&#32;ccuty_ccsocket&#32;1</emphasis>
+13 
+14 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+15 
+16 <emphasis role="preprocessor">#if&#32;defined(_WIN32)&#32;||&#32;defined(_WIN64)</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;winsock2.h&gt;</emphasis>
+18 <emphasis role="preprocessor">#define&#32;SOCKSIZE&#32;int</emphasis>
+19 <emphasis role="preprocessor">#define&#32;SOCKDATA&#32;char</emphasis>
+20 
+21 <emphasis role="preprocessor">#else</emphasis>
+22 <emphasis role="preprocessor">#include&#32;&lt;sys/types.h&gt;</emphasis>
+23 <emphasis role="preprocessor">#include&#32;&lt;sys/socket.h&gt;</emphasis>
+24 <emphasis role="preprocessor">#define&#32;SOCKET&#32;int</emphasis>
+25 <emphasis role="preprocessor">#define&#32;SOCKADDR&#32;struct&#32;sockaddr</emphasis>
+26 <emphasis role="preprocessor">#define&#32;SOCKADDR_IN&#32;struct&#32;sockaddr_in</emphasis>
+27 <emphasis role="preprocessor">#define&#32;INVALID_SOCKET&#32;-1</emphasis>
+28 <emphasis role="preprocessor">#define&#32;SOCKSIZE&#32;ssize_t</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SOCKDATA&#32;void</emphasis>
+30 <emphasis role="preprocessor">#endif</emphasis>
+31 
+32 <emphasis role="comment">//&#32;ignore&#32;SIGPIPES&#32;when&#32;possible</emphasis>
+33 <emphasis role="preprocessor">#if&#32;defined(MSG_NOSIGNAL)</emphasis>
+34 <emphasis role="preprocessor">#&#32;&#32;define&#32;NO_SIGPIPE_(flags)&#32;(flags&#32;|&#32;MSG_NOSIGNAL)</emphasis>
+35 <emphasis role="preprocessor">#else</emphasis>
+36 <emphasis role="preprocessor">#&#32;&#32;define&#32;NO_SIGPIPE_(flags)&#32;(flags)</emphasis>
+37 <emphasis role="preprocessor">#endif</emphasis>
+38 
+46 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec">Socket</link>&#32;{
+47 <emphasis role="keyword">public</emphasis>:
+52 &#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Errors</link>&#32;{&#32;Failed&#32;=&#32;-1,&#32;InvalidSocket&#32;=&#32;-2,&#32;UnknownHost&#32;=&#32;-3&#32;};
+53 
+57 &#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_socket_1a1a662407744738aa56d1ccb6d7be26eb">startup</link>();
+58 &#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;cleanup();
+60 
+65 &#32;&#32;<link linkend="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec">Socket</link>(<emphasis role="keywordtype">int</emphasis>&#32;type&#32;=&#32;SOCK_STREAM);
+66 
+68 &#32;&#32;<link linkend="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec">Socket</link>(<emphasis role="keywordtype">int</emphasis>&#32;type,&#32;SOCKET&#32;sockfd);
+69 
+71 &#32;&#32;<link linkend="_class_socket_1aeac4eb6379a543d38ed88977d3b6630a">~Socket</link>();
+72 
+77 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a772419bd74c4fe4987d190506a64ff87">connect</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;host,&#32;<emphasis role="keywordtype">int</emphasis>&#32;port);
+78 
+81 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1aff8a77c02a44937db59c8c8a057072d9">bind</link>(<emphasis role="keywordtype">int</emphasis>&#32;port);
+82 
+86 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1acdffcdd08c888132e95da022e0710b1d">bind</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;host,&#32;<emphasis role="keywordtype">int</emphasis>&#32;port);
+87 
+89 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1aef06605c6725958004116983f1a2051f">close</link>();
+90 
+92 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_socket_1af82b21921f44a5c210f8aaedc26ca1c3">isClosed</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sockfd_&#32;==&#32;INVALID_SOCKET;&#32;}
+93 
+95 &#32;&#32;SOCKET&#32;<link linkend="_class_socket_1a1f3bad4217fea24f81d39f57406a0ec8">descriptor</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sockfd_;&#32;}
+96 
+98 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_socket_1a417b47af24de10184192de00d9112589">shutdownInput</link>();
+99 
+101 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_socket_1a650128aee2581e6695c6812d8afe14b5">shutdownOutput</link>();
+102 
+108 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_1aadd260f15afadf0c31fa3dcf88d0ea49">send</link>(<emphasis role="keyword">const</emphasis>&#32;SOCKDATA*&#32;buf,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len,&#32;<emphasis role="keywordtype">int</emphasis>&#32;flags&#32;=&#32;0)&#32;{
+109 &#32;&#32;&#32;&#32;return&#32;::send(sockfd_,&#32;buf,&#32;len,&#32;NO_SIGPIPE_(flags));
+110 &#32;&#32;}
+111 
+117 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_1a01b463d51433a10658854446bde71c40">receive</link>(SOCKDATA*&#32;buf,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len,&#32;<emphasis role="keywordtype">int</emphasis>&#32;flags&#32;=&#32;0)&#32;{
+118 &#32;&#32;&#32;&#32;return&#32;::recv(sockfd_,&#32;buf,&#32;len,&#32;flags);
+119 &#32;&#32;}
+120 
+121 <emphasis role="preprocessor">#if&#32;!defined(_WIN32)&#32;&amp;&amp;&#32;!defined(_WIN64)</emphasis>
+122 
+124 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_1aef5c4ba848f475f117b89bac531ac150">sendTo</link>(<emphasis role="keywordtype">void</emphasis>&#32;<emphasis role="keyword">const</emphasis>*&#32;buf,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len,&#32;<emphasis role="keywordtype">int</emphasis>&#32;flags,
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SOCKADDR&#32;<emphasis role="keyword">const</emphasis>*&#32;to,&#32;socklen_t&#32;addrlen)&#32;{
+126 &#32;&#32;&#32;&#32;return&#32;::sendto(sockfd_,&#32;buf,&#32;len,&#32;NO_SIGPIPE_(flags),&#32;to,&#32;addrlen);
+127 &#32;&#32;}
+128 
+130 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_1aa19f1c03af97458c042880c6be638151">receiveFrom</link>(<emphasis role="keywordtype">void</emphasis>*&#32;buf,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len,&#32;<emphasis role="keywordtype">int</emphasis>&#32;flags,
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SOCKADDR*&#32;from,&#32;socklen_t*&#32;addrlen)&#32;{
+132 &#32;&#32;&#32;&#32;return&#32;::recvfrom(sockfd_,&#32;buf,&#32;len,&#32;flags,&#32;from,&#32;addrlen);
+133 &#32;&#32;}
+134 
+136 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a06ff0dd6837c9f51948df655fc2713cd">setReceiveBufferSize</link>(<emphasis role="keywordtype">int</emphasis>&#32;size);
+137 
+139 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1ab02b997fa7e251d596116e95c9ccaf97">setReuseAddress</link>(<emphasis role="keywordtype">bool</emphasis>);
+140 
+142 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1afc49ad6cc259a0006ca13bb22fdd7383">setSendBufferSize</link>(<emphasis role="keywordtype">int</emphasis>&#32;size);
+143 
+145 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a41cc1caae51e3e83e16ce2c20689ed03">setSoLinger</link>(<emphasis role="keywordtype">bool</emphasis>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;linger);
+146 
+148 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1ad65a22ec40902e2c0a98c5d4ac885f99">setSoTimeout</link>(<emphasis role="keywordtype">int</emphasis>&#32;timeout);
+149 
+151 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a7bc0110f3bedbb18f26b05ece01553fa">setTcpNoDelay</link>(<emphasis role="keywordtype">bool</emphasis>);
+152 
+154 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a53a0a6980058ce02034033b05f6ca389">getReceiveBufferSize</link>()&#32;<emphasis role="keyword">const</emphasis>;
+155 
+157 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_socket_1a440e7ee9303d454df0c51fe6125cd2af">getReuseAddress</link>()&#32;<emphasis role="keyword">const</emphasis>;
+158 
+160 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1acb2d3979ff562c2ffd60b12a1b4c9897">getSendBufferSize</link>()&#32;<emphasis role="keyword">const</emphasis>;
+161 
+163 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_socket_1ae3545855771edf076843e2e07fa7d3cd">getSoLinger</link>(<emphasis role="keywordtype">int</emphasis>&amp;&#32;linger)&#32;<emphasis role="keyword">const</emphasis>;
+164 
+166 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_socket_1a38b17de459b22ab45db16e538b963c49">getSoTimeout</link>()&#32;<emphasis role="keyword">const</emphasis>;
+167 
+169 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_socket_1a2539928ed0829df5070384f907ea48f7">getTcpNoDelay</link>()&#32;<emphasis role="keyword">const</emphasis>;
+170 
+171 <emphasis role="preprocessor">#endif</emphasis>
+172 
+173 <emphasis role="keyword">private</emphasis>:
+174 &#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis>ServerSocket;
+175 
+176 &#32;&#32;<emphasis role="comment">//&#32;Initializes&#32;a&#32;local&#32;INET4&#32;address,&#32;returns&#32;0&#32;on&#32;success,&#32;-1&#32;otherwise.</emphasis>
+177 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;setLocalAddress(SOCKADDR_IN&amp;&#32;addr,&#32;<emphasis role="keywordtype">int</emphasis>&#32;port);
+178 &#32;&#32;<emphasis role="comment">//&#32;Initializes&#32;a&#32;remote&#32;INET4&#32;address,&#32;returns&#32;0&#32;on&#32;success,&#32;-1&#32;otherwise.</emphasis>
+179 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;setAddress(SOCKADDR_IN&amp;&#32;addr,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;host,&#32;<emphasis role="keywordtype">int</emphasis>&#32;port);
+180 
+181 &#32;&#32;SOCKET&#32;sockfd_{};
+182 &#32;&#32;<link linkend="_class_socket_1acd3cb39bc957be2f34c91b9e262e1cec">Socket</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_socket">Socket</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+183 &#32;&#32;<link linkend="_class_socket">Socket</link>&amp;&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_socket">Socket</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+184 &#32;&#32;<link linkend="_class_socket">Socket</link>&amp;&#32;operator=(<link linkend="_class_socket">Socket</link>&amp;&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+185 };
+186 
+187 
+188 
+192 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&#32;{
+193 <emphasis role="keyword">public</emphasis>:
+195 &#32;&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>();
+196 
+197 &#32;&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">~ServerSocket</link>();
+198 
+202 &#32;&#32;<link linkend="_class_socket">Socket</link>*&#32;<link linkend="_class_server_socket_1accc3d56d42aa50a5f3c920cf0b26959b">accept</link>();
+203 
+206 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_server_socket_1ad5281fe6c005bca007a9a758bd612481">bind</link>(<emphasis role="keywordtype">int</emphasis>&#32;port,&#32;<emphasis role="keywordtype">int</emphasis>&#32;backlog&#32;=&#32;50);
+207 
+209 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_server_socket_1a3eac6d5571bb092622d328dbda2de2cf">close</link>();
+210 
+212 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_server_socket_1aa1c00353c8f50697c8a4a8882e520286">isClosed</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sockfd_&#32;==&#32;INVALID_SOCKET;&#32;}
+213 
+215 &#32;&#32;SOCKET&#32;<link linkend="_class_server_socket_1a42fb2ded476612b5f23c46abb74db9c2">descriptor</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sockfd_;&#32;}
+216 
+217 <emphasis role="preprocessor">#if&#32;!defined(_WIN32)&#32;&amp;&amp;&#32;!defined(_WIN64)</emphasis>
+218 
+220 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_server_socket_1ab34154bc6114c638ae02f5e018121099">setReceiveBufferSize</link>(<emphasis role="keywordtype">int</emphasis>&#32;size);
+221 
+223 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_server_socket_1ae60d7cc31ad535e5d3cac42e38b8ec98">setReuseAddress</link>(<emphasis role="keywordtype">bool</emphasis>);
+224 
+226 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;<link linkend="_class_server_socket_1aedb9144c9c375fcb14ac47bcb9d2eb17">setSoTimeout</link>(<emphasis role="keywordtype">int</emphasis>&#32;timeout);
+227 
+229 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_server_socket_1a9e5e1ee852ba26156c757a0086b780fe">setTcpNoDelay</link>(<emphasis role="keywordtype">bool</emphasis>);
+230 
+231 <emphasis role="preprocessor">#endif</emphasis>
+232 
+233 <emphasis role="keyword">private</emphasis>:
+234 &#32;&#32;<link linkend="_class_socket">Socket</link>*&#32;createSocket(SOCKET);
+235 &#32;&#32;SOCKET&#32;sockfd_{};&#32;&#32;<emphasis role="comment">//&#32;listening&#32;socket.</emphasis>
+236 &#32;&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+237 &#32;&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&amp;&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+238 &#32;&#32;<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&amp;&#32;operator=(<link linkend="_class_server_socket_1a2b3098589541243241ca25495155186c">ServerSocket</link>&amp;&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+239 };
+240 
+241 
+276 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&#32;{
+277 <emphasis role="keyword">public</emphasis>:
+283 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>(<link linkend="_class_socket">Socket</link>*,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;inputSize&#32;=&#32;8192,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;ouputSize&#32;=&#32;8192);
+284 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>(<link linkend="_class_socket">Socket</link>&amp;,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;inputSize&#32;=&#32;8192,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;ouputSize&#32;=&#32;8192);
+286 
+287 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">~SocketBuffer</link>();
+288 
+300 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine</link>(std::string&amp;&#32;message);
+301 
+309 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;message);
+310 
+313 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87">read</link>(<emphasis role="keywordtype">char</emphasis>*&#32;buffer,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len);
+314 
+317 &#32;&#32;SOCKSIZE&#32;<link linkend="_class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3">write</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;str,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;len);
+318 
+320 &#32;&#32;<link linkend="_class_socket">Socket</link>*&#32;<link linkend="_class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969">socket</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sock_;&#32;}
+321 
+327 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16">setReadSeparator</link>(<emphasis role="keywordtype">int</emphasis>&#32;separ);
+328 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;readSeparator()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;insep_;&#32;}
+329 &#32;&#32;<emphasis role="comment">//&#32;@}</emphasis>
+330 
+336 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4">setWriteSeparator</link>(<emphasis role="keywordtype">int</emphasis>&#32;separ);
+337 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;writeSeparator()<emphasis role="keyword">&#32;const&#32;</emphasis>{&#32;<emphasis role="keywordflow">return</emphasis>&#32;outsep_;&#32;}
+338 &#32;&#32;<emphasis role="comment">//&#32;@}</emphasis>
+339 
+340 <emphasis role="keyword">private</emphasis>:
+341 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+342 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&amp;&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+343 &#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&amp;&#32;operator=(<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&amp;&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+344 
+345 <emphasis role="keyword">protected</emphasis>:
+346 &#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;retrieveLine(std::string&amp;&#32;str,&#32;SOCKSIZE&#32;received);
+347 &#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;insize_{},&#32;outsize_{};
+348 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;insep_{},&#32;outsep_{};
+349 &#32;&#32;Socket*&#32;sock_{};
+350 &#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>InputBuffer*&#32;in_{};
+351 };
+352 
+353 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

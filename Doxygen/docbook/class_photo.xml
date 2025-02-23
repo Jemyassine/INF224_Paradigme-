@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_photo" xml:lang="en-US">
+<title>Photo Class Reference</title>
+<indexterm><primary>Photo</primary></indexterm>
+<para>Inheritance diagram for Photo:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_photo.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_photo_1afcd8b98f13007d1b2a235294d79ee099"/><emphasis role="strong">Photo</emphasis> (const std::string &amp;name, const std::string &amp;pathname, double latitude, double longitude)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_photo_1a8bfc54f6bb210e3fcbd7b5c501e38053">display</link> (std::ostream &amp;os) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_photo_1a98b55224b5f9bd016cb08aa2e9a64e46">play</link> () const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_photo_1ab86310b55a9c963863d2984087487ac5">write</link> (std::ofstream &amp;ofs) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_photo_1a15d767ea069022f368e53ccb85c2af54">read</link> (std::ifstream &amp;ifs) override</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_photo_1a2199b058723d50a474a03f4a937ff83e">getClassName</link> () const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_multimedia">Multimedia</link>        <itemizedlist>
+            <listitem><para><emphasis role="strong">Multimedia</emphasis> (std::string name, std::string pathname)</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getName</emphasis> () const</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getPathname</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setName</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setPathname</emphasis> (const std::string &amp;pathname)</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_photo_1a8bfc54f6bb210e3fcbd7b5c501e38053"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>Photo</secondary></indexterm>
+<indexterm><primary>Photo</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void Photo::display (std::ostream &amp; os) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_photo_1a2199b058723d50a474a03f4a937ff83e"/><section>
+    <title>getClassName()</title>
+<indexterm><primary>getClassName</primary><secondary>Photo</secondary></indexterm>
+<indexterm><primary>Photo</primary><secondary>getClassName</secondary></indexterm>
+<para><computeroutput>std::string Photo::getClassName ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_photo_1a98b55224b5f9bd016cb08aa2e9a64e46"/><section>
+    <title>play()</title>
+<indexterm><primary>play</primary><secondary>Photo</secondary></indexterm>
+<indexterm><primary>Photo</primary><secondary>play</secondary></indexterm>
+<para><computeroutput>void Photo::play ( ) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_photo_1a15d767ea069022f368e53ccb85c2af54"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>Photo</secondary></indexterm>
+<indexterm><primary>Photo</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>void Photo::read (std::ifstream &amp; ifs)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_photo_1ab86310b55a9c963863d2984087487ac5"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>Photo</secondary></indexterm>
+<indexterm><primary>Photo</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void Photo::write (std::ofstream &amp; ofs) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/Photo.hCPP/Photo.cpp</section>
+</section>

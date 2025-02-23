@@ -1,0 +1,57 @@
+\doxysection{Film.\+h}
+\hypertarget{_film_8h_source}{}\label{_film_8h_source}\index{CPP/Film.h@{CPP/Film.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FILM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FILM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Video.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }Film\ :\ \textcolor{keyword}{public}\ Video\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}*\ chapterDurations;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ chapterCount;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ Film()\ :\ Video::Video(),\ chapterDurations(\textcolor{keyword}{nullptr}),\ chapterCount(0)\{\};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00014\ \ \ \ \ Film(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ pathname,\ \textcolor{keywordtype}{int}\ duration,\ \textcolor{keywordtype}{int}*\ chapters\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ count\ =\ 0);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Film();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Modifier\ to\ set\ chapter\ durations}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ setChapters(\textcolor{keywordtype}{int}*\ chapters,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Accessor\ to\ get\ chapter\ durations}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ getChapters()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Accessor\ to\ get\ chapter\ count}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ getChapterCount()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Accessor\ to\ get\ the\ duration\ of\ a\ specific\ chapter}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ getChapterDuration(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ display\ chapter\ durations}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ displayChapters()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Overriding\ the\ display\ method\ from\ Video\ class}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ display(std::ostream\&\ os)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Copy\ constructor}}
+\DoxyCodeLine{00038\ \ \ \ \ Film(\textcolor{keyword}{const}\ Film\&\ other);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Copy\ assignment\ operator}}
+\DoxyCodeLine{00041\ \ \ \ \ Film\&\ operator=(\textcolor{keyword}{const}\ Film\&\ other);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Serialization}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ write(std::ofstream\&\ ofs)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ read(std::ifstream\&\ ifs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Factory\ method}}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ getClassName()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Film"{}};\ \}}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__server_tools_8h_source" xml:lang="en-US">
+<title>ServerTools.h</title>
+<indexterm><primary>CPP/ServerTools.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;SERVERTOOLS_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;SERVERTOOLS_H&#32;</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;sstream&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;algorithm&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&quot;tcpserver.h&quot;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&quot;MultimediaManager.h&quot;</emphasis>
+11 
+12 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_server_tools">ServerTools</link>&#32;{
+13 <emphasis role="keyword">public</emphasis>:
+14 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Splits&#32;the&#32;input&#32;string&#32;&apos;name&apos;&#32;into&#32;words&#32;and&#32;stores&#32;them&#32;in&#32;the&#32;array&#32;&apos;parameters&apos;.</emphasis>
+15 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Returns&#32;the&#32;number&#32;of&#32;words&#32;extracted.</emphasis>
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;a&#32;double&#32;space&#32;(&quot;&#32;&#32;&quot;)&#32;is&#32;found,&#32;returns&#32;1&#32;immediately.</emphasis>
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;getWords(std::string&#32;parameters[],&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name)
+18 &#32;&#32;&#32;&#32;{
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(name.find(<emphasis role="stringliteral">&quot;&#32;&#32;&quot;</emphasis>)&#32;!=&#32;std::string::npos)&#32;<emphasis role="comment">//&#32;check&#32;for&#32;double&#32;spaces</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+21 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;word;&#32;<emphasis role="comment">//&#32;temporary&#32;storage&#32;for&#32;each&#32;word</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::stringstream&#32;iss(name);&#32;<emphasis role="comment">//&#32;use&#32;stringstream&#32;to&#32;parse&#32;words</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;<emphasis role="comment">//&#32;word&#32;counter</emphasis>
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;word)&#32;<emphasis role="comment">//&#32;while&#32;there&#32;are&#32;words&#32;in&#32;the&#32;stream</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;parameters[i++]&#32;=&#32;word;&#32;<emphasis role="comment">//&#32;store&#32;each&#32;word&#32;and&#32;increment&#32;counter</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;i;
+28 &#32;&#32;&#32;&#32;}
+29 
+30 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Processes&#32;a&#32;protocol&#32;request&#32;string&#32;and&#32;interacts&#32;with&#32;the&#32;MultimediaManager.</emphasis>
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Returns&#32;a&#32;response&#32;string&#32;that&#32;is&#32;sent&#32;back&#32;to&#32;the&#32;client.</emphasis>
+32 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;std::string&#32;protocolDealer(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;request,&#32;<link linkend="_class_multimedia_manager">MultimediaManager</link>&#32;&amp;&#32;manager)
+33 {
+34 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&#32;codeEndLine&#32;=&#32;<emphasis role="stringliteral">&quot;ç;1&quot;</emphasis>;
+35 &#32;&#32;&#32;&#32;std::ostringstream&#32;oss;&#32;
+36 
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(request&#32;==&#32;<emphasis role="stringliteral">&quot;lGrp&quot;</emphasis>)&#32;{&#32;&#32;
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.listALLGroups(oss);
+39 &#32;&#32;&#32;&#32;}
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(request&#32;==&#32;<emphasis role="stringliteral">&quot;lMlt&quot;</emphasis>)&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.listAllMultimedias(oss);
+42 &#32;&#32;&#32;&#32;}
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Assume&#32;the&#32;request&#32;has&#32;a&#32;command&#32;and&#32;an&#32;argument.</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(request.length()&#32;&lt;&#32;5)
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Invalid&#32;request&#32;format&quot;</emphasis>&#32;+&#32;codeEndLine;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;command&#32;=&#32;request.substr(0,&#32;4);
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;stringSize&#32;=&#32;request.length()&#32;-&#32;5;&#32;<emphasis role="comment">//&#32;4&#32;chars&#32;for&#32;command&#32;and&#32;1&#32;for&#32;space</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;name&#32;=&#32;request.substr(5,&#32;stringSize);
+51 
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command.substr(0,&#32;3)&#32;==&#32;<emphasis role="stringliteral">&quot;add&quot;</emphasis>)&#32;{
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;width&#32;=&#32;0;
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;addV&quot;</emphasis>)
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;width&#32;=&#32;3;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;addP&quot;</emphasis>)
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;width&#32;=&#32;4;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Unknown&#32;add&#32;command&quot;</emphasis>&#32;+&#32;codeEndLine;
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;parameters[10];&#32;&#32;<emphasis role="comment">//&#32;fixed&#32;size&#32;array</emphasis>
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;count&#32;=&#32;getWords(parameters,&#32;name);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;&lt;&#32;width)
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Make&#32;sure&#32;the&#32;form&#32;is&#32;complete&#32;before&#32;trying&#32;again.&quot;</emphasis>&#32;+&#32;codeEndLine;
+65 
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(width&#32;==&#32;3)
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.createVideo(parameters[0],&#32;parameters[1],&#32;std::stoi(parameters[2]));
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.createPhoto(parameters[0],&#32;parameters[1],&#32;std::stoi(parameters[2]),&#32;std::stoi(parameters[3]));
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::invalid_argument&#32;&amp;e)&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Bad&#32;input:&#32;invalid&#32;argument&quot;</emphasis>&#32;+&#32;codeEndLine;
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::out_of_range&#32;&amp;e)&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Integer&#32;overflow:&#32;out&#32;of&#32;range&quot;</emphasis>&#32;+&#32;codeEndLine;
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;adding&#32;&quot;</emphasis>&#32;+&#32;parameters[0]&#32;+&#32;codeEndLine;
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(stringSize&#32;&gt;&#32;0)&#32;{
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;play&quot;</emphasis>)&#32;{
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.playMultimedia(name);
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;playing&#32;&quot;</emphasis>&#32;+&#32;name&#32;+&#32;codeEndLine;
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;find&quot;</emphasis>)&#32;{
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::ostringstream&#32;ossFind;
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.displayMultimedia(name,&#32;ossFind);
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ossFind.str()&#32;+&#32;codeEndLine;
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;remv&quot;</emphasis>)&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;manager.removeMultimedia(name);
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;removing&#32;&quot;</emphasis>&#32;+&#32;name&#32;+&#32;codeEndLine;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;command&#32;not&#32;found&quot;</emphasis>&#32;+&#32;codeEndLine;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;Please,&#32;provide&#32;a&#32;name!&quot;</emphasis>&#32;+&#32;codeEndLine;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+103 &#32;&#32;&#32;&#32;}
+104 
+105 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;complete&#32;response&#32;from&#32;the&#32;stream.</emphasis>
+106 &#32;&#32;&#32;&#32;std::string&#32;response&#32;=&#32;oss.str();
+107 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Replace&#32;newline&#32;and&#32;carriage&#32;return&#32;characters&#32;with&#32;a&#32;space&#32;(or&#32;any&#32;character&#32;that&#32;does&#32;not&#32;interfere)</emphasis>
+108 &#32;&#32;&#32;&#32;std::replace(response.begin(),&#32;response.end(),&#32;<emphasis role="charliteral">&apos;\n&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>);
+109 &#32;&#32;&#32;&#32;std::replace(response.begin(),&#32;response.end(),&#32;<emphasis role="charliteral">&apos;\r&apos;</emphasis>,&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>);
+110 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Append&#32;your&#32;custom&#32;end-of-message&#32;code.</emphasis>
+111 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;response&#32;+&#32;codeEndLine;
+112 }
+113 
+114 };
+115 
+116 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

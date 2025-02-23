@@ -1,0 +1,122 @@
+\doxysection{Server\+Tools.\+h}
+\hypertarget{_server_tools_8h_source}{}\label{_server_tools_8h_source}\index{CPP/ServerTools.h@{CPP/ServerTools.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVERTOOLS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVERTOOLS\_H\ }}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}tcpserver.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}MultimediaManager.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_server_tools}{ServerTools}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Splits\ the\ input\ string\ 'name'\ into\ words\ and\ stores\ them\ in\ the\ array\ 'parameters'.}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ number\ of\ words\ extracted.}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ If\ a\ double\ space\ ("{}\ \ "{})\ is\ found,\ returns\ 1\ immediately.}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getWords(std::string\ parameters[],\ \textcolor{keyword}{const}\ std::string\&\ name)}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name.find(\textcolor{stringliteral}{"{}\ \ "{}})\ !=\ std::string::npos)\ \textcolor{comment}{//\ check\ for\ double\ spaces}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ word;\ \textcolor{comment}{//\ temporary\ storage\ for\ each\ word}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::stringstream\ iss(name);\ \textcolor{comment}{//\ use\ stringstream\ to\ parse\ words}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;\ \textcolor{comment}{//\ word\ counter}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ word)\ \textcolor{comment}{//\ while\ there\ are\ words\ in\ the\ stream}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ parameters[i++]\ =\ word;\ \textcolor{comment}{//\ store\ each\ word\ and\ increment\ counter}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Processes\ a\ protocol\ request\ string\ and\ interacts\ with\ the\ MultimediaManager.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Returns\ a\ response\ string\ that\ is\ sent\ back\ to\ the\ client.}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ protocolDealer(\textcolor{keyword}{const}\ std::string\&\ request,\ \mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}}\ \&\ manager)}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ codeEndLine\ =\ \textcolor{stringliteral}{"{}ç;1"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ std::ostringstream\ oss;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (request\ ==\ \textcolor{stringliteral}{"{}lGrp"{}})\ \{\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ manager.listALLGroups(oss);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (request\ ==\ \textcolor{stringliteral}{"{}lMlt"{}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ manager.listAllMultimedias(oss);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assume\ the\ request\ has\ a\ command\ and\ an\ argument.}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.length()\ <\ 5)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Invalid\ request\ format"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::string\ command\ =\ request.substr(0,\ 4);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stringSize\ =\ request.length()\ -\/\ 5;\ \textcolor{comment}{//\ 4\ chars\ for\ command\ and\ 1\ for\ space}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ name\ =\ request.substr(5,\ stringSize);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command.substr(0,\ 3)\ ==\ \textcolor{stringliteral}{"{}add"{}})\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}addV"{}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ 3;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}addP"{}})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ 4;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown\ add\ command"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ parameters[10];\ \ \textcolor{comment}{//\ fixed\ size\ array}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ getWords(parameters,\ name);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <\ width)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Make\ sure\ the\ form\ is\ complete\ before\ trying\ again."{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (width\ ==\ 3)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ manager.createVideo(parameters[0],\ parameters[1],\ std::stoi(parameters[2]));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ manager.createPhoto(parameters[0],\ parameters[1],\ std::stoi(parameters[2]),\ std::stoi(parameters[3]));}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad\ input:\ invalid\ argument"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::out\_of\_range\ \&e)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Integer\ overflow:\ out\ of\ range"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}adding\ "{}}\ +\ parameters[0]\ +\ codeEndLine;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stringSize\ >\ 0)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}play"{}})\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ manager.playMultimedia(name);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}playing\ "{}}\ +\ name\ +\ codeEndLine;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}find"{}})\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ ossFind;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ manager.displayMultimedia(name,\ ossFind);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ossFind.str()\ +\ codeEndLine;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}remv"{}})\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ manager.removeMultimedia(name);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}removing\ "{}}\ +\ name\ +\ codeEndLine;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}command\ not\ found"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Please,\ provide\ a\ name!"{}}\ +\ codeEndLine;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ complete\ response\ from\ the\ stream.}}
+\DoxyCodeLine{00106\ \ \ \ \ std::string\ response\ =\ oss.str();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Replace\ newline\ and\ carriage\ return\ characters\ with\ a\ space\ (or\ any\ character\ that\ does\ not\ interfere)}}
+\DoxyCodeLine{00108\ \ \ \ \ std::replace(response.begin(),\ response.end(),\ \textcolor{charliteral}{'\(\backslash\)n'},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00109\ \ \ \ \ std::replace(response.begin(),\ response.end(),\ \textcolor{charliteral}{'\(\backslash\)r'},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ Append\ your\ custom\ end-\/of-\/message\ code.}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ response\ +\ codeEndLine;}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

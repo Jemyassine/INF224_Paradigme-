@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_video" kind="class" language="C++" prot="public">
+    <compoundname>Video</compoundname>
+    <basecompoundref refid="class_multimedia" prot="public" virt="non-virtual">Multimedia</basecompoundref>
+    <derivedcompoundref refid="class_film" prot="public" virt="non-virtual">Film</derivedcompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_video_1a8534071e7e759e39c42fa9a51ae620eb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Video::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>Video::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="8" column="9" bodyfile="CPP/Video.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_video_1ab67336c2c5b6227a9635bc7dcd6af543" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Video::Video</definition>
+        <argsstring>()</argsstring>
+        <name>Video</name>
+        <qualifiedname>Video::Video</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="11" column="5" bodyfile="CPP/Video.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a35707f2f7f07e406a4c6bd1defe7c812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Video::Video</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;pathname, int duration)</argsstring>
+        <name>Video</name>
+        <qualifiedname>Video::Video</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pathname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="12" column="5" bodyfile="CPP/Video.cpp" bodystart="5" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1aebf7e2a8fa2bbd79335b1cf35925d190" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Video::~Video</definition>
+        <argsstring>()</argsstring>
+        <name>~Video</name>
+        <qualifiedname>Video::~Video</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="13" column="13" bodyfile="CPP/Video.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a57f903f1d582ac6ef88922c7a6cb8f7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Video::getDuration</definition>
+        <argsstring>() const</argsstring>
+        <name>getDuration</name>
+        <qualifiedname>Video::getDuration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="15" column="9" bodyfile="CPP/Video.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1aca0f92f98c7b6377aaa23af1645b8172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Video::setDuration</definition>
+        <argsstring>(int duration)</argsstring>
+        <name>setDuration</name>
+        <qualifiedname>Video::setDuration</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="16" column="10" bodyfile="CPP/Video.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a5aa5abf5dc093c7eecab97f9cd30555d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Video::display</definition>
+        <argsstring>(std::ostream &amp;os) const override</argsstring>
+        <name>display</name>
+        <qualifiedname>Video::display</qualifiedname>
+        <reimplements refid="class_multimedia_1af3d889bdbf9c04809f11195d7a17448e">display</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="18" column="10" bodyfile="CPP/Video.cpp" bodystart="20" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a89e11497f4f200f387805b10bd42922d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Video::play</definition>
+        <argsstring>() const override</argsstring>
+        <name>play</name>
+        <qualifiedname>Video::play</qualifiedname>
+        <reimplements refid="class_multimedia_1a1fa4ae371afc516559955b38e0392acb">play</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="19" column="10" bodyfile="CPP/Video.cpp" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a3938693176fc86983e19c540ab7e7d56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Video::write</definition>
+        <argsstring>(std::ofstream &amp;ofs) const override</argsstring>
+        <name>write</name>
+        <qualifiedname>Video::write</qualifiedname>
+        <reimplements refid="class_multimedia_1a866891c1ac5118d2c0d5c1ae12482d09">write</reimplements>
+        <param>
+          <type>std::ofstream &amp;</type>
+          <declname>ofs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="22" column="10" bodyfile="CPP/Video.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Video::read</definition>
+        <argsstring>(std::ifstream &amp;ifs) override</argsstring>
+        <name>read</name>
+        <qualifiedname>Video::read</qualifiedname>
+        <reimplements refid="class_multimedia_1aabaabcf03f9b98c31b3dd9958d1be1aa">read</reimplements>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>ifs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="23" column="10" bodyfile="CPP/Video.cpp" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_1a1dcd090b6854b30bf9f2f233dc0faff7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Video::getClassName</definition>
+        <argsstring>() const override</argsstring>
+        <name>getClassName</name>
+        <qualifiedname>Video::getClassName</qualifiedname>
+        <reimplements refid="class_multimedia_1a142f01a2d7c1f55a4a32b53303bd692e">getClassName</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/Video.h" line="26" column="17" bodyfile="CPP/Video.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Film</label>
+        <link refid="class_film"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Multimedia</label>
+        <link refid="class_multimedia"/>
+      </node>
+      <node id="1">
+        <label>Video</label>
+        <link refid="class_video"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Multimedia</label>
+        <link refid="class_multimedia"/>
+      </node>
+      <node id="1">
+        <label>Video</label>
+        <link refid="class_video"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="CPP/Video.h" line="6" column="1" bodyfile="CPP/Video.h" bodystart="6" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_video_1a5aa5abf5dc093c7eecab97f9cd30555d" prot="public" virt="virtual"><scope>Video</scope><name>display</name></member>
+      <member refid="class_video_1a8534071e7e759e39c42fa9a51ae620eb" prot="private" virt="non-virtual"><scope>Video</scope><name>duration</name></member>
+      <member refid="class_video_1a1dcd090b6854b30bf9f2f233dc0faff7" prot="public" virt="virtual"><scope>Video</scope><name>getClassName</name></member>
+      <member refid="class_video_1a57f903f1d582ac6ef88922c7a6cb8f7f" prot="public" virt="non-virtual"><scope>Video</scope><name>getDuration</name></member>
+      <member refid="class_multimedia_1ace0804f8019ed84df1f3c18eb28cf189" prot="public" virt="non-virtual"><scope>Video</scope><name>getName</name></member>
+      <member refid="class_multimedia_1a4b330c898974e8b62cc3220d6381bd7c" prot="public" virt="non-virtual"><scope>Video</scope><name>getPathname</name></member>
+      <member refid="class_multimedia_1a7106753d618df92d53b89328b7ecfe7f" prot="public" virt="non-virtual"><scope>Video</scope><name>Multimedia</name></member>
+      <member refid="class_multimedia_1a337b5ed495d27cd9d0319f90c898cf96" prot="public" virt="non-virtual"><scope>Video</scope><name>Multimedia</name></member>
+      <member refid="class_video_1a89e11497f4f200f387805b10bd42922d" prot="public" virt="virtual"><scope>Video</scope><name>play</name></member>
+      <member refid="class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7" prot="public" virt="virtual"><scope>Video</scope><name>read</name></member>
+      <member refid="class_video_1aca0f92f98c7b6377aaa23af1645b8172" prot="public" virt="non-virtual"><scope>Video</scope><name>setDuration</name></member>
+      <member refid="class_multimedia_1a7f76261a215bae20b9fafa18acb5ebd2" prot="public" virt="non-virtual"><scope>Video</scope><name>setName</name></member>
+      <member refid="class_multimedia_1a11bfaef1f1f5351b15d75fd2c2a92928" prot="public" virt="non-virtual"><scope>Video</scope><name>setPathname</name></member>
+      <member refid="class_video_1ab67336c2c5b6227a9635bc7dcd6af543" prot="public" virt="non-virtual"><scope>Video</scope><name>Video</name></member>
+      <member refid="class_video_1a35707f2f7f07e406a4c6bd1defe7c812" prot="public" virt="non-virtual"><scope>Video</scope><name>Video</name></member>
+      <member refid="class_video_1a3938693176fc86983e19c540ab7e7d56" prot="public" virt="virtual"><scope>Video</scope><name>write</name></member>
+      <member refid="class_multimedia_1ab280f9ce1d0a1291c9b1ab876e854c94" prot="public" virt="virtual"><scope>Video</scope><name>~Multimedia</name></member>
+      <member refid="class_video_1aebf7e2a8fa2bbd79335b1cf35925d190" prot="public" virt="virtual"><scope>Video</scope><name>~Video</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

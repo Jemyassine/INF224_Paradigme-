@@ -1,0 +1,124 @@
+\doxysection{Film Class Reference}
+\hypertarget{class_film}{}\label{class_film}\index{Film@{Film}}
+Inheritance diagram for Film\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_film}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_film_a1c873d8e0e4b56ef4b5c4983671f4d1d}\label{class_film_a1c873d8e0e4b56ef4b5c4983671f4d1d} 
+{\bfseries Film} (const std\+::string \&name, const std\+::string \&pathname, int duration, int \texorpdfstring{$\ast$}{*}chapters=nullptr, int count=0)
+\item 
+\Hypertarget{class_film_a023189ed17b7e112e6db9d6f7b767e69}\label{class_film_a023189ed17b7e112e6db9d6f7b767e69} 
+void {\bfseries set\+Chapters} (int \texorpdfstring{$\ast$}{*}chapters, int count)
+\item 
+\Hypertarget{class_film_a7bdcc9cb81df92862f98b3b6b286ab4a}\label{class_film_a7bdcc9cb81df92862f98b3b6b286ab4a} 
+const int \texorpdfstring{$\ast$}{*} {\bfseries get\+Chapters} () const
+\item 
+\Hypertarget{class_film_ae2ce531d6e526ad89a52cc64a109f1a4}\label{class_film_ae2ce531d6e526ad89a52cc64a109f1a4} 
+const int {\bfseries get\+Chapter\+Count} () const
+\item 
+\Hypertarget{class_film_a651777e681c98d0581a67e0fff55a879}\label{class_film_a651777e681c98d0581a67e0fff55a879} 
+const int {\bfseries get\+Chapter\+Duration} (int index) const
+\item 
+\Hypertarget{class_film_aa8595702a0c221bbd8c7bc6cb5c66d92}\label{class_film_aa8595702a0c221bbd8c7bc6cb5c66d92} 
+void {\bfseries display\+Chapters} () const
+\item 
+void \mbox{\hyperlink{class_film_a441f4fb605a7d46b906678c87040d707}{display}} (std\+::ostream \&os) const override
+\item 
+\Hypertarget{class_film_a71002f3f02dd2e03d9059bfc86c17118}\label{class_film_a71002f3f02dd2e03d9059bfc86c17118} 
+{\bfseries Film} (const \mbox{\hyperlink{class_film}{Film}} \&other)
+\item 
+\Hypertarget{class_film_a3162aa6c8d939fcd5afe49d47202cbf5}\label{class_film_a3162aa6c8d939fcd5afe49d47202cbf5} 
+\mbox{\hyperlink{class_film}{Film}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_film}{Film}} \&other)
+\item 
+void \mbox{\hyperlink{class_film_a64700dae3afe5511027b24c72d28888f}{write}} (std\+::ofstream \&ofs) const override
+\item 
+void \mbox{\hyperlink{class_film_ac739dc43e2e83ec751274820e1a76a06}{read}} (std\+::ifstream \&ifs) override
+\item 
+std\+::string \mbox{\hyperlink{class_film_a5d1cfd8484d03b7df2c430f8e37f1d08}{get\+Class\+Name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Video} (const std\+::string \&name, const std\+::string \&pathname, int duration)
+\item 
+int {\bfseries get\+Duration} () const
+\item 
+void {\bfseries set\+Duration} (int duration)
+\item 
+void \mbox{\hyperlink{class_video_a5aa5abf5dc093c7eecab97f9cd30555d}{display}} (std\+::ostream \&os) const override
+\item 
+void \mbox{\hyperlink{class_video_a89e11497f4f200f387805b10bd42922d}{play}} () const override
+\item 
+void \mbox{\hyperlink{class_video_a3938693176fc86983e19c540ab7e7d56}{write}} (std\+::ofstream \&ofs) const override
+\item 
+void \mbox{\hyperlink{class_video_aa719dd7639f1cf178d1f2ad0a3f6a5f7}{read}} (std\+::ifstream \&ifs) override
+\item 
+std\+::string \mbox{\hyperlink{class_video_a1dcd090b6854b30bf9f2f233dc0faff7}{get\+Class\+Name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Multimedia} (std\+::string name, std\+::string pathname)
+\item 
+std\+::string {\bfseries get\+Name} () const
+\item 
+std\+::string {\bfseries get\+Pathname} () const
+\item 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+void {\bfseries set\+Pathname} (const std\+::string \&pathname)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_film_a441f4fb605a7d46b906678c87040d707}\index{Film@{Film}!display@{display}}
+\index{display@{display}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_film_a441f4fb605a7d46b906678c87040d707} 
+void Film\+::display (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_multimedia}{Multimedia}}.
+
+\Hypertarget{class_film_a5d1cfd8484d03b7df2c430f8e37f1d08}\index{Film@{Film}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily \label{class_film_a5d1cfd8484d03b7df2c430f8e37f1d08} 
+std\+::string Film\+::get\+Class\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_multimedia}{Multimedia}}.
+
+\Hypertarget{class_film_ac739dc43e2e83ec751274820e1a76a06}\index{Film@{Film}!read@{read}}
+\index{read@{read}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{class_film_ac739dc43e2e83ec751274820e1a76a06} 
+void Film\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia}{Multimedia}}.
+
+\Hypertarget{class_film_a64700dae3afe5511027b24c72d28888f}\index{Film@{Film}!write@{write}}
+\index{write@{write}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{class_film_a64700dae3afe5511027b24c72d28888f} 
+void Film\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia}{Multimedia}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+CPP/Film.\+h\item 
+CPP/Film.\+cpp\end{DoxyCompactItemize}

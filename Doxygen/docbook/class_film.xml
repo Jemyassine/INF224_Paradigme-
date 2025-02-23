@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_film" xml:lang="en-US">
+<title>Film Class Reference</title>
+<indexterm><primary>Film</primary></indexterm>
+<para>Inheritance diagram for Film:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_film.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_film_1a1c873d8e0e4b56ef4b5c4983671f4d1d"/><emphasis role="strong">Film</emphasis> (const std::string &amp;name, const std::string &amp;pathname, int duration, int *chapters=nullptr, int count=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1a023189ed17b7e112e6db9d6f7b767e69"/>void <emphasis role="strong">setChapters</emphasis> (int *chapters, int count)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1a7bdcc9cb81df92862f98b3b6b286ab4a"/>const int * <emphasis role="strong">getChapters</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1ae2ce531d6e526ad89a52cc64a109f1a4"/>const int <emphasis role="strong">getChapterCount</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1a651777e681c98d0581a67e0fff55a879"/>const int <emphasis role="strong">getChapterDuration</emphasis> (int index) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1aa8595702a0c221bbd8c7bc6cb5c66d92"/>void <emphasis role="strong">displayChapters</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_film_1a441f4fb605a7d46b906678c87040d707">display</link> (std::ostream &amp;os) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1a71002f3f02dd2e03d9059bfc86c17118"/><emphasis role="strong">Film</emphasis> (const <link linkend="_class_film">Film</link> &amp;other)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_film_1a3162aa6c8d939fcd5afe49d47202cbf5"/><link linkend="_class_film">Film</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_class_film">Film</link> &amp;other)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_film_1a64700dae3afe5511027b24c72d28888f">write</link> (std::ofstream &amp;ofs) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_film_1ac739dc43e2e83ec751274820e1a76a06">read</link> (std::ifstream &amp;ifs) override</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_film_1a5d1cfd8484d03b7df2c430f8e37f1d08">getClassName</link> () const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_video">Video</link>        <itemizedlist>
+            <listitem><para><emphasis role="strong">Video</emphasis> (const std::string &amp;name, const std::string &amp;pathname, int duration)</para>
+</listitem>
+            <listitem><para>int <emphasis role="strong">getDuration</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setDuration</emphasis> (int duration)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a5aa5abf5dc093c7eecab97f9cd30555d">display</link> (std::ostream &amp;os) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a89e11497f4f200f387805b10bd42922d">play</link> () const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a3938693176fc86983e19c540ab7e7d56">write</link> (std::ofstream &amp;ofs) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7">read</link> (std::ifstream &amp;ifs) override</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_video_1a1dcd090b6854b30bf9f2f233dc0faff7">getClassName</link> () const override</para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_class_multimedia">Multimedia</link>        <itemizedlist>
+            <listitem><para><emphasis role="strong">Multimedia</emphasis> (std::string name, std::string pathname)</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getName</emphasis> () const</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getPathname</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setName</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setPathname</emphasis> (const std::string &amp;pathname)</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_film_1a441f4fb605a7d46b906678c87040d707"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>Film</secondary></indexterm>
+<indexterm><primary>Film</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void Film::display (std::ostream &amp; os) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_film_1a5d1cfd8484d03b7df2c430f8e37f1d08"/><section>
+    <title>getClassName()</title>
+<indexterm><primary>getClassName</primary><secondary>Film</secondary></indexterm>
+<indexterm><primary>Film</primary><secondary>getClassName</secondary></indexterm>
+<para><computeroutput>std::string Film::getClassName ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_film_1ac739dc43e2e83ec751274820e1a76a06"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>Film</secondary></indexterm>
+<indexterm><primary>Film</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>void Film::read (std::ifstream &amp; ifs)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_film_1a64700dae3afe5511027b24c72d28888f"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>Film</secondary></indexterm>
+<indexterm><primary>Film</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void Film::write (std::ofstream &amp; ofs) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/Film.hCPP/Film.cpp</section>
+</section>

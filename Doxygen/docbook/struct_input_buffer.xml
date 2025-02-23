@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_input_buffer" xml:lang="en-US">
+<title>InputBuffer Struct Reference</title>
+<indexterm><primary>InputBuffer</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_input_buffer_1a9409ec8e4581caa99dcac1af963349b5"/><emphasis role="strong">InputBuffer</emphasis> (size_t size)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_input_buffer_1aee7a717b6cf023deabe9910410e6cfb6"/>char * <emphasis role="strong">buffer</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_input_buffer_1a2f05121c4fb8571845cc22d083c6da46"/>char * <emphasis role="strong">begin</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_input_buffer_1a52ba71c71b9b955b8369fc5217e3c4b6"/>char * <emphasis role="strong">end</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_input_buffer_1ad94b06e792363709c990e9aa78c500ec"/>SOCKSIZE <emphasis role="strong">remaining</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+CPP/ccsocket.cpp</section>

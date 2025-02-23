@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_video" xml:lang="en-US">
+<title>Video Class Reference</title>
+<indexterm><primary>Video</primary></indexterm>
+<para>Inheritance diagram for Video:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_video.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_video_1a35707f2f7f07e406a4c6bd1defe7c812"/><emphasis role="strong">Video</emphasis> (const std::string &amp;name, const std::string &amp;pathname, int duration)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_video_1a57f903f1d582ac6ef88922c7a6cb8f7f"/>int <emphasis role="strong">getDuration</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_video_1aca0f92f98c7b6377aaa23af1645b8172"/>void <emphasis role="strong">setDuration</emphasis> (int duration)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a5aa5abf5dc093c7eecab97f9cd30555d">display</link> (std::ostream &amp;os) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a89e11497f4f200f387805b10bd42922d">play</link> () const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1a3938693176fc86983e19c540ab7e7d56">write</link> (std::ofstream &amp;ofs) const override</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7">read</link> (std::ifstream &amp;ifs) override</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_video_1a1dcd090b6854b30bf9f2f233dc0faff7">getClassName</link> () const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_multimedia">Multimedia</link>        <itemizedlist>
+            <listitem><para><emphasis role="strong">Multimedia</emphasis> (std::string name, std::string pathname)</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getName</emphasis> () const</para>
+</listitem>
+            <listitem><para>std::string <emphasis role="strong">getPathname</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setName</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">setPathname</emphasis> (const std::string &amp;pathname)</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_video_1a5aa5abf5dc093c7eecab97f9cd30555d"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>Video</secondary></indexterm>
+<indexterm><primary>Video</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void Video::display (std::ostream &amp; os) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_video_1a1dcd090b6854b30bf9f2f233dc0faff7"/><section>
+    <title>getClassName()</title>
+<indexterm><primary>getClassName</primary><secondary>Video</secondary></indexterm>
+<indexterm><primary>Video</primary><secondary>getClassName</secondary></indexterm>
+<para><computeroutput>std::string Video::getClassName ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_video_1a89e11497f4f200f387805b10bd42922d"/><section>
+    <title>play()</title>
+<indexterm><primary>play</primary><secondary>Video</secondary></indexterm>
+<indexterm><primary>Video</primary><secondary>play</secondary></indexterm>
+<para><computeroutput>void Video::play ( ) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Implements <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_video_1aa719dd7639f1cf178d1f2ad0a3f6a5f7"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>Video</secondary></indexterm>
+<indexterm><primary>Video</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>void Video::read (std::ifstream &amp; ifs)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<anchor xml:id="_class_video_1a3938693176fc86983e19c540ab7e7d56"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>Video</secondary></indexterm>
+<indexterm><primary>Video</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void Video::write (std::ofstream &amp; ofs) const<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_multimedia">Multimedia</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/Video.hCPP/Video.cpp</section>
+</section>

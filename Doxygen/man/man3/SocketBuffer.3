@@ -1,0 +1,204 @@
+.TH "SocketBuffer" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SocketBuffer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <ccsocket\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "SOCKSIZE \fBreadLine\fP (std::string &message)"
+.br
+.ti -1c
+.RI "SOCKSIZE \fBwriteLine\fP (const std::string &message)"
+.br
+.ti -1c
+.RI "SOCKSIZE \fBread\fP (char *buffer, size_t len)"
+.br
+.ti -1c
+.RI "SOCKSIZE \fBwrite\fP (const char *str, size_t len)"
+.br
+.ti -1c
+.RI "\fBSocket\fP * \fBsocket\fP ()"
+.br
+.RI "Returns the associated socket\&. "
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBSocketBuffer\fP (\fBSocket\fP *, size_t inputSize=8192, size_t ouputSize=8192)"
+.br
+.ti -1c
+.RI "\fBSocketBuffer\fP (\fBSocket\fP &, size_t inputSize=8192, size_t ouputSize=8192)"
+.br
+.in -1c
+.in -1c
+.in +1c
+.ti -1c
+.RI "size_t \fBinsize_\fP {}"
+.br
+.ti -1c
+.RI "size_t \fBoutsize_\fP {}"
+.br
+.ti -1c
+.RI "int \fBinsep_\fP {}"
+.br
+.ti -1c
+.RI "int \fBoutsep_\fP {}"
+.br
+.ti -1c
+.RI "\fBSocket\fP * \fBsock_\fP {}"
+.br
+.ti -1c
+.RI "struct \fBInputBuffer\fP * \fBin_\fP {}"
+.br
+.ti -1c
+.RI "void \fBsetReadSeparator\fP (int separ)"
+.br
+.ti -1c
+.RI "int \fBreadSeparator\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetWriteSeparator\fP (int separ)"
+.br
+.ti -1c
+.RI "int \fBwriteSeparator\fP () const"
+.br
+.ti -1c
+.RI "bool \fBretrieveLine\fP (std::string &str, SOCKSIZE received)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Preserves record boundaries when exchanging messages between connected TCP/IP sockets\&. Ensures that one call to \fBreadLine()\fP corresponds to one and exactly one call to \fBwriteLine()\fP on the other side\&. By default, \fBwriteLine()\fP adds 
+.br
+ at the end of each message and \fBreadLine()\fP searches for 
+.br
+, \\r or 
+.br
+\\r so that it can retreive the entire record\&. Beware messages should thus not contain these charecters\&.
+
+.PP
+.PP
+.nf
+ int main() {
+    Socket sock;
+    SocketBuffer sockbuf(sock);
+
+    int status = sock\&.connect("localhost", 3331);
+    if (status < 0) {
+      cerr << "Could not connect" << endl;
+      return 1;
+    }
+
+    while (cin) {
+      string request, response;
+      cout << "Request: ";
+      getline(cin, request);
+
+      if (sockbuf\&.writeLine(request) < 0) {
+         cerr << "Could not send message" << endl;
+         return 2;
+      }
+      if (sockbuf\&.readLine(response) < 0) {
+         cerr << "Couldn't receive message" << endl;
+         return 3;
+      }
+    }
+  return 0;
+}
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SocketBuffer::SocketBuffer (\fBSocket\fP * sock, size_t inputSize = \fR8192\fP, size_t ouputSize = \fR8192\fP)"
+Constructor\&. \fIsocket\fP must be a connected TCP/IP \fBSocket\fP\&. It should \fBnot\fP be deleted as long as the \fBSocketBuffer\fP is used\&. \fIinputSize\fP and \fIouputSize\fP are the sizes of the buffers that are used internally for exchanging data\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "SOCKSIZE SocketBuffer::read (char * buffer, size_t len)"
+Reads exactly \fIlen\fP bytes from the socket, blocks otherwise\&. 
+.PP
+\fBReturns\fP
+.RS 4
+see \fBreadLine()\fP 
+.RE
+.PP
+
+.SS "SOCKSIZE SocketBuffer::readLine (std::string & message)"
+Read a message from a connected socket\&. \fBreadLine()\fP receives one (and only one) message sent by \fBwriteLine()\fP on the other side, ie, a call to \fBwriteLine()\fP corresponds to one and exactly one call to \fBreadLine()\fP on the other side\&. The received data is stored in \fImessage\fP\&. This method blocks until the message is fully received\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+The number of bytes that were received or one of the following values:
+.IP "\(bu" 2
+0: shutdownOutput() was called on the other side
+.IP "\(bu" 2
+Socket::Failed (-1): a connection error occured
+.IP "\(bu" 2
+Socket::InvalidSocket (-2): the socket is invalid\&. 
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+the separator (eg 
+.br
+) is counted in the value returned by \fBreadLine()\fP\&. 
+.RE
+.PP
+
+.SS "void SocketBuffer::setReadSeparator (int separ)"
+Returns/changes the separator used by \fBreadLine()\fP\&. \fBsetReadSeparator()\fP changes the symbol used by \fBreadLine()\fP to separate successive messages:
+.IP "\(bu" 2
+if \fIsepar\fP < 0 (the default) \fBreadLine()\fP searches for \\n, \\r or \\n\\r\&.
+.IP "\(bu" 2
+if \fIsepar\fP >= 0, \fBreadLine()\fP searches for this character to separate messages, 
+.PP
+
+.SS "void SocketBuffer::setWriteSeparator (int separ)"
+Returns/changes the separator used by \fBwriteLine()\fP\&. \fBsetWriteSeparator()\fP changes the character(s) used by \fBwriteLine()\fP to separate successive messages:
+.IP "\(bu" 2
+if \fIsepar\fP < 0 (the default) \fBwriteLine()\fP inserts \\n\\r between successive lines\&.
+.IP "\(bu" 2
+if \fIsepar\fP >= 0, \fBwriteLine()\fP inserts \fIsepar\fP between successive lines, 
+.PP
+
+.SS "SOCKSIZE SocketBuffer::write (const char * str, size_t len)"
+Writes \fIlen\fP bytes to the socket\&. 
+.PP
+\fBReturns\fP
+.RS 4
+see \fBreadLine()\fP 
+.RE
+.PP
+
+.SS "SOCKSIZE SocketBuffer::writeLine (const std::string & message)"
+Send a message to a connected socket\&. \fBwriteLine()\fP sends a message that will be received by a single call of \fBreadLine()\fP on the other side,
+
+.PP
+\fBReturns\fP
+.RS 4
+see \fBreadLine()\fP 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+if \fImessage\fP contains one or several occurences of the separator, \fBreadLine()\fP will be called as many times on the other side\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

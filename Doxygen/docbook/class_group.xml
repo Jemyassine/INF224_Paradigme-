@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_group" xml:lang="en-US">
+<title>Group Class Reference</title>
+<indexterm><primary>Group</primary></indexterm>
+<para>Inheritance diagram for Group:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_group.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_group_1a10fc62dd92115677976891017a943e00"/><emphasis role="strong">Group</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_group_1a2441b4048116108fe8f65bdf71d02494"/>std::string <emphasis role="strong">getName</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_group_1a661faafa833aa92388499c5f43d34dfa"/>void <emphasis role="strong">display</emphasis> (std::ostream &amp;os) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_group_1ac1565b0b2f438f2619d8a5fd0a7a77a2"/>void <emphasis role="strong">play</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/Group.hCPP/Group.cpp</section>

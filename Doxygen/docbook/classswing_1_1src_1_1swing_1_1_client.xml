@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classswing_1_1src_1_1swing_1_1_client" xml:lang="en-US">
+<title>swing.src.swing.Client Class Reference</title>
+<indexterm><primary>swing.src.swing.Client</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classswing_1_1src_1_1swing_1_1_client_1a90bfd97d45080a8f81e82bc276258b19">Client</link> (String host, int port)  throws UnknownHostException, IOException </para>
+</listitem>
+            <listitem><para>String <link linkend="_classswing_1_1src_1_1swing_1_1_client_1acf1efb106790fd300fba711c85436d7c">send</link> (String request)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classswing_1_1src_1_1swing_1_1_client_1a90bfd97d45080a8f81e82bc276258b19"/><section>
+    <title>Client()</title>
+<indexterm><primary>Client</primary><secondary>swing.src.swing.Client</secondary></indexterm>
+<indexterm><primary>swing.src.swing.Client</primary><secondary>Client</secondary></indexterm>
+<para><computeroutput>swing.src.swing.Client.Client (String host, int port) throws UnknownHostException, IOException<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Initialise la connexion. Renvoie une exception en cas d&apos;erreur. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classswing_1_1src_1_1swing_1_1_client_1acf1efb106790fd300fba711c85436d7c"/><section>
+    <title>send()</title>
+<indexterm><primary>send</primary><secondary>swing.src.swing.Client</secondary></indexterm>
+<indexterm><primary>swing.src.swing.Client</primary><secondary>send</secondary></indexterm>
+<para><computeroutput>String swing.src.swing.Client.send (String request)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Envoie une requete au server et retourne sa reponse. Noter que la methode bloque si le serveur ne repond pas. </para>
+
+<para>Envoyer la requete au serveur</para>
+
+<para>Recuperer le resultat envoye par le serveur</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+swing/src/swing/Client.java</section>
+</section>

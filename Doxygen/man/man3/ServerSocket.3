@@ -1,0 +1,79 @@
+.TH "ServerSocket" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ServerSocket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <ccsocket\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServerSocket\fP ()"
+.br
+.RI "Creates a listening socket that waits for connection requests by TCP/IP clients\&. "
+.ti -1c
+.RI "\fBSocket\fP * \fBaccept\fP ()"
+.br
+.ti -1c
+.RI "int \fBbind\fP (int port, int backlog=50)"
+.br
+.ti -1c
+.RI "int \fBclose\fP ()"
+.br
+.RI "Closes the socket\&. "
+.ti -1c
+.RI "bool \fBisClosed\fP () const"
+.br
+.RI "Returns true if the socket was closed\&. "
+.ti -1c
+.RI "SOCKET \fBdescriptor\fP ()"
+.br
+.RI "Returns the descriptor of the socket\&. "
+.ti -1c
+.RI "int \fBsetReceiveBufferSize\fP (int size)"
+.br
+.RI "Sets the SO_RCVBUF option to the specified value\&. "
+.ti -1c
+.RI "int \fBsetReuseAddress\fP (bool)"
+.br
+.RI "Enables/disables the SO_REUSEADDR socket option\&. "
+.ti -1c
+.RI "int \fBsetSoTimeout\fP (int timeout)"
+.br
+.RI "Enables/disables SO_TIMEOUT with the specified timeout (in milliseconds)\&. "
+.ti -1c
+.RI "int \fBsetTcpNoDelay\fP (bool)"
+.br
+.RI "Turns on/off TCP coalescence (useful in some cases to avoid delays)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCP/IP IPv4 server socket\&. Waits for requests to come in over the network\&. TCP/IP sockets do not preserve record boundaries but \fBSocketBuffer\fP solves this problem\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSocket\fP * ServerSocket::accept ()"
+Accepts a new connection request and returns a socket for exchanging data with this client\&. This function blocks until there is a connection request\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the new \fBSocket\fP or nullptr on error\&. 
+.RE
+.PP
+
+.SS "int ServerSocket::bind (int port, int backlog = \fR50\fP)"
+Assigns the server socket to localhost\&. 
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative value on error, see \fBSocket::Errors\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

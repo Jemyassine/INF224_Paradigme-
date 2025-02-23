@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_t_c_p_server" xml:lang="en-US">
+<title>TCPServer Class Reference</title>
+<indexterm><primary>TCPServer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;tcpserver.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_class_t_c_p_server_1aaf1f42d2d5c7593e2a0349fea7c7648a">Callback</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link> (Callback const &amp;callback)</para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23">run</link> (int port)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_t_c_p_server_1a94abdeb80587f39a869fde6f24522a78"/>class <emphasis role="strong">TCPLock</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_t_c_p_server_1aff1ba1873083d214cbcb808b8091757a"/>class <emphasis role="strong">SocketCnx</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>TCP/IP IPv4 server. Supports TCP/IP AF_INET IPv4 connections with multiple clients. One thread is used per client. </para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_class_t_c_p_server_1aaf1f42d2d5c7593e2a0349fea7c7648a"/><section>
+    <title>Callback</title>
+<indexterm><primary>Callback</primary><secondary>TCPServer</secondary></indexterm>
+<indexterm><primary>TCPServer</primary><secondary>Callback</secondary></indexterm>
+<para><computeroutput>using TCPServer::Callback</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">
+&#32;&#32;std::function&lt;&#32;bool(std::string&#32;<emphasis role="keyword">const</emphasis>&amp;&#32;request,&#32;std::string&amp;&#32;response)&#32;&gt;
+</programlisting></section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7"/><section>
+    <title>TCPServer()</title>
+<indexterm><primary>TCPServer</primary><secondary>TCPServer</secondary></indexterm>
+<indexterm><primary>TCPServer</primary><secondary>TCPServer</secondary></indexterm>
+<para><computeroutput>TCPServer::TCPServer (Callback const &amp; callback)</computeroutput></para>
+<para>initializes the server. The callback function will be called each time the server receives a request from a client.<itemizedlist>
+<listitem>
+<para><emphasis>request</emphasis> contains the data sent by the client</para>
+</listitem><listitem>
+<para><emphasis>response</emphasis> will be sent to the client as a response The connection with the client is closed if the callback returns false. </para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23"/><section>
+    <title>run()</title>
+<indexterm><primary>run</primary><secondary>TCPServer</secondary></indexterm>
+<indexterm><primary>TCPServer</primary><secondary>run</secondary></indexterm>
+<para><computeroutput>int TCPServer::run (int port)<computeroutput>[virtual]</computeroutput></computeroutput></para>
+<para>Starts the server. Binds an internal <link linkend="_class_server_socket">ServerSocket</link> to <emphasis>port</emphasis> then starts an infinite loop that processes connection requests from clients. <formalpara><title>Returns</title>
+
+<para>0 on normal termination, or a negative value if the <link linkend="_class_server_socket">ServerSocket</link> could not be bound (value is then one of <link linkend="_class_socket_1a9f68308228badcdd299cd83e62e36976">Socket::Errors</link>). </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/tcpserver.hCPP/tcpserver.cpp</section>
+</section>

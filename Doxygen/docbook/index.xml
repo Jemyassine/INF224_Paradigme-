@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>My Project</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classswing_1_1src_1_1swing_1_1_client.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_film.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_group.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_input_buffer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classswing_1_1src_1_1_main.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_multimedia.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_multimedia_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_multimedia_manager_test.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_photo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_server_socket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_server_tools.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_socket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_socket_buffer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_socket_cnx.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_t_c_p_server.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_test_polymorphisme.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_video.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classswing_1_1src_1_1swing_1_1_window.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="ccsocket_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_film_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_group_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_multimedia_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_multimedia_manager_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_multimedia_manager_test_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_photo_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_server_tools_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="tcpserver_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_test_polymorphisme_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_video_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_socket_buffer" xml:lang="en-US">
+<title>SocketBuffer Class Reference</title>
+<indexterm><primary>SocketBuffer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;ccsocket.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine</link> (std::string &amp;message)</para>
+</listitem>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine</link> (const std::string &amp;message)</para>
+</listitem>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87">read</link> (char *buffer, size_t len)</para>
+</listitem>
+            <listitem><para>SOCKSIZE <link linkend="_class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3">write</link> (const char *str, size_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1ace5301cb9f4b36153759d72cfc7e7969"/><link linkend="_class_socket">Socket</link> * <emphasis role="strong">socket</emphasis> ()</para>
+
+<para>Returns the associated socket. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title></title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link> (<link linkend="_class_socket">Socket</link> *, size_t inputSize=8192, size_t ouputSize=8192)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a739a80a7bb5d2603d8d0d9a88293bad8"/><emphasis role="strong">SocketBuffer</emphasis> (<link linkend="_class_socket">Socket</link> &amp;, size_t inputSize=8192, size_t ouputSize=8192)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a079fdc120086897d487fd5542fe57c7e"/>size_t <emphasis role="strong">insize_</emphasis> {}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a2e6112608ced0e269808fe454fa2ff81"/>size_t <emphasis role="strong">outsize_</emphasis> {}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a9103ba29f1740eb1ef20500f3d1eeb92"/>int <emphasis role="strong">insep_</emphasis> {}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a2ce505eb4c7d94f92d910e695b327d40"/>int <emphasis role="strong">outsep_</emphasis> {}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a78f7f3187813c123cac254f6e914b9ae"/><link linkend="_class_socket">Socket</link> * <emphasis role="strong">sock_</emphasis> {}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a78504f4a49e11250977fab9fb56f387f"/>struct <link linkend="_struct_input_buffer">InputBuffer</link> * <emphasis role="strong">in_</emphasis> {}</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16">setReadSeparator</link> (int separ)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a81a0088b93fc30ebcdde8dc6841fc03d"/>int <emphasis role="strong">readSeparator</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4">setWriteSeparator</link> (int separ)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1a8ec7db971ba2a8b11c37b55a56f77c25"/>int <emphasis role="strong">writeSeparator</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_socket_buffer_1afed3bfc9187c207578f8ffe37c811a83"/>bool <emphasis role="strong">retrieveLine</emphasis> (std::string &amp;str, SOCKSIZE received)</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Detailed Description</title>
+
+<para>Preserves record boundaries when exchanging messages between connected TCP/IP sockets. Ensures that one call to <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> corresponds to one and exactly one call to <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> on the other side. By default, <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> adds <?linebreak?> at the end of each message and <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> searches for <?linebreak?>, \r or <?linebreak?>\r so that it can retreive the entire record. Beware messages should thus not contain these charecters.</para>
+
+<para><literallayout><computeroutput>&#32;<emphasis role="keywordtype">int</emphasis>&#32;main()&#32;{
+&#32;&#32;&#32;&#32;Socket&#32;sock;
+&#32;&#32;&#32;&#32;<link linkend="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38">SocketBuffer</link>&#32;sockbuf(sock);
+
+&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;status&#32;=&#32;sock.<link linkend="_class_socket_1a772419bd74c4fe4987d190506a64ff87">connect</link>(<emphasis role="stringliteral">&quot;localhost&quot;</emphasis>,&#32;3331);
+&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(status&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Could&#32;not&#32;connect&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+&#32;&#32;&#32;&#32;}
+
+&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(cin)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;request,&#32;response;
+&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Request:&#32;&quot;</emphasis>;
+&#32;&#32;&#32;&#32;&#32;&#32;getline(cin,&#32;request);
+
+&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sockbuf.writeLine(request)&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Could&#32;not&#32;send&#32;message&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;2;
+&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sockbuf.readLine(response)&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Couldn&apos;t&#32;receive&#32;message&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;3;
+&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;}
+&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+}
+</computeroutput></literallayout> </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_socket_buffer_1ac5989bcaf64234947934c7106af1cf38"/><section>
+    <title>SocketBuffer()</title>
+<indexterm><primary>SocketBuffer</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>SocketBuffer</secondary></indexterm>
+<para><computeroutput>SocketBuffer::SocketBuffer (<link linkend="_class_socket">Socket</link> * sock, size_t inputSize = <computeroutput>8192</computeroutput>
+, size_t ouputSize = <computeroutput>8192</computeroutput>
+)</computeroutput></para>
+<para>Constructor. <emphasis>socket</emphasis> must be a connected TCP/IP <link linkend="_class_socket">Socket</link>. It should <emphasis role="bold">not</emphasis> be deleted as long as the <link linkend="_class_socket_buffer">SocketBuffer</link> is used. <emphasis>inputSize</emphasis> and <emphasis>ouputSize</emphasis> are the sizes of the buffers that are used internally for exchanging data. </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_socket_buffer_1ae8a72a818dfb3a0986dc72a2e0ca5a87"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>SOCKSIZE SocketBuffer::read (char * buffer, size_t len)</computeroutput></para>
+<para>Reads exactly <emphasis>len</emphasis> bytes from the socket, blocks otherwise. <formalpara><title>Returns</title>
+
+<para>see <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d"/><section>
+    <title>readLine()</title>
+<indexterm><primary>readLine</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>readLine</secondary></indexterm>
+<para><computeroutput>SOCKSIZE SocketBuffer::readLine (std::string &amp; message)</computeroutput></para>
+<para>Read a message from a connected socket. <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> receives one (and only one) message sent by <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> on the other side, ie, a call to <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> corresponds to one and exactly one call to <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> on the other side. The received data is stored in <emphasis>message</emphasis>. This method blocks until the message is fully received.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The number of bytes that were received or one of the following values:<itemizedlist>
+<listitem>
+<para>0: shutdownOutput() was called on the other side</para>
+</listitem><listitem>
+<para>Socket::Failed (-1): a connection error occured</para>
+</listitem><listitem>
+<para>Socket::InvalidSocket (-2): the socket is invalid. </para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para>the separator (eg <?linebreak?>) is counted in the value returned by <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link>. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16"/><section>
+    <title>setReadSeparator()</title>
+<indexterm><primary>setReadSeparator</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>setReadSeparator</secondary></indexterm>
+<para><computeroutput>void SocketBuffer::setReadSeparator (int separ)</computeroutput></para>
+<para>Returns/changes the separator used by <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link>. <link linkend="_class_socket_buffer_1aca9ca0b2defa3b9e08bbbe6abafe3f16">setReadSeparator()</link> changes the symbol used by <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> to separate successive messages:<itemizedlist>
+<listitem>
+<para>if <emphasis>separ</emphasis> &lt; 0 (the default) <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> searches for \n, \r or \n\r.</para>
+</listitem><listitem>
+<para>if <emphasis>separ</emphasis> &gt;= 0, <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> searches for this character to separate messages, </para>
+</listitem></itemizedlist>
+</para>
+</section>
+<anchor xml:id="_class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4"/><section>
+    <title>setWriteSeparator()</title>
+<indexterm><primary>setWriteSeparator</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>setWriteSeparator</secondary></indexterm>
+<para><computeroutput>void SocketBuffer::setWriteSeparator (int separ)</computeroutput></para>
+<para>Returns/changes the separator used by <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link>. <link linkend="_class_socket_buffer_1a165d87f2460de769fb09d84a46a793a4">setWriteSeparator()</link> changes the character(s) used by <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> to separate successive messages:<itemizedlist>
+<listitem>
+<para>if <emphasis>separ</emphasis> &lt; 0 (the default) <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> inserts \n\r between successive lines.</para>
+</listitem><listitem>
+<para>if <emphasis>separ</emphasis> &gt;= 0, <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> inserts <emphasis>separ</emphasis> between successive lines, </para>
+</listitem></itemizedlist>
+</para>
+</section>
+<anchor xml:id="_class_socket_buffer_1ad5a49e3f1f44e735eb15d1896eebf7b3"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>SOCKSIZE SocketBuffer::write (const char * str, size_t len)</computeroutput></para>
+<para>Writes <emphasis>len</emphasis> bytes to the socket. <formalpara><title>Returns</title>
+
+<para>see <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282"/><section>
+    <title>writeLine()</title>
+<indexterm><primary>writeLine</primary><secondary>SocketBuffer</secondary></indexterm>
+<indexterm><primary>SocketBuffer</primary><secondary>writeLine</secondary></indexterm>
+<para><computeroutput>SOCKSIZE SocketBuffer::writeLine (const std::string &amp; message)</computeroutput></para>
+<para>Send a message to a connected socket. <link linkend="_class_socket_buffer_1a96ba6ada0c8b57eacff2aa2e4e34c282">writeLine()</link> sends a message that will be received by a single call of <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> on the other side,</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>see <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>if <emphasis>message</emphasis> contains one or several occurences of the separator, <link linkend="_class_socket_buffer_1afa3a2f239eb56c2e4fd4fa465f7fb54d">readLine()</link> will be called as many times on the other side. </para>
+</note>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/ccsocket.hCPP/ccsocket.cpp</section>
+</section>

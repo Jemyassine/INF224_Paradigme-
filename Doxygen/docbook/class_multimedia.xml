@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_multimedia" xml:lang="en-US">
+<title>Multimedia Class Reference</title>
+<indexterm><primary>Multimedia</primary></indexterm>
+<para>Inheritance diagram for Multimedia:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_multimedia.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_multimedia_1a337b5ed495d27cd9d0319f90c898cf96"/><emphasis role="strong">Multimedia</emphasis> (std::string name, std::string pathname)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1ace0804f8019ed84df1f3c18eb28cf189"/>std::string <emphasis role="strong">getName</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a4b330c898974e8b62cc3220d6381bd7c"/>std::string <emphasis role="strong">getPathname</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a7f76261a215bae20b9fafa18acb5ebd2"/>void <emphasis role="strong">setName</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a11bfaef1f1f5351b15d75fd2c2a92928"/>void <emphasis role="strong">setPathname</emphasis> (const std::string &amp;pathname)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1af3d889bdbf9c04809f11195d7a17448e"/>virtual void <emphasis role="strong">display</emphasis> (std::ostream &amp;os) const =0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a1fa4ae371afc516559955b38e0392acb"/>virtual void <emphasis role="strong">play</emphasis> () const =0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a866891c1ac5118d2c0d5c1ae12482d09"/>virtual void <emphasis role="strong">write</emphasis> (std::ofstream &amp;ofs) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1aabaabcf03f9b98c31b3dd9958d1be1aa"/>virtual void <emphasis role="strong">read</emphasis> (std::ifstream &amp;ifs)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_1a142f01a2d7c1f55a4a32b53303bd692e"/>virtual std::string <emphasis role="strong">getClassName</emphasis> () const =0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/Multimedia.hCPP/Multimedia.cpp</section>

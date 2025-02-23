@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_tcpserver_8h_source" xml:lang="en-US">
+<title>tcpserver.h</title>
+<indexterm><primary>CPP/tcpserver.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//</emphasis>
+2 <emphasis role="comment">//&#32;&#32;tcpserver:&#32;TCP/IP&#32;INET&#32;Server.</emphasis>
+3 <emphasis role="comment">//&#32;&#32;(c)&#32;Eric&#32;Lecolinet&#32;-&#32;Telecom&#32;ParisTech&#32;-&#32;2016.</emphasis>
+4 <emphasis role="comment">//&#32;&#32;http://www.telecom-paristech.fr/~elc</emphasis>
+5 <emphasis role="comment">//</emphasis>
+6 
+7 <emphasis role="preprocessor">#ifndef&#32;__tcpserver__</emphasis>
+8 <emphasis role="preprocessor">#define&#32;__tcpserver__</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;thread&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;functional&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&quot;ccsocket.h&quot;</emphasis>
+14 
+15 <emphasis role="keyword">class&#32;</emphasis>TCPConnection;
+16 <emphasis role="keyword">class&#32;</emphasis>TCPLock;
+17 
+20 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>&#32;{
+21 <emphasis role="keyword">public</emphasis>:
+22 
+23 &#32;&#32;<emphasis role="keyword">using&#32;</emphasis>Callback&#32;=
+24 &#32;&#32;std::function&lt;&#32;bool(std::string&#32;<emphasis role="keyword">const</emphasis>&amp;&#32;request,&#32;std::string&amp;&#32;response)&#32;&gt;;
+25 
+31 &#32;&#32;<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>(Callback&#32;<emphasis role="keyword">const</emphasis>&amp;&#32;callback);
+32 
+33 &#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">~TCPServer</link>();
+34 
+40 &#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_t_c_p_server_1a1409041961e91f1dbc4933483b4c3b23">run</link>(<emphasis role="keywordtype">int</emphasis>&#32;port);
+41 
+42 <emphasis role="keyword">private</emphasis>:
+43 &#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis>TCPLock;
+44 &#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis>SocketCnx;
+45 
+46 &#32;&#32;<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>(<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>&#32;<emphasis role="keyword">const</emphasis>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+47 &#32;&#32;<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>&amp;&#32;operator=(<link linkend="_class_t_c_p_server_1aaed5a80480fd9d616c7773f58906c5e7">TCPServer</link>&#32;<emphasis role="keyword">const</emphasis>&amp;)&#32;=&#32;<emphasis role="keyword">delete</emphasis>;
+48 &#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;error(std::string&#32;<emphasis role="keyword">const</emphasis>&amp;&#32;msg);
+49 
+50 &#32;&#32;<link linkend="_class_server_socket">ServerSocket</link>&#32;servsock_;
+51 &#32;&#32;Callback&#32;callback_{};
+52 };
+53 
+54 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

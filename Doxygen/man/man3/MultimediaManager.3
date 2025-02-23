@@ -1,0 +1,68 @@
+.TH "MultimediaManager" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultimediaManager
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "PhotoPtr \fBcreatePhoto\fP (const std::string &name, const std::string &pathname, double latitude, double longitude)"
+.br
+.ti -1c
+.RI "VideoPtr \fBcreateVideo\fP (const std::string &name, const std::string &pathname, int duration)"
+.br
+.ti -1c
+.RI "FilmPtr \fBcreateFilm\fP (const std::string &name, const std::string &pathname, int duration, int *chapters, int count)"
+.br
+.ti -1c
+.RI "GroupPtr \fBcreateGroup\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "MultimediaPtr \fBfindMultimedia\fP (const std::string &name) const"
+.br
+.ti -1c
+.RI "void \fBdisplayMultimedia\fP (const std::string &name, std::ostream &os) const"
+.br
+.ti -1c
+.RI "void \fBdisplayGroup\fP (const std::string &name, std::ostream &os) const"
+.br
+.ti -1c
+.RI "void \fBplayMultimedia\fP (const std::string &name) const"
+.br
+.ti -1c
+.RI "void \fBplayGroup\fP (const std::string &name) const"
+.br
+.ti -1c
+.RI "void \fBremoveMultimedia\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBremoveGroup\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBlistAllMultimedias\fP (std::ostream &os) const"
+.br
+.ti -1c
+.RI "void \fBlistALLGroups\fP (std::ostream &os) const"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const std::string &filename) const"
+.br
+.ti -1c
+.RI "void \fBload\fP (const std::string &filename)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static MultimediaPtr \fBcreateObject\fP (const std::string &className)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

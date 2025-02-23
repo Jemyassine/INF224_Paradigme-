@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_multimedia_manager" xml:lang="en-US">
+<title>MultimediaManager Class Reference</title>
+<indexterm><primary>MultimediaManager</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a39a0131f35c57b8c3c7d8f8b5844755d"/>PhotoPtr <emphasis role="strong">createPhoto</emphasis> (const std::string &amp;name, const std::string &amp;pathname, double latitude, double longitude)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1ade1099bdf55b6e2f1868fc5e6a33a093"/>VideoPtr <emphasis role="strong">createVideo</emphasis> (const std::string &amp;name, const std::string &amp;pathname, int duration)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1af21e4b6f003263e1d768e192dda8800a"/>FilmPtr <emphasis role="strong">createFilm</emphasis> (const std::string &amp;name, const std::string &amp;pathname, int duration, int *chapters, int count)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1aca2d16e0725e1b710d795208f332fab0"/>GroupPtr <emphasis role="strong">createGroup</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a7d3934e71088005b18b04203232d4d48"/>MultimediaPtr <emphasis role="strong">findMultimedia</emphasis> (const std::string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a9eb9c1d9ddf8b9252e8507a68cf56bf6"/>void <emphasis role="strong">displayMultimedia</emphasis> (const std::string &amp;name, std::ostream &amp;os) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1aeb3be79deb8d3f15a60472a7d344cf7d"/>void <emphasis role="strong">displayGroup</emphasis> (const std::string &amp;name, std::ostream &amp;os) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1adf6126d3d97ab86044c885ab6c8ebf35"/>void <emphasis role="strong">playMultimedia</emphasis> (const std::string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a75d17031b5e656aea68b0f4f2632a266"/>void <emphasis role="strong">playGroup</emphasis> (const std::string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1af893904e73016ed9761afba73b0bcdce"/>void <emphasis role="strong">removeMultimedia</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1aef9ea73a17ffe243cc8fb180daabbad6"/>void <emphasis role="strong">removeGroup</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1aa1d266f1e84148df8454f5a6604d5241"/>void <emphasis role="strong">listAllMultimedias</emphasis> (std::ostream &amp;os) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1ae7815c740203b7f2f5aa4b2ab7164674"/>void <emphasis role="strong">listALLGroups</emphasis> (std::ostream &amp;os) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1aa86f583785502469d1d381ca64ce49cd"/>void <emphasis role="strong">save</emphasis> (const std::string &amp;filename) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a3f21279b2748eb074725994651793548"/>void <emphasis role="strong">load</emphasis> (const std::string &amp;filename)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_multimedia_manager_1a9c5293600dd726f9bbb54285b6e29840"/>static MultimediaPtr <emphasis role="strong">createObject</emphasis> (const std::string &amp;className)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+CPP/MultimediaManager.hCPP/MultimediaManager.cpp</section>

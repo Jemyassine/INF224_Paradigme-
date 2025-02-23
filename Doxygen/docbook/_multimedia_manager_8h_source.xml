@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__multimedia_manager_8h_source" xml:lang="en-US">
+<title>MultimediaManager.h</title>
+<indexterm><primary>CPP/MultimediaManager.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;MULTIMEDIA_MANAGER_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;MULTIMEDIA_MANAGER_H</emphasis>
+3 <emphasis role="preprocessor">#define&#32;version_etape_9</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&quot;Photo.h&quot;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;Video.h&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;Film.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;Group.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;map&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+12 
+13 <emphasis role="keyword">using&#32;</emphasis>MultimediaPtr&#32;=&#32;std::shared_ptr&lt;Multimedia&gt;;
+14 <emphasis role="keyword">using&#32;</emphasis>PhotoPtr&#32;=&#32;std::shared_ptr&lt;Photo&gt;;
+15 <emphasis role="keyword">using&#32;</emphasis>VideoPtr&#32;=&#32;std::shared_ptr&lt;Video&gt;;
+16 <emphasis role="keyword">using&#32;</emphasis>FilmPtr&#32;=&#32;std::shared_ptr&lt;Film&gt;;
+17 <emphasis role="keyword">using&#32;</emphasis>GroupPtr&#32;=&#32;std::shared_ptr&lt;Group&gt;;
+18 
+19 <emphasis role="keyword">using&#32;</emphasis>multimediaTable&#32;=&#32;std::map&lt;std::string,&#32;MultimediaPtr&gt;;
+20 <emphasis role="keyword">using&#32;</emphasis>groupTable&#32;=&#32;std::map&lt;std::string,&#32;GroupPtr&gt;;
+21 
+22 
+23 
+24 
+25 <emphasis role="keyword">class&#32;</emphasis>MultimediaManager&#32;{
+26 <emphasis role="keyword">private</emphasis>:
+27 &#32;&#32;&#32;&#32;multimediaTable&#32;multimediaTable;
+28 &#32;&#32;&#32;&#32;groupTable&#32;groupTable;
+29 
+30 <emphasis role="keyword">public</emphasis>:
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//constructor</emphasis>
+32 &#32;&#32;&#32;&#32;MultimediaManager()&#32;{};
+33 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;destructor</emphasis>
+34 &#32;&#32;&#32;&#32;~MultimediaManager(){};
+35 &#32;&#32;&#32;&#32;
+36 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Methods&#32;to&#32;create&#32;and&#32;add&#32;objects&#32;to&#32;the&#32;tables</emphasis>
+37 &#32;&#32;&#32;&#32;PhotoPtr&#32;createPhoto(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;pathname,&#32;<emphasis role="keywordtype">double</emphasis>&#32;latitude,&#32;<emphasis role="keywordtype">double</emphasis>&#32;longitude);
+38 &#32;&#32;&#32;&#32;VideoPtr&#32;createVideo(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;pathname,&#32;<emphasis role="keywordtype">int</emphasis>&#32;duration);
+39 &#32;&#32;&#32;&#32;FilmPtr&#32;createFilm(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;pathname,&#32;<emphasis role="keywordtype">int</emphasis>&#32;duration,&#32;<emphasis role="keywordtype">int</emphasis>*&#32;chapters,&#32;<emphasis role="keywordtype">int</emphasis>&#32;count);
+40 &#32;&#32;&#32;&#32;GroupPtr&#32;createGroup&#32;(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name);
+41 
+42 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Methods&#32;to&#32;find&#32;and&#32;display&#32;objects&#32;or&#32;groups</emphasis>
+43 &#32;&#32;&#32;&#32;MultimediaPtr&#32;findMultimedia(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name)&#32;<emphasis role="keyword">const</emphasis>;
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;displayMultimedia(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const</emphasis>;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;displayGroup(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name,&#32;std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const</emphasis>;
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Method&#32;to&#32;play&#32;a&#32;multimedia&#32;object</emphasis>
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;playMultimedia(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name)&#32;<emphasis role="keyword">const</emphasis>;
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;playGroup(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name)&#32;<emphasis role="keyword">const</emphasis>;
+50 
+51 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Methods&#32;to&#32;remove&#32;objects&#32;or&#32;groups</emphasis>
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;removeMultimedia(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name);
+53 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;removeGroup(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name);
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Method&#32;to&#32;list&#32;all&#32;multimedia&#32;objects</emphasis>
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;listAllMultimedias(std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const</emphasis>;
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Method&#32;to&#32;list&#32;all&#32;groups</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;listALLGroups(std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const</emphasis>;
+58 
+59 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Serialization</emphasis>
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;save(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;filename)&#32;<emphasis role="keyword">const</emphasis>;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;load(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;filename);
+62 
+63 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Factory&#32;method</emphasis>
+64 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;MultimediaPtr&#32;createObject(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;className);
+65 };
+66 
+67 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

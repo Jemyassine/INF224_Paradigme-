@@ -1,0 +1,250 @@
+.TH "Socket" 3 "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Socket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <ccsocket\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBErrors\fP { \fBFailed\fP = -1, \fBInvalidSocket\fP = -2, \fBUnknownHost\fP = -3 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocket\fP (int type=SOCK_STREAM)"
+.br
+.ti -1c
+.RI "\fBSocket\fP (int type, SOCKET sockfd)"
+.br
+.RI "Creates a \fBSocket\fP from an existing socket file descriptor\&. "
+.ti -1c
+.RI "\fB~Socket\fP ()"
+.br
+.RI "Destructor (closes the socket)\&. "
+.ti -1c
+.RI "int \fBconnect\fP (const std::string &host, int port)"
+.br
+.ti -1c
+.RI "int \fBbind\fP (int port)"
+.br
+.ti -1c
+.RI "int \fBbind\fP (const std::string &host, int port)"
+.br
+.ti -1c
+.RI "int \fBclose\fP ()"
+.br
+.RI "Closes the socket\&. "
+.ti -1c
+.RI "bool \fBisClosed\fP () const"
+.br
+.RI "Returns true if the socket has been closed\&. "
+.ti -1c
+.RI "SOCKET \fBdescriptor\fP ()"
+.br
+.RI "Returns the descriptor of the socket\&. "
+.ti -1c
+.RI "void \fBshutdownInput\fP ()"
+.br
+.RI "Disables further receive operations\&. "
+.ti -1c
+.RI "void \fBshutdownOutput\fP ()"
+.br
+.RI "Disables further send operations\&. "
+.ti -1c
+.RI "SOCKSIZE \fBsend\fP (const SOCKDATA *buf, size_t len, int flags=0)"
+.br
+.ti -1c
+.RI "SOCKSIZE \fBreceive\fP (SOCKDATA *buf, size_t len, int flags=0)"
+.br
+.ti -1c
+.RI "SOCKSIZE \fBsendTo\fP (void const *buf, size_t len, int flags, SOCKADDR const *to, socklen_t addrlen)"
+.br
+.RI "Sends data to a datagram socket\&. "
+.ti -1c
+.RI "SOCKSIZE \fBreceiveFrom\fP (void *buf, size_t len, int flags, SOCKADDR *from, socklen_t *addrlen)"
+.br
+.RI "Receives data from datagram socket\&. "
+.ti -1c
+.RI "int \fBsetReceiveBufferSize\fP (int size)"
+.br
+.RI "Set the size of the TCP/IP input buffer\&. "
+.ti -1c
+.RI "int \fBsetReuseAddress\fP (bool)"
+.br
+.RI "Enable/disable the SO_REUSEADDR socket option\&. "
+.ti -1c
+.RI "int \fBsetSendBufferSize\fP (int size)"
+.br
+.RI "Set the size of the TCP/IP output buffer\&. "
+.ti -1c
+.RI "int \fBsetSoLinger\fP (bool, int linger)"
+.br
+.RI "Enable/disable SO_LINGER with the specified linger time in seconds\&. "
+.ti -1c
+.RI "int \fBsetSoTimeout\fP (int timeout)"
+.br
+.RI "Enable/disable SO_TIMEOUT with the specified timeout (in milliseconds)\&. "
+.ti -1c
+.RI "int \fBsetTcpNoDelay\fP (bool)"
+.br
+.RI "Enable/disable TCP_NODELAY (turns on/off TCP coalescence)\&. "
+.ti -1c
+.RI "int \fBgetReceiveBufferSize\fP () const"
+.br
+.RI "Return the size of the TCP/IP input buffer\&. "
+.ti -1c
+.RI "bool \fBgetReuseAddress\fP () const"
+.br
+.RI "Return SO_REUSEADDR state\&. "
+.ti -1c
+.RI "int \fBgetSendBufferSize\fP () const"
+.br
+.RI "Return the size of the TCP/IP output buffer\&. "
+.ti -1c
+.RI "bool \fBgetSoLinger\fP (int &linger) const"
+.br
+.RI "Return SO_LINGER state and the specified linger time in seconds\&. "
+.ti -1c
+.RI "int \fBgetSoTimeout\fP () const"
+.br
+.RI "Return SO_TIMEOUT value\&. "
+.ti -1c
+.RI "bool \fBgetTcpNoDelay\fP () const"
+.br
+.RI "Return TCP_NODELAY state\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "static void \fBstartup\fP ()"
+.br
+.ti -1c
+.RI "static void \fBcleanup\fP ()"
+.br
+.in -1c
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBServerSocket\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCP/IP or UDP/Datagram IPv4 socket\&. AF_INET connections following the IPv4 Internet protocol are supported\&. 
+.PP
+\fBNote\fP
+.RS 4
+
+.IP "\(bu" 2
+\fBServerSocket\fP should be used on the server side\&.
+.IP "\(bu" 2
+SIGPIPE signals are ignored when using Linux, BSD or MACOSX\&.
+.IP "\(bu" 2
+TCP/IP sockets do not preserve record boundaries but \fBSocketBuffer\fP solves this problem\&. 
+.PP
+.RE
+.PP
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSocket::Errors\fP"
+\fBSocket\fP errors\&.
+.IP "\(bu" 2
+Socket::Failed (-1): could not connect, could not bind, etc\&.
+.IP "\(bu" 2
+Socket::InvalidSocket (-2): invalid socket or wrong socket type
+.IP "\(bu" 2
+Socket::UnknownHost (-3): could not reach host 
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Socket::Socket (int type = \fRSOCK_STREAM\fP)"
+Creates a new \fBSocket\fP\&. Creates a AF_INET socket using the IPv4 Internet protocol\&. Type can be:
+.IP "\(bu" 2
+SOCK_STREAM (the default) for TCP/IP connected stream sockets
+.IP "\(bu" 2
+SOCK_DGRAM for UDP/datagram sockets (available only or Unix/Linux) 
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int Socket::bind (const std::string & host, int port)"
+Assigns the socket to an IP address\&. On Unix/Linux host can be a hostname, on Windows it can only be an IP address\&. 
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative value on error, see \fBSocket::Errors\fP 
+.RE
+.PP
+
+.SS "int Socket::bind (int port)"
+Assigns the socket to localhost\&. 
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative value on error, see \fBSocket::Errors\fP 
+.RE
+.PP
+
+.SS "int Socket::connect (const std::string & host, int port)"
+Connects the socket to an address\&. Typically used for connecting TCP/IP clients to a \fBServerSocket\fP\&. On Unix/Linux host can be a hostname, on Windows it can only be an IP address\&. 
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative value on error which is one of \fBSocket::Errors\fP 
+.RE
+.PP
+
+.SS "SOCKSIZE Socket::receive (SOCKDATA * buf, size_t len, int flags = \fR0\fP)\fR [inline]\fP"
+Receives data from a connected (TCP/IP) socket\&. Reads at most \fIlen\fP bytes fand stores them in \fIbuf\fP\&. By default, this function blocks the caller until thre is availbale data\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the number of bytes that were received, or 0 or \fBshutdownOutput()\fP was called on the other side, or Socket::Failed (-1) if an error occured\&. 
+.RE
+.PP
+
+.SS "SOCKSIZE Socket::send (const SOCKDATA * buf, size_t len, int flags = \fR0\fP)\fR [inline]\fP"
+Send sdata to a connected (TCP/IP) socket\&. Sends the first \fIlen\fP bytes in \fIbuf\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+the number of bytes that were sent, or 0 or \fBshutdownInput()\fP was called on the other side, or Socket::Failed (-1) if an error occured\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+TCP/IP sockets do not preserve record boundaries, see \fBSocketBuffer\fP\&. 
+.RE
+.PP
+
+.SS "void Socket::startup ()\fR [static]\fP"
+initialisation and cleanup of sockets on Widows\&. 
+.PP
+\fBNote\fP
+.RS 4
+startup is automaticcaly called when a \fBSocket\fP or a \fBServerSocket\fP is created 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

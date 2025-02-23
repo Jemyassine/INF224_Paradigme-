@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classswing_1_1src_1_1_main" xml:lang="en-US">
+<title>swing.src.Main Class Reference</title>
+<indexterm><primary>swing.src.Main</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classswing_1_1src_1_1_main_1a14cf0ae0eb78412c27dee68460549ae5"/>static void <emphasis role="strong">main</emphasis> (String[] args)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+swing/src/Main.java</section>

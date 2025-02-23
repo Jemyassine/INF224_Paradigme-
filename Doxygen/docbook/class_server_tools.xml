@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_server_tools" xml:lang="en-US">
+<title>ServerTools Class Reference</title>
+<indexterm><primary>ServerTools</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_server_tools_1adb2b3016f674a62b7e9fe470512e5b10"/>static int <emphasis role="strong">getWords</emphasis> (std::string parameters[], const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_server_tools_1ab54ad1dfac64635ac3686235e5f0a935"/>static std::string <emphasis role="strong">protocolDealer</emphasis> (const std::string &amp;request, <link linkend="_class_multimedia_manager">MultimediaManager</link> &amp;manager)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+CPP/ServerTools.h</section>

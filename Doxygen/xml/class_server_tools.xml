@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_server_tools" kind="class" language="C++" prot="public">
+    <compoundname>ServerTools</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_server_tools_1adb2b3016f674a62b7e9fe470512e5b10" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int ServerTools::getWords</definition>
+        <argsstring>(std::string parameters[], const std::string &amp;name)</argsstring>
+        <name>getWords</name>
+        <qualifiedname>ServerTools::getWords</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>parameters</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ServerTools.h" line="17" column="16" bodyfile="CPP/ServerTools.h" bodystart="17" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_tools_1ab54ad1dfac64635ac3686235e5f0a935" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string ServerTools::protocolDealer</definition>
+        <argsstring>(const std::string &amp;request, MultimediaManager &amp;manager)</argsstring>
+        <name>protocolDealer</name>
+        <qualifiedname>ServerTools::protocolDealer</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type><ref refid="class_multimedia_manager" kindref="compound">MultimediaManager</ref> &amp;</type>
+          <declname>manager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CPP/ServerTools.h" line="32" column="24" bodyfile="CPP/ServerTools.h" bodystart="32" bodyend="112"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CPP/ServerTools.h" line="12" column="1" bodyfile="CPP/ServerTools.h" bodystart="12" bodyend="114"/>
+    <listofallmembers>
+      <member refid="class_server_tools_1adb2b3016f674a62b7e9fe470512e5b10" prot="public" virt="non-virtual"><scope>ServerTools</scope><name>getWords</name></member>
+      <member refid="class_server_tools_1ab54ad1dfac64635ac3686235e5f0a935" prot="public" virt="non-virtual"><scope>ServerTools</scope><name>protocolDealer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

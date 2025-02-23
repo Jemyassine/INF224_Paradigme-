@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__multimedia_8h_source" xml:lang="en-US">
+<title>Multimedia.h</title>
+<indexterm><primary>CPP/Multimedia.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;MULTIMEDIA_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;MULTIMEDIA_H</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+6 
+7 <emphasis role="keyword">class&#32;</emphasis>Multimedia{
+8 <emphasis role="keyword">private</emphasis>:
+9 &#32;&#32;&#32;&#32;std::string&#32;name;
+10 &#32;&#32;&#32;&#32;std::string&#32;pathname;
+11 <emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;Multimedia(){};
+13 &#32;&#32;&#32;&#32;Multimedia(&#32;std::string&#32;name,&#32;std::string&#32;pathname);
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;~Multimedia();
+15 &#32;&#32;&#32;&#32;std::string&#32;getName()&#32;<emphasis role="keyword">const</emphasis>;
+16 &#32;&#32;&#32;&#32;std::string&#32;getPathname()&#32;<emphasis role="keyword">const</emphasis>;
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setName(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;name);
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;setPathname(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;pathname);
+19 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;display(std::ostream&amp;&#32;os)&#32;<emphasis role="keyword">const</emphasis>&#32;=&#32;0&#32;;
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;play()&#32;<emphasis role="keyword">const</emphasis>&#32;=&#32;0;&#32;
+21 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Serialization</emphasis>
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;write(std::ofstream&amp;&#32;ofs)&#32;<emphasis role="keyword">const</emphasis>;
+23 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;read(std::ifstream&amp;&#32;ifs);
+24 &#32;&#32;&#32;&#32;
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Factory&#32;method</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;std::string&#32;getClassName()&#32;<emphasis role="keyword">const</emphasis>&#32;=&#32;0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+27 };
+28 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

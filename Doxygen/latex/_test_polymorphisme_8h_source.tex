@@ -1,0 +1,42 @@
+\doxysection{Test\+Polymorphisme.\+h}
+\hypertarget{_test_polymorphisme_8h_source}{}\label{_test_polymorphisme_8h_source}\index{CPP/TestPolymorphisme.h@{CPP/TestPolymorphisme.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TestPolymorphisme\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TestPolymorphisme\_h}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Photo.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Video.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }TestPolymorphisme\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ TestPolymorphisme()\ \{test();\};\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ test\ ()\{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::vector<Multimedia*>\ multimediaList;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::string\ pathname1\ =\ \textcolor{stringliteral}{"{}D:\(\backslash\)\(\backslash\)time\_money\_phrase\_219589\_938x1668.jpg"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ pathname2\ =\ \textcolor{stringliteral}{"{}D:\(\backslash\)\(\backslash\)Samara.mp4"{}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Ajout\ d'objets\ de\ type\ Photo\ et\ Video}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ multimediaList.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_photo}{Photo}}(\textcolor{stringliteral}{"{}time\_money"{}},pathname1,\ 48.8566,\ 2.3522));}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ multimediaList.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_video}{Video}}(\textcolor{stringliteral}{"{}Samara"{}},\ pathname2,\ 120));}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Boucle\ pour\ afficher\ et\ jouer\ chaque\ élément}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ it\ :\ multimediaList)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>display(std::cout);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>play();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Libération\ de\ la\ mémoire}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ it\ :\ multimediaList)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;\ \ \textcolor{comment}{//\ Appelle\ le\ destructeur\ virtuel\ correctement}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ la\ prpriété\ cracteristique\ de\ polymorphisme\ est\ que\ le\ type\ de\ l'objet\ est\ déterminé\ à\ l'exécution\ et\ non\ à\ la\ compilation}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ les\ elements\ de\ la\ liste\ multimediaList\ sont\ de\ type\ Multimedia*\ mais\ ils\ peuvent\ pointer\ vers\ des\ objets\ de\ type\ Photo\ ou\ Video}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ par\ rapport\ au\ java\ le\ polymorphisme\ en\ C++\ est\ plus\ puissant\ car\ il\ peut\ être\ utilisé\ avec\ des\ pointeurs\ et\ des\ références}}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
